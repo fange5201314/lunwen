@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Thesis workstation proposed TaskContract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "project_id",
+    "node_id",
+    "plan_version",
+    "role_id",
+    "dependency_task_ids",
+    "input_manifest_ref",
+    "output_specs",
+    "capability_version",
+    "resource_locks",
+    "idempotency_key",
+    "business_retry_policy",
+    "api_retry_policy_ref"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "node_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "role_id": {
+      "type": "string",
+      "pattern": "^R[0-9]{3}$"
+    },
+    "dependency_task_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "input_manifest_ref": {
+      "type": "string"
+    },
+    "output_specs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^D[0-9]{3}$"
+      },
+      "minItems": 1
+    },
+    "capability_version": {
+      "type": "string"
+    },
+    "resource_locks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "business_retry_policy": {
+      "const": "human_resume_only"
+    },
+    "api_retry_policy_ref": {
+      "type": "string"
+    }
+  }
+}

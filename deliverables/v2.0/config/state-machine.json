@@ -1,0 +1,25 @@
+{
+  "project_states": [
+    "draft",
+    "planning",
+    "awaiting_plan_approval",
+    "queued",
+    "running",
+    "checking",
+    "awaiting_acceptance",
+    "blocked",
+    "failed_waiting_user",
+    "paused_by_user",
+    "completed",
+    "cancelled"
+  ],
+  "guards": {
+    "formal_production": "approved_plan_hash_matches AND inputs_complete AND dependencies_passed AND capability_verified AND locks_available",
+    "awaiting_acceptance": "all_required_artifacts_registered AND independent_checks_passed AND manifest_frozen",
+    "completed": "user_acceptance_matches_manifest_hash",
+    "resume": "human_action_recorded AND checkpoint_valid AND plan_current AND dependencies_passed AND capability_verified"
+  },
+  "terminal_history": "completed versions immutable; revisions create new versions and acceptance records",
+  "project_isolation": "failed node + downstream only; shared capability failure affects its consumers, not all projects",
+  "task_success_is_not_project_completion": true
+}

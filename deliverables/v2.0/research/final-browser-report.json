@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "computed-style standalone SVG export",
+    "single-page architecture PDF",
+    "multi-agent diagram node contract inspection",
+    "failure diagram budget inspection",
+    "prototype diagram switching",
+    "proposal HTML font/image load and PDF print",
+    "resource report PDF print"
+  ],
+  "javascript_errors": [],
+  "browser": "system Chromium over allowed localhost HTTP; no browser policy changed"
+}

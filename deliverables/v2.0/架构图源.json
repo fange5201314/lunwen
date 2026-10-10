@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "毕设论文工作站 · 多 Agent 编排架构（设计方案）",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-thesis-studio-20261009-120000/architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "用户",
+      "sublabel": "方案确认 / 最终验收",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "论文工作站",
+      "sublabel": "React 工作区 / 决策板",
+      "pos": [
+        340,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "项目 API",
+      "sublabel": "Fastify + SSE",
+      "pos": [
+        640,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "持久状态",
+      "sublabel": "PostgreSQL / Outbox",
+      "pos": [
+        940,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "team",
+      "type": "backend",
+      "label": "多 Agent 团队",
+      "sublabel": "Paperclip / 岗位与委派",
+      "pos": [
+        340,
+        270
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "scheduler",
+      "type": "messagebus",
+      "label": "任务图与关卡",
+      "sublabel": "方案已确认才派发制作",
+      "pos": [
+        640,
+        270
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "notice",
+      "type": "external",
+      "label": "故障与人工介入",
+      "sublabel": "本机提醒 / 手机渠道",
+      "pos": [
+        940,
+        270
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "win",
+      "type": "backend",
+      "label": "Windows 专业执行器",
+      "sublabel": "CAD / CAE / TIA / 资源锁",
+      "pos": [
+        40,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "隔离执行 Worker",
+      "sublabel": "CLI / MCP / API 适配",
+      "pos": [
+        340,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "执行器接入层",
+      "sublabel": "检查点 / 收集 / 取消",
+      "pos": [
+        640,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "gateway",
+      "type": "security",
+      "label": "Octopus API 网关",
+      "sublabel": "有限切换 / 可观测错误",
+      "pos": [
+        940,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "files",
+      "type": "database",
+      "label": "成果文件库",
+      "sublabel": "原始文件 / 哈希 / 版本",
+      "pos": [
+        40,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "documents",
+      "type": "backend",
+      "label": "论文与文档链",
+      "sublabel": "检索 / 解析 / 翻译 / 排版",
+      "pos": [
+        340,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "check",
+      "type": "backend",
+      "label": "独立质量检查",
+      "sublabel": "格式 / 引用 / 全文覆盖",
+      "pos": [
+        640,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "models",
+      "type": "cloud",
+      "label": "已有模型 API 渠道",
+      "sublabel": "同能力备用 / 熔断",
+      "pos": [
+        940,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "database",
+      "label": "证据与章节索引",
+      "sublabel": "文件 → 事实 → 章节",
+      "pos": [
+        40,
+        960
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "decisions",
+      "type": "database",
+      "label": "工程决策记录",
+      "sublabel": "提案 / 否决 / 取代 / 验证",
+      "pos": [
+        640,
+        960
+      ],
+      "size": [
+        220,
+        76
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "user-ui",
+      "from": "user",
+      "to": "ui",
+      "label": "确认与验收"
+    },
+    {
+      "id": "ui-api",
+      "from": "ui",
+      "to": "api",
+      "label": "命令 / 事件"
+    },
+    {
+      "id": "api-db",
+      "from": "api",
+      "to": "db",
+      "label": "事务"
+    },
+    {
+      "id": "api-scheduler",
+      "from": "api",
+      "to": "scheduler",
+      "label": "版本关卡"
+    },
+    {
+      "id": "scheduler-team",
+      "from": "scheduler",
+      "to": "team",
+      "label": "委派"
+    },
+    {
+      "id": "scheduler-notice",
+      "from": "scheduler",
+      "to": "notice",
+      "label": "失败暂停"
+    },
+    {
+      "id": "scheduler-adapter",
+      "from": "scheduler",
+      "to": "adapter",
+      "label": "就绪任务"
+    },
+    {
+      "id": "adapter-worker",
+      "from": "adapter",
+      "to": "worker",
+      "label": "执行"
+    },
+    {
+      "id": "adapter-gateway",
+      "from": "adapter",
+      "to": "gateway",
+      "label": "模型请求"
+    },
+    {
+      "id": "gateway-models",
+      "from": "gateway",
+      "to": "models",
+      "label": "有限切换"
+    },
+    {
+      "id": "worker-win",
+      "from": "worker",
+      "to": "win",
+      "label": "原生工具"
+    },
+    {
+      "id": "worker-documents",
+      "from": "worker",
+      "to": "documents",
+      "label": "材料任务"
+    },
+    {
+      "id": "win-files",
+      "from": "win",
+      "to": "files",
+      "label": "原生文件"
+    },
+    {
+      "id": "documents-files",
+      "from": "documents",
+      "to": "files",
+      "label": "成果提交"
+    },
+    {
+      "id": "documents-check",
+      "from": "documents",
+      "to": "check",
+      "label": "检查冻结版"
+    },
+    {
+      "id": "files-evidence",
+      "from": "files",
+      "to": "evidence",
+      "label": "来源索引"
+    },
+    {
+      "id": "check-decisions",
+      "from": "check",
+      "to": "decisions",
+      "label": "验证记录"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "唯一业务状态源",
+      "items": [
+        "项目、关卡、证据和验收归工作站管理",
+        "Paperclip 负责角色与执行派发；运行结束不等于验收"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "论文工具组合",
+      "items": [
+        "Paper Search CLI → Docling → 翻译与术语 → OfficeCLI",
+        "thesis-docx 独立审计；Archify 生成架构与流程图"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "失败与恢复边界",
+      "items": [
+        "API 仅有限重试；断流片段不直接进入成果",
+        "业务失败暂停依赖并通知；人工恢复有效检查点"
+      ]
+    }
+  ]
+}

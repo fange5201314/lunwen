@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspace/deliverables/thesis-studio/.archify/architecture-thesis-studio-20261009-120000/candidate.json",
+    "sha256": "9b0d49e635bd30f5e93412cbdfb67ef63731c42323cbb58d03a77f73a4210dc3",
+    "bytes": 7177
+  },
+  "artifact": {
+    "path": "/workspace/deliverables/thesis-studio/.archify/architecture-thesis-studio-20261009-120000/architecture.html",
+    "sha256": "737591eddf1d2b2b3404ea03ff3c64290e48d78ed5eac4522af0be2fe81d0561",
+    "bytes": 779348
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/deliverables/thesis-studio/.archify/architecture-thesis-studio-20261009-120000/architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome navigation failed: net::ERR_BLOCKED_BY_ADMINISTRATOR"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspace/deliverables/thesis-studio/research/archify-browser/architecture.finalize.json",
+    "summaryReceipt": "/workspace/deliverables/thesis-studio/research/archify-browser/architecture.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/deliverables/thesis-studio/research/archify-browser/architecture.browser-check.json"
+  },
+  "update": {
+    "status": "unavailable",
+    "installedVersion": null,
+    "availableVersion": null,
+    "releaseNotes": null,
+    "checkedAt": null,
+    "source": null,
+    "noticeRequired": false,
+    "noticeText": null,
+    "reason": "check-failed"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1343
+}

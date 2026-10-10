@@ -1,0 +1,12 @@
+# Local credentials and private source uploads
+.env
+.env.*
+!.env.example
+**/sources/
+**/research/repos/
+**/research/*-extracted.txt
+# Local execution and dependency caches
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store

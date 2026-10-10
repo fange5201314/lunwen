@@ -1,0 +1,43 @@
+{
+  "role_ids": [
+    "R001",
+    "R002",
+    "R003",
+    "R004",
+    "R005",
+    "R009",
+    "R010",
+    "R011",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R023",
+    "R024",
+    "R031",
+    "R085",
+    "R006",
+    "R007",
+    "R008",
+    "R013",
+    "R082",
+    "R094",
+    "R095"
+  ],
+  "default_inference_slots": {
+    "min": 4,
+    "max": 8,
+    "status": "design_recommendation_pending_real_capacity_validation"
+  },
+  "activation": "phase_and_task_capability_driven",
+  "not_all_roles_are_live_processes": true,
+  "review_separation": "author_member_id != reviewer_member_id",
+  "meetings": {
+    "max_rounds": 2,
+    "suggested_deadline_minutes": 10,
+    "output": "DecisionProposal, not automatic user approval"
+  }
+}

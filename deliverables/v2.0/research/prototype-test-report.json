@@ -1,0 +1,172 @@
+{
+  "passed": 41,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "初始11页导航",
+      "status": "passed"
+    },
+    {
+      "name": "未确认方案禁止制作",
+      "status": "passed"
+    },
+    {
+      "name": "四区方案确认开启派发",
+      "status": "passed"
+    },
+    {
+      "name": "检查点阶段推进",
+      "status": "passed"
+    },
+    {
+      "name": "业务失败转人工",
+      "status": "passed"
+    },
+    {
+      "name": "失败后禁止自主推进",
+      "status": "passed"
+    },
+    {
+      "name": "A失败B继续",
+      "status": "passed"
+    },
+    {
+      "name": "无人工记录不恢复",
+      "status": "passed"
+    },
+    {
+      "name": "人工恢复保留检查点",
+      "status": "passed"
+    },
+    {
+      "name": "API有限切换保持业务状态",
+      "status": "passed"
+    },
+    {
+      "name": "API耗尽转人工",
+      "status": "passed"
+    },
+    {
+      "name": "96个岗位目录",
+      "status": "passed"
+    },
+    {
+      "name": "会议结果进决策不自动批准",
+      "status": "passed"
+    },
+    {
+      "name": "岗位模拟招募实例",
+      "status": "passed"
+    },
+    {
+      "name": "检查通过仅待用户验收",
+      "status": "passed"
+    },
+    {
+      "name": "外文与开题共6格式槽位",
+      "status": "passed"
+    },
+    {
+      "name": "用户验收后才完成",
+      "status": "passed"
+    },
+    {
+      "name": "修改建修订任务不沿用完成",
+      "status": "passed"
+    },
+    {
+      "name": "实质变更冻结新版本并关制作门",
+      "status": "passed"
+    },
+    {
+      "name": "开源资源可检索具体组合",
+      "status": "passed"
+    },
+    {
+      "name": "全量884索引分页",
+      "status": "passed"
+    },
+    {
+      "name": "专业分支可切换",
+      "status": "passed"
+    },
+    {
+      "name": "新项目隔离并转义用户输入",
+      "status": "passed"
+    },
+    {
+      "name": "刷新恢复本地项目状态",
+      "status": "passed"
+    },
+    {
+      "name": "评估可导出",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 overview",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 workspace",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 plan",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 crew",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 board",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 decisions",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 evidence",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 artifacts",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 resources",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 recovery",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 architecture",
+      "status": "passed"
+    },
+    {
+      "name": "768px响应式无页面溢出",
+      "status": "passed"
+    },
+    {
+      "name": "390px方案确认无页面溢出",
+      "status": "passed"
+    },
+    {
+      "name": "Archify生成图HTTP真实浏览器可打开",
+      "status": "passed"
+    },
+    {
+      "name": "架构图无横向溢出",
+      "status": "passed"
+    },
+    {
+      "name": "无JavaScript异常",
+      "status": "passed"
+    }
+  ],
+  "js_errors": [],
+  "note": "浏览器验证原型模拟行为；不等同真实Agent、论文或网关端到端验证。Archify自带file导航browser-check受当前浏览器策略限制，改用HTTP独立验证。"
+}

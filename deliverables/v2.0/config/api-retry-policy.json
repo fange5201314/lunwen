@@ -1,0 +1,23 @@
+{
+  "policy_id": "same-capability-bounded-v1",
+  "status": "design_default_unverified_on_real_gateway",
+  "max_total_attempts": 3,
+  "total_deadline_seconds": 90,
+  "connect_timeout_seconds": 10,
+  "budget_owner": "single_gateway",
+  "disable_independent_sdk_retries": true,
+  "retryable_http_statuses": [
+    429,
+    500,
+    502,
+    503,
+    504
+  ],
+  "respect_retry_after": true,
+  "backoff": "exponential_with_jitter_within_total_deadline",
+  "eligible_failover": "same_verified_capability_binding",
+  "partial_stream": "quarantine; commit only after complete response and schema check",
+  "executed_tool_side_effect": "no automatic replay; query operation ledger; human handling if uncertain",
+  "all_channels_failed": "checkpoint+capability circuit break+dependent tasks blocked+notification outbox",
+  "business_retry": "human_resume_only"
+}

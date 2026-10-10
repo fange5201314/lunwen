@@ -1,0 +1,55 @@
+{
+  "status": "example_no_real_bindings",
+  "bindings": [
+    {
+      "alias": "architect-review",
+      "endpoint_ref": null,
+      "model_id": null,
+      "credential_ref": null,
+      "roles": [
+        "R021",
+        "R006",
+        "R083"
+      ],
+      "requires": [
+        "reasoning",
+        "structured_output",
+        "decision_evidence"
+      ]
+    },
+    {
+      "alias": "fulltext-translation",
+      "endpoint_ref": null,
+      "model_id": null,
+      "credential_ref": null,
+      "roles": [
+        "R018",
+        "R020"
+      ],
+      "requires": [
+        "fulltext_coverage",
+        "terminology",
+        "long_context"
+      ]
+    },
+    {
+      "alias": "engineering-tools",
+      "endpoint_ref": null,
+      "model_id": null,
+      "credential_ref": null,
+      "roles": [
+        "R035",
+        "R046",
+        "R056",
+        "R062"
+      ],
+      "requires": [
+        "tool_calling",
+        "code_execution_feedback",
+        "json_contract"
+      ]
+    }
+  ],
+  "existing_channel_policy": "reuse user-provided configured channels; do not ask for secret values in chat",
+  "budget_enforcement": "optional; usage tracking enabled when integrated"
+}

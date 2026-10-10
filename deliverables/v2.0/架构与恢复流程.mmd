@@ -1,0 +1,27 @@
+%% 设计方案，非已运行拓扑
+flowchart TD
+  U[用户：方案确认 / 用户验收] --> UI[React 工作区：聊天 / 看板 / 预览 / 决策]
+  UI --> API[Fastify 命令 API / SSE]
+  API --> DB[(PostgreSQL：业务状态 / 事件 / Outbox)]
+  API --> GATE[方案版本 / 输入 / 能力 / 依赖 / 资源关卡]
+  GATE --> PC[Paperclip 角色 / 委派 / Run派发]
+  PC --> AD[CLI / MCP / API统一适配层]
+  AD --> PY[Python文献与文档Worker]
+  AD --> WIN[Windows CAD / CAE / TIA执行器]
+  AD --> GW[一个Octopus网关：共享有限请求预算]
+  GW --> MODEL[已有模型API / 同能力备用渠道]
+  PY --> FILE[(原始文件 / 哈希对象库 / Manifest)]
+  WIN --> FILE
+  FILE --> CHECK[独立检查：内容 / 引用 / 全文 / 格式 / 工程]
+  CHECK -->|通过| EVIDENCE[(证据事实 / 章节支持关系)]
+  EVIDENCE --> ACCEPT[待用户验收：绑定版本与清单哈希]
+  ACCEPT -->|用户确认| DONE[已完成]
+  CHECK -->|业务失败| FAIL[保存现场 / 停失败节点和依赖]
+  MODEL -->|预算耗尽或断流无法安全重发| FAIL
+  FAIL --> NOTICE[本机工单 + 手机渠道 / 投递状态]
+  NOTICE --> HUMAN[人工处理 / 记录决定]
+  HUMAN -->|有效检查点与依赖重新核对| GATE
+  DEC[(工程决策：候选 / 否决 / 取代 / 验证)] --> GATE
+  HUMAN --> DEC
+  PC --> MEETING[最多两轮证据会议 / 招募自测]
+  MEETING --> DEC

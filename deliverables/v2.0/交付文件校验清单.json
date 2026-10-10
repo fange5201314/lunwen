@@ -1,0 +1,402 @@
+{
+  "version": "2.0",
+  "edition": "github-publication",
+  "indexed_resources": 884,
+  "curated_resources": 35,
+  "role_definitions": 96,
+  "workflow_nodes": 215,
+  "prototype_pages": 11,
+  "original_uploads": "retained in private workspace, represented by redacted source manifest",
+  "files": [
+    {
+      "path": ".archify/architecture-thesis-studio-20261009-120000/architecture.browser-check.json",
+      "bytes": 3687,
+      "sha256": "9c661bb8e93f131101d75436cf40dddb906660bd4771160615dc454358b565cb"
+    },
+    {
+      "path": ".archify/architecture-thesis-studio-20261009-120000/architecture.delivery.json",
+      "bytes": 644,
+      "sha256": "e2c6f0dba069859f795c77d635714826b74a8f82c6f8e6d738125234a2ce29ad"
+    },
+    {
+      "path": ".archify/architecture-thesis-studio-20261009-120000/architecture.finalize-summary.json",
+      "bytes": 3128,
+      "sha256": "5625915404a3dfe74cf1c507e545b56d7d5ac5a796295e489c7e9e269aa377ee"
+    },
+    {
+      "path": ".archify/architecture-thesis-studio-20261009-120000/architecture.finalize.json",
+      "bytes": 14918,
+      "sha256": "7aefefac637b8374a2676eee469f8fadf4d8441381e6b414201bf2aeee28cdda"
+    },
+    {
+      "path": ".archify/architecture-thesis-studio-20261009-120000/architecture.html",
+      "bytes": 779348,
+      "sha256": "737591eddf1d2b2b3404ea03ff3c64290e48d78ed5eac4522af0be2fe81d0561"
+    },
+    {
+      "path": ".archify/architecture-thesis-studio-20261009-120000/candidate.json",
+      "bytes": 7177,
+      "sha256": "9b0d49e635bd30f5e93412cbdfb67ef63731c42323cbb58d03a77f73a4210dc3"
+    },
+    {
+      "path": "API故障与恢复时序.mmd",
+      "bytes": 805,
+      "sha256": "652aae9d49740d47ea51d8a46b1f0adfdf9d4e1088c2be3831a80033d5a30eed"
+    },
+    {
+      "path": "README.md",
+      "bytes": 550,
+      "sha256": "523e9bb803e0b4a39f7efd0317383a610bed34cc37aea860d10ff0e0486e3beb"
+    },
+    {
+      "path": "config/acceptance-scenarios.json",
+      "bytes": 6438,
+      "sha256": "6e7b25a21912c63545924f5f3b21fa3b95193b490a0f77f78f8243b49d3c14a1"
+    },
+    {
+      "path": "config/adapter-contract.json",
+      "bytes": 1059,
+      "sha256": "37b55f632118e8a563149763616f4bbb8842fc4b37b5f86d11e74f9612368999"
+    },
+    {
+      "path": "config/agent-roles.json",
+      "bytes": 67077,
+      "sha256": "61b2537fc6408812a58b19731ea0bafacc21da4864b99e6235530b8c866e5b01"
+    },
+    {
+      "path": "config/api-retry-policy.json",
+      "bytes": 851,
+      "sha256": "7eeb353625d5dc31ae65082926bfc6ec8f0418331ae8a9d219979a3432ecd1fa"
+    },
+    {
+      "path": "config/catalog-data.js",
+      "bytes": 1254012,
+      "sha256": "6fe4969272904725b5c72489783553bc416f2360ffb34fa186ba2635f8667b6f"
+    },
+    {
+      "path": "config/chapter-templates.json",
+      "bytes": 16526,
+      "sha256": "500f2e1d363d1f289b7ad954bc98e2e99d7b43a6e63751a8794ce098a9ce8431"
+    },
+    {
+      "path": "config/clippings-source-index.json",
+      "bytes": 624519,
+      "sha256": "010669a37625d3d83af8be337156de660b1441b0243ba2ccabbb182985f7e2b5"
+    },
+    {
+      "path": "config/collaboration-diagram.json",
+      "bytes": 10903,
+      "sha256": "4e5c89153f6ee125a9914b7c89d6ead4f7a3e353bb6a044d978e096aa0305ac1"
+    },
+    {
+      "path": "config/curated-data.js",
+      "bytes": 23390,
+      "sha256": "2bf4829584ec17d5e6db7b7cf0b309f7d5420e10e079b4e42f8e075c9538de07"
+    },
+    {
+      "path": "config/curated-resources.json",
+      "bytes": 25726,
+      "sha256": "c6af9928840513afbf643c5e0d3626c8dd5af3f917692e1b446ed21dda66d842"
+    },
+    {
+      "path": "config/deliverable-specs.json",
+      "bytes": 13671,
+      "sha256": "583bfee39885887f44555ce38e659528cc24b4413932df928b28a50ab27bc30d"
+    },
+    {
+      "path": "config/integration-manifest.json",
+      "bytes": 27592,
+      "sha256": "da52bb7706ab231d619e34ade2b1d525d84333bfcbc8886d44eb3ac17b57d95b"
+    },
+    {
+      "path": "config/model-routing.example.json",
+      "bytes": 1182,
+      "sha256": "c838a95db51b65f4834bcfc6ec72deea1944c08b1b6d68328c663ed2555aa186"
+    },
+    {
+      "path": "config/mvp-activation.json",
+      "bytes": 772,
+      "sha256": "a016170cac5fdc680df37e08f048b6dcf109f80d811d3e90e85546372a06971d"
+    },
+    {
+      "path": "config/resource-catalog.json",
+      "bytes": 1126963,
+      "sha256": "8f54d1d6cb29ef781f1676c574bc78d2186f16037d45428bb96f1ed4593e8f3a"
+    },
+    {
+      "path": "config/state-machine.json",
+      "bytes": 996,
+      "sha256": "243be547bccfed0506d5bb92c1ff3de7727bc6aa231014fdc0822563fbff848b"
+    },
+    {
+      "path": "config/task-contract.schema.json",
+      "bytes": 1697,
+      "sha256": "460f7f82adf1f460a5f76c4c7d66c88401bf4576978c14c84270b16485e04b87"
+    },
+    {
+      "path": "config/team-presets.json",
+      "bytes": 4887,
+      "sha256": "0fe834ca0f4833ccbff4ba4a7084dfca27125a5f70696298ac780c79986df275"
+    },
+    {
+      "path": "config/workflow-nodes.json",
+      "bytes": 68502,
+      "sha256": "bc48d2c887b9bf52e8ce60f5c43ce63f9108de6e355d69811164a39bb5c8ae44"
+    },
+    {
+      "path": "research/archify-browser/architecture.browser-check.json",
+      "bytes": 1924,
+      "sha256": "ef26b65045b65e2be7cfb547b329eaa23733c7375f0c2c501ad492d75a84e2d7"
+    },
+    {
+      "path": "research/archify-browser/architecture.finalize-summary.json",
+      "bytes": 2120,
+      "sha256": "0d23c8672c024a7926c78f5696b21e9c420c58cbec2e2ad9518b6d61102a3f9e"
+    },
+    {
+      "path": "research/archify-browser/architecture.finalize.json",
+      "bytes": 12249,
+      "sha256": "a4674dc8f2f46924c19d9b391ce23b34fb58f9e3d622088830b87082979eba82"
+    },
+    {
+      "path": "research/architecture-pdf-page1.png",
+      "bytes": 88412,
+      "sha256": "578b6fa8d9813f1d570b9fdd81d940c7986b2d514c8f4c7077f17108a3903fae"
+    },
+    {
+      "path": "research/build_collaboration_diagram.py",
+      "bytes": 12381,
+      "sha256": "b34a902f796477cbbb6f8d3a6f9a376af4ab0575b2c81cbb905026547e22daad"
+    },
+    {
+      "path": "research/build_specs.py",
+      "bytes": 6353,
+      "sha256": "bc3b4af65da42eb1534803bf2d26ebc0807fc2b9a1ac29f863080ca6ed2423be"
+    },
+    {
+      "path": "research/delivery-validation.json",
+      "bytes": 1057,
+      "sha256": "02c2a0818475c98cba9f99016ab4c183d2bee8f413bd2e62094ab60984f4b988"
+    },
+    {
+      "path": "research/final-browser-report.json",
+      "bytes": 448,
+      "sha256": "89acca3933456a2480825680a5a7dfc2314275801b8852da83ef0b5bb21243fa"
+    },
+    {
+      "path": "research/final_browser_check.py",
+      "bytes": 5913,
+      "sha256": "b34c328e10dade796e876f048f0c92ff84424c249afbace40012af92f68ecb2a"
+    },
+    {
+      "path": "research/make_diagram.py",
+      "bytes": 3215,
+      "sha256": "ce73b992520d805f5e96171fe64d9d1fee5b2f7ab40eab7c0edc48dbb0374d92"
+    },
+    {
+      "path": "research/mobile-plan.png",
+      "bytes": 212235,
+      "sha256": "2d9e63ad73e7b3136012c8abb61471b9c6aa6659dab3111fd283e4d941934f07"
+    },
+    {
+      "path": "research/proposal-first-screen.png",
+      "bytes": 144073,
+      "sha256": "b59c90296969a91a1a82bbdc4f5bd3c12bade181442031ce29b78f2bef4eba3c"
+    },
+    {
+      "path": "research/proposal-pdf-page1.png",
+      "bytes": 146562,
+      "sha256": "da26b6c486e5bbc8972ca662c9bfe6d08f1cfc33671d0cd57b10f8cd6387d711"
+    },
+    {
+      "path": "research/prototype-test-report.json",
+      "bytes": 3696,
+      "sha256": "2843b010f293ef39b01049ecd814db29bdabca764cab19290ccd3939956f14ab"
+    },
+    {
+      "path": "research/render_documents.py",
+      "bytes": 8001,
+      "sha256": "34277b0d8e2079d0c4292194d56100a7a21295ff87ffada3dc9ca9e17acfb5fe"
+    },
+    {
+      "path": "research/repo-evidence.json",
+      "bytes": 30619,
+      "sha256": "5336390eaeb44868f8f0c4dd1217b7214bce09041c979ec3e4f9242eb58a39c4"
+    },
+    {
+      "path": "research/source-manifest.json",
+      "bytes": 14175,
+      "sha256": "cb1aee74ba4c4ec7728ec9a749a0dc0d8a8f20a284cefa523822e14dd8269553"
+    },
+    {
+      "path": "research/test_prototype.py",
+      "bytes": 8590,
+      "sha256": "da2557305d4c050fe2dbf5ba7efc8d3f4e976ac6961041b9992040026ce5905e"
+    },
+    {
+      "path": "third-party-notices/Archify-MIT-LICENSE.txt",
+      "bytes": 1102,
+      "sha256": "b799ab081703e7821ae5096d2c1abdf14bbdc75e8ea1c4045998c36ed6db9706"
+    },
+    {
+      "path": "原型团队岗位.png",
+      "bytes": 213792,
+      "sha256": "15a49ef66e30a77b5b89ece2249da5a56909928e9b9e656139bcc434da677d9a"
+    },
+    {
+      "path": "原型成果验收.png",
+      "bytes": 185030,
+      "sha256": "61de99c3d1868b802c4e6839ec47db126e103ca10b9a442acba3e2de32288160"
+    },
+    {
+      "path": "原型项目工作区.png",
+      "bytes": 202240,
+      "sha256": "55657826f0e38d95de896b3871c7108394b833d8ff51ffa5854c46ecefdeb160"
+    },
+    {
+      "path": "原型首页.png",
+      "bytes": 223308,
+      "sha256": "bc2961ceb982eefc08a6f33b7e91ef968776be4df0ee3c9560950023e5737ffa"
+    },
+    {
+      "path": "可点击原型.html",
+      "bytes": 860170,
+      "sha256": "68e7a791fec3702c80487c8ef28a2347233f2e4c104a0a5b8582692edc1fda46"
+    },
+    {
+      "path": "复现与验证.md",
+      "bytes": 2567,
+      "sha256": "f4703a67df6f9933afcb62255fa3ff634fec124fb9c97a917c7f84978323c158"
+    },
+    {
+      "path": "多Agent协作.svg",
+      "bytes": 7799,
+      "sha256": "519ac0b2ae190ddb0bf95b1163c91d0a80332304313f3dab9bdbbf581efa2f80"
+    },
+    {
+      "path": "多Agent协作与恢复图.html",
+      "bytes": 25347,
+      "sha256": "67fcb39d6813f3ea027ed5da876535d9560af473d0115604b1a961c2791b2e7a"
+    },
+    {
+      "path": "多Agent协作与恢复图.pdf",
+      "bytes": 326907,
+      "sha256": "70176948d325ce8d40f60398799c52f277cd07b252338c83fb1d15960edd9e89"
+    },
+    {
+      "path": "多Agent协作预览.png",
+      "bytes": 161395,
+      "sha256": "fdfc90664d3aa0627478c5d1ecddc9141a75e57f5a4d04118efbed354989cfa4"
+    },
+    {
+      "path": "失败与恢复.svg",
+      "bytes": 5618,
+      "sha256": "0633a69e97efe2a4be5d14dd57ab605ea19a411b02ab26b170e6f5613afa4e19"
+    },
+    {
+      "path": "失败与恢复图.pdf",
+      "bytes": 342908,
+      "sha256": "0e28e8dd834ece86e980988e9a20a7895e31456037c6e5416ea6b930692a68e4"
+    },
+    {
+      "path": "失败与恢复预览.png",
+      "bytes": 134683,
+      "sha256": "1dd225d398a09bbc6ca8f9f23d05faec46ed46e4a034acbcff37da263566b2e6"
+    },
+    {
+      "path": "开始评审.html",
+      "bytes": 3564,
+      "sha256": "4631c25b701c1e1565d57eb2e28e17983ebe73b1030718375177d729820e8845"
+    },
+    {
+      "path": "架构与恢复流程.mmd",
+      "bytes": 1405,
+      "sha256": "7958778d303cc06c94eb3e4868665b53483f62ae40167b753ce142589a44e24d"
+    },
+    {
+      "path": "架构图.html",
+      "bytes": 779348,
+      "sha256": "737591eddf1d2b2b3404ea03ff3c64290e48d78ed5eac4522af0be2fe81d0561"
+    },
+    {
+      "path": "架构图.pdf",
+      "bytes": 674963,
+      "sha256": "108cca6a92c4a86e414161f3a64cf98c72bdd62a8ae88910008dcfbb4b40fcfa"
+    },
+    {
+      "path": "架构图.svg",
+      "bytes": 284626,
+      "sha256": "a39ca5aae40e1de10c08d642b3498e2124ab055ec0ba3e357ebc937898eb3155"
+    },
+    {
+      "path": "架构图打印版.html",
+      "bytes": 285743,
+      "sha256": "103f65b5a8c74dc4005598b4c27abbbc9cb4247836cc7c7ae2ee6381677db9d9"
+    },
+    {
+      "path": "架构图源.json",
+      "bytes": 7177,
+      "sha256": "9b0d49e635bd30f5e93412cbdfb67ef63731c42323cbb58d03a77f73a4210dc3"
+    },
+    {
+      "path": "架构图预览.png",
+      "bytes": 220606,
+      "sha256": "67bd8d50be1bf945802a22ca3e832305318d5db30ce1e1bd67789c71f3d516aa"
+    },
+    {
+      "path": "架构设计与方案说明.docx",
+      "bytes": 56314,
+      "sha256": "ebecc1e08c99be138409b9d4d9cc4bf4e8e7e532d53ce734f768986b99654736"
+    },
+    {
+      "path": "架构设计与方案说明.html",
+      "bytes": 43306,
+      "sha256": "7a1315abf6538ba50dabb1e601ffaca7f0b1651135e6dfc2697e6a2d08357c6e"
+    },
+    {
+      "path": "架构设计与方案说明.md",
+      "bytes": 35389,
+      "sha256": "6fc7596d3a0736c6fbe9a46c722f0c5db4ccb125525758df3a862a4a035f1e6b"
+    },
+    {
+      "path": "架构设计与方案说明.pdf",
+      "bytes": 2051407,
+      "sha256": "9edf8990003a89a47fbd15d2bb558aa3f72c4ee15556b9b19629291cdb114f67"
+    },
+    {
+      "path": "第三方复用说明.md",
+      "bytes": 1366,
+      "sha256": "cc69d5a143ba642e4e572714c4d5bf2c1e42af4ffd19865cb23626bf94213e1b"
+    },
+    {
+      "path": "资源全量索引.csv",
+      "bytes": 504189,
+      "sha256": "a4361b54a0b5df102296a43dbfe76054ff84a3b66fe71d0398e5c48ada1f28bc"
+    },
+    {
+      "path": "资源复用与缺口清单.xlsx",
+      "bytes": 229590,
+      "sha256": "8e85487e7b3c961466ee8dcfb6c0dfa4cded6e7b5056082f73f0e5c134963c75"
+    },
+    {
+      "path": "资源清单与使用说明.html",
+      "bytes": 12682,
+      "sha256": "e2a68719918f5a2e43c3a33926d8249b9d7738d77e6ee21238b47585bbca8ae7"
+    },
+    {
+      "path": "资源清单与使用说明.md",
+      "bytes": 8812,
+      "sha256": "a10240e277de8d6138d99b54c743b107192dc9741b14a9074b27e36e975e5d0b"
+    },
+    {
+      "path": "资源清单与使用说明.pdf",
+      "bytes": 621868,
+      "sha256": "b1355ee628e71d324ad607a3e3f4b1d29038b111e5a36e38ddd45ce60bfb7a9f"
+    },
+    {
+      "path": "重点开源复用表.csv",
+      "bytes": 12779,
+      "sha256": "15ac0672c59a066c0cb6ed26d7ad1cfc349673ad3f75e8dd40a644ccc2d02c02"
+    }
+  ]
+}

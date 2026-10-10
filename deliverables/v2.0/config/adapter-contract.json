@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "workstation_owned_proposed_interface_not_upstream_API",
+  "methods": {
+    "prepare": "verify inputs, environment, version and locks; no production side effect",
+    "submit": "return run_id and true invocation status",
+    "poll": "actual process/tool status; do not infer success from PID",
+    "cancel": "acknowledge safe stop or report unknown/unsupported; no premature lock release",
+    "collect": "outputs+manifest+hashes+logs+exit_code",
+    "check": "independent check report; compiler/solver results retained",
+    "resume": "declare supported checkpoint granularity; otherwise minimal valid node rerun",
+    "selftest": "input missing/success/failure/cancel/checkpoint/collect tests"
+  },
+  "required_result": [
+    "run_id",
+    "status",
+    "exit_code",
+    "output_manifest_ref",
+    "log_ref",
+    "checkpoint_ref",
+    "error",
+    "resume_supported",
+    "capability_version"
+  ],
+  "idempotency": "workstation TaskRun unique active key + callback event_id + operation ledger for non-idempotent tools"
+}

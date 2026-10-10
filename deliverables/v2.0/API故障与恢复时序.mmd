@@ -1,0 +1,23 @@
+sequenceDiagram
+  participant T as TaskRun
+  participant G as 单一网关
+  participant A as 渠道A
+  participant B as 同能力渠道B
+  participant L as 去重与响应暂存
+  participant H as 人工处理中心
+  T->>G: 请求(request_id, 总预算3次/90秒)
+  G->>A: attempt1
+  A-->>G: 429/可重试5xx/连接失败
+  G->>G: 扣预算/退避/检查无副作用
+  G->>B: attempt2（同能力绑定）
+  alt 完整有效响应
+    B-->>G: 完整响应/正常结束
+    G->>L: 校验对象与工具调用ID
+    L-->>T: 完整输出，提交一次
+  else 断流/全渠道耗尽
+    B-->>G: 断流或失败
+    G->>L: 隔离部分响应，核对副作用
+    G-->>T: 可见错误，不伪成功
+    T->>H: 失败工单/检查点/停止依赖
+    H->>T: 人工处理后恢复(原因,有效版本)
+  end
