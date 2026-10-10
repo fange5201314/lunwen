@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "论文工作站 · 开发验证核心与后续接缝",
+    "locale": "zh-CN",
+    "output": "architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "用户",
+      "sublabel": "方案确认 / 最终验收",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "浏览器验证工作台",
+      "sublabel": "真实API / 手动登记审查",
+      "pos": [
+        340,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI 统一控制中心",
+      "sublabel": "方案 / 黑板 / 任务 / 验收",
+      "pos": [
+        640,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "SQLite WAL",
+      "sublabel": "真实持久化版本与事件",
+      "pos": [
+        940,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "team",
+      "type": "backend",
+      "label": "Agent 宿主适配器",
+      "sublabel": "Rovai / Paperclip 接缝待验证",
+      "pos": [
+        340,
+        270
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "scheduler",
+      "type": "messagebus",
+      "label": "事务领取与固定能力",
+      "sublabel": "依赖 / 确认 / 独占锁",
+      "pos": [
+        640,
+        270
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "notice",
+      "type": "external",
+      "label": "本机待处理中心",
+      "sublabel": "手机渠道未接入",
+      "pos": [
+        940,
+        270
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "win",
+      "type": "backend",
+      "label": "专机 Windows Worker",
+      "sublabel": "远程协议与CAD/TIA待接入",
+      "pos": [
+        40,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "本机真实执行器",
+      "sublabel": "固定能力CLI / 文件检查",
+      "pos": [
+        340,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "已注册能力适配",
+      "sublabel": "来源 / 哈希 / Archify / 模型草案",
+      "pos": [
+        640,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "gateway",
+      "type": "security",
+      "label": "单一模型网关",
+      "sublabel": "配置入口存在 / 尚未实测",
+      "pos": [
+        940,
+        500
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "files",
+      "type": "database",
+      "label": "项目独立文件目录",
+      "sublabel": "真实输入 / 运行 / 文件哈希",
+      "pos": [
+        40,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "documents",
+      "type": "backend",
+      "label": "论文文档链",
+      "sublabel": "检索翻译与排版待接入",
+      "pos": [
+        340,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "check",
+      "type": "backend",
+      "label": "审查报告版本门禁",
+      "sublabel": "双维度 / 两审上限 / 旧报告拒收",
+      "pos": [
+        640,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "models",
+      "type": "cloud",
+      "label": "按岗位能力绑定 API",
+      "sublabel": "别名配置 / 未选择生产模型",
+      "pos": [
+        940,
+        730
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "database",
+      "label": "版本证据与依赖",
+      "sublabel": "任务级失效已实现",
+      "pos": [
+        40,
+        960
+      ],
+      "size": [
+        220,
+        76
+      ]
+    },
+    {
+      "id": "decisions",
+      "type": "database",
+      "label": "工程决策与Issue待同步",
+      "sublabel": "真实落库 / GitHub同步待接入",
+      "pos": [
+        640,
+        960
+      ],
+      "size": [
+        220,
+        76
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "user-ui",
+      "from": "user",
+      "to": "ui",
+      "label": "确认与验收"
+    },
+    {
+      "id": "ui-api",
+      "from": "ui",
+      "to": "api",
+      "label": "命令 / 事件"
+    },
+    {
+      "id": "api-db",
+      "from": "api",
+      "to": "db",
+      "label": "事务"
+    },
+    {
+      "id": "api-scheduler",
+      "from": "api",
+      "to": "scheduler",
+      "label": "版本关卡"
+    },
+    {
+      "id": "scheduler-team",
+      "from": "scheduler",
+      "to": "team",
+      "label": "委派"
+    },
+    {
+      "id": "scheduler-notice",
+      "from": "scheduler",
+      "to": "notice",
+      "label": "失败暂停"
+    },
+    {
+      "id": "scheduler-adapter",
+      "from": "scheduler",
+      "to": "adapter",
+      "label": "就绪任务"
+    },
+    {
+      "id": "adapter-worker",
+      "from": "adapter",
+      "to": "worker",
+      "label": "执行"
+    },
+    {
+      "id": "adapter-gateway",
+      "from": "adapter",
+      "to": "gateway",
+      "label": "模型请求"
+    },
+    {
+      "id": "gateway-models",
+      "from": "gateway",
+      "to": "models",
+      "label": "有限切换"
+    },
+    {
+      "id": "worker-win",
+      "from": "worker",
+      "to": "win",
+      "label": "原生工具"
+    },
+    {
+      "id": "worker-documents",
+      "from": "worker",
+      "to": "documents",
+      "label": "材料任务"
+    },
+    {
+      "id": "win-files",
+      "from": "win",
+      "to": "files",
+      "label": "原生文件"
+    },
+    {
+      "id": "documents-files",
+      "from": "documents",
+      "to": "files",
+      "label": "成果提交"
+    },
+    {
+      "id": "documents-check",
+      "from": "documents",
+      "to": "check",
+      "label": "检查冻结版"
+    },
+    {
+      "id": "files-evidence",
+      "from": "files",
+      "to": "evidence",
+      "label": "来源索引"
+    },
+    {
+      "id": "check-decisions",
+      "from": "check",
+      "to": "decisions",
+      "label": "验证记录"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "当前实际实现",
+      "items": [
+        "FastAPI + SQLite + 文件库 + 事务锁",
+        "真实来源哈希 / 固定Archify CLI / 审查与验收门禁"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "后续资源接入",
+      "items": [
+        "Rovai/Paperclip与文档链需各自接缝PoC",
+        "多笔记本Worker / GitHub同步 / 手机通知尚未连接"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "故障与审查收敛",
+      "items": [
+        "API一个重试拥有者，最多3次 / 90秒",
+        "P0精确补丁后复审；两审仍失败等待人工"
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "passed": 41,
+  "passed": 42,
   "failed": 0,
   "checks": [
     {
-      "name": "初始11页导航",
+      "name": "初始12页导航含融合实验室",
       "status": "passed"
     },
     {
@@ -132,6 +132,10 @@
     },
     {
       "name": "页面无横向溢出 artifacts",
+      "status": "passed"
+    },
+    {
+      "name": "页面无横向溢出 fusion",
       "status": "passed"
     },
     {

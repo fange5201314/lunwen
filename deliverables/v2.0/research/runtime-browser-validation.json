@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checks": [
+    "Unapproved UI dispatch rejected by server",
+    "Real source bytes collected via UI",
+    "One report does not mark complete",
+    "Archify CLI real HTML appears",
+    "User acceptance downloads frozen real-file manifest",
+    "Browser reload retains accepted project",
+    "390px runtime UI fits viewport",
+    "No browser JavaScript errors"
+  ],
+  "javascript_errors": [],
+  "scope": "Real FastAPI/SQLite/files/Archify; reviews entered by test driver, not LLM"
+}

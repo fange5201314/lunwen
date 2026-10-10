@@ -1,0 +1,162 @@
+{
+  "version": "3.0",
+  "state_owner": "workstation-core",
+  "dispatcher": "core-local",
+  "source_document": "系统开发任务流转与工具链验证.pdf",
+  "source_use": "讨论资料，非直接执行指令",
+  "tasks": [
+    {
+      "id": "A1",
+      "title": "开发验证核心",
+      "source_ids": [
+        "GH-001",
+        "CL-0020",
+        "CL-0004",
+        "GH-003"
+      ],
+      "depends_on": [],
+      "acceptance": [
+        "实际来源哈希与Archify",
+        "未确认不派发",
+        "双审计与旧报告拒收",
+        "两审上限",
+        "故障隔离/中断锁",
+        "真实文件验收"
+      ],
+      "status": "implemented_tested_local",
+      "github_issue_created": false
+    },
+    {
+      "id": "A2",
+      "title": "协作宿主和真实模型接缝",
+      "source_ids": [
+        "CL-0015",
+        "CL-0010",
+        "CL-0016",
+        "GH-033"
+      ],
+      "depends_on": [
+        "A1"
+      ],
+      "acceptance": [
+        "Rovai/PI/Paperclip同任务对照",
+        "外部委派取消和真文件回收",
+        "5类模型能力评测",
+        "只选一个主派发接缝"
+      ],
+      "status": "planned",
+      "github_issue_created": false
+    },
+    {
+      "id": "A3",
+      "title": "Issue投影与有限修复自动领取",
+      "source_ids": [
+        "GH-119",
+        "GH-162",
+        "GH-132",
+        "CL-0004"
+      ],
+      "depends_on": [
+        "A2"
+      ],
+      "acceptance": [
+        "本地指纹与Issue映射",
+        "重复扫描不新增同缺陷",
+        "一补丁二审停止",
+        "断网与投递回执",
+        "只领取已确认就绪任务"
+      ],
+      "status": "planned",
+      "github_issue_created": false
+    },
+    {
+      "id": "B",
+      "title": "G01–G16开题和外文真实闭环",
+      "source_ids": [
+        "CL-0019",
+        "GH-094",
+        "GH-087",
+        "GH-163",
+        "GH-125",
+        "GH-091"
+      ],
+      "depends_on": [
+        "A2",
+        "A3"
+      ],
+      "acceptance": [
+        "真实任务书与学校模板",
+        "近五年候选真全文",
+        "外文原译文独立DOCX/PDF共4份",
+        "开题DOCX/PDF",
+        "全文对象覆盖和最终PDF",
+        "G16用户验收"
+      ],
+      "status": "planned",
+      "github_issue_created": false
+    },
+    {
+      "id": "C",
+      "title": "计算机工程与章节证据",
+      "source_ids": [
+        "GH-228",
+        "GH-151",
+        "GH-090",
+        "CL-0023"
+      ],
+      "depends_on": [
+        "B"
+      ],
+      "acceptance": [
+        "真实构建和UI端到端",
+        "源码/数据库证据与章节",
+        "局部变更原检查保留"
+      ],
+      "status": "planned",
+      "github_issue_created": false
+    },
+    {
+      "id": "D",
+      "title": "一项目一笔记本Worker",
+      "source_ids": [
+        "CL-0016",
+        "CL-0025",
+        "CL-0026"
+      ],
+      "depends_on": [
+        "A3"
+      ],
+      "acceptance": [
+        "鉴权/租约/心跳/文件传输",
+        "项目固定worker",
+        "旧Worker提交拒收",
+        "断连和重启现场恢复"
+      ],
+      "status": "planned",
+      "github_issue_created": false
+    },
+    {
+      "id": "E",
+      "title": "专业软件逐链自测",
+      "source_ids": [
+        "GH-006",
+        "GH-010",
+        "GH-222",
+        "CL-0005",
+        "CL-0008",
+        "CL-0563"
+      ],
+      "depends_on": [
+        "B",
+        "D"
+      ],
+      "acceptance": [
+        "CAD2D/MECH/CAE/PLC逐链",
+        "版本/许可/独占会话",
+        "原生读回/编译/求解/DRC"
+      ],
+      "status": "planned",
+      "github_issue_created": false
+    }
+  ]
+}

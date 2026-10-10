@@ -1,0 +1,34 @@
+{
+  "version": "3.0",
+  "checks": {
+    "control_plane": 14,
+    "runtime_browser": 8,
+    "fusion_browser": 64,
+    "main_prototype": 42
+  },
+  "actual_runtime": [
+    "FastAPI/SQLite",
+    "real file bytes/SHA256",
+    "pinned Archify CLI",
+    "manual scoped review reports",
+    "bounded retry HTTP fixtures",
+    "local Issue outbox"
+  ],
+  "unverified": [
+    "paid/live model gateway",
+    "external Agent hosts",
+    "multi-laptop transport/auth/heartbeat",
+    "GitHub Issue API",
+    "Windows professional tools",
+    "real paper/translation chain",
+    "mobile delivery"
+  ],
+  "sources": {
+    "original_attachments": 8,
+    "additional_pdf_pages": 34,
+    "catalog": 884,
+    "priority_entries": 23,
+    "priority_topics": 22
+  },
+  "private_originals_published": false
+}

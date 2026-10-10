@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/thesis/evidence-impact.schema.json",
+  "title": "Proposed versioned evidence and impact contract",
+  "description": "Workstation contract; not claimed as an existing third-party API.",
+  "type": "object",
+  "required": ["project_id", "plan_version", "generation", "artifacts", "edges"],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "plan_version": {"type": "integer", "minimum": 1},
+    "generation": {"type": "integer", "minimum": 1},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "version", "hash", "status", "producer_run", "source_refs"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"enum": ["requirement", "decision", "native_project", "experiment", "source_document", "figure", "chapter", "slide", "review_report", "manifest"]},
+          "version": {"type": "integer", "minimum": 1},
+          "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "status": {"enum": ["proposed", "produced", "pending_review", "checked", "stale", "failed", "accepted"]},
+          "producer_run": {"type": "string"},
+          "source_refs": {"type": "array", "items": {"type": "string"}},
+          "object_locator": {"type": "string", "description": "Page/object/section or code file and line references; sketches labeled as such."},
+          "reviews": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["upstream", "downstream", "relation"],
+        "properties": {
+          "upstream": {"type": "string"},
+          "downstream": {"type": "string"},
+          "relation": {"enum": ["depends_on", "supports", "projects_to", "reviews"]},
+          "locator": {"type": "string"}
+        }
+      }
+    }
+  },
+  "application_invariants": [
+    "unique artifact IDs; referenced artifacts exist; depends_on is acyclic",
+    "artifact hashes derive from real file bytes before production acceptance",
+    "review scope matches project, plan, generation and input/output hashes",
+    "accepted historical manifests remain immutable; changes create new versions",
+    "only explicit provenance justifies selective object-level invalidation"
+  ]
+}

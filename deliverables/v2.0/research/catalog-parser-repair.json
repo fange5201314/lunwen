@@ -1,0 +1,507 @@
+{
+  "records": 884,
+  "priority_111_records": 23,
+  "corrections": [
+    {
+      "id": "CL-0015",
+      "field": "name"
+    },
+    {
+      "id": "CL-0015",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0015",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0015",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0076",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0076",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0076",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0116",
+      "field": "name"
+    },
+    {
+      "id": "CL-0116",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0116",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0116",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0117",
+      "field": "name"
+    },
+    {
+      "id": "CL-0117",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0117",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0117",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0118",
+      "field": "name"
+    },
+    {
+      "id": "CL-0118",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0118",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0118",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0168",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0168",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0168",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0179",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0179",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0179",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0214",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0214",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0214",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0246",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0246",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0246",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0247",
+      "field": "name"
+    },
+    {
+      "id": "CL-0247",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0247",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0247",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0479",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0479",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0479",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0480",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0480",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0480",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0508",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0508",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0508",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0509",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0509",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0509",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0519",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0519",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0519",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0538",
+      "field": "name"
+    },
+    {
+      "id": "CL-0538",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0538",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0538",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0583",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0583",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0583",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0574",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0574",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0574",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0006",
+      "field": "name"
+    },
+    {
+      "id": "CL-0006",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0006",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0006",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0325",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0325",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0325",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0417",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0417",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0417",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0437",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0437",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0437",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0113",
+      "field": "name"
+    },
+    {
+      "id": "CL-0113",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0113",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0113",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0205",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0205",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0205",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0269",
+      "field": "name"
+    },
+    {
+      "id": "CL-0269",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0269",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0269",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0329",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0329",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0329",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0339",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0339",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0339",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0421",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0421",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0421",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0317",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0317",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0317",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0564",
+      "field": "name"
+    },
+    {
+      "id": "CL-0564",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0564",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0564",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0100",
+      "field": "name"
+    },
+    {
+      "id": "CL-0100",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0100",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0100",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0188",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0188",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0188",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0291",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0291",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0291",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0306",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0306",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0306",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0340",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0340",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0340",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0401",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0401",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0401",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0106",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0106",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0106",
+      "field": "evidence"
+    },
+    {
+      "id": "CL-0119",
+      "field": "summary"
+    },
+    {
+      "id": "CL-0119",
+      "field": "interfaces"
+    },
+    {
+      "id": "CL-0119",
+      "field": "evidence"
+    }
+  ],
+  "rule": "split on unescaped Markdown pipe; preserve original raw_row"
+}

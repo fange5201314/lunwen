@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "version": "2.1",
+  "checks": [
+    "No external JS/CDN dependency",
+    "system: 21 node input/output/source/status contracts inspectable",
+    "evidence: 13 node input/output/source/status contracts inspectable",
+    "recovery: 9 node input/output/source/status contracts inspectable",
+    "200→100ms: 10 affected objects, 2 pending impact reviews, 1 unchanged source library; highlighting works",
+    "Impact highlighting resets",
+    "Direct hash navigation selects recovery view",
+    "Hashchange switches existing page view",
+    "Three-scene A3 PDF exported with browser fonts",
+    "390px mobile view retains scrollable SVG and node panel",
+    "Standalone three-view SVG is valid XML"
+  ],
+  "javascript_errors": [],
+  "browser": "System Chromium / localhost HTTP",
+  "scope": "Offline architecture interaction and actual generated artifacts; external Agent/tools/API not runtime-tested"
+}

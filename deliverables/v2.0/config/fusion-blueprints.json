@@ -1,0 +1,4604 @@
+{
+  "schema_version": "fusion-blueprints/1.0",
+  "edition": "111-priority-resource-fusion",
+  "simulation": true,
+  "principles": [
+    "Workstation Core 保存唯一业务状态并派发；Paperclip / Rovai 作为待验证宿主适配器",
+    "一次开发选择一个主工作流；参考机制不另启调度器",
+    "作者与结构 / 目标审计者分离，审计会话独立，关卡由人类批准",
+    "API 最多 3 次共用请求预算；业务检查失败保存检查点并暂停依赖",
+    "111 标记是用户优先级，不是运行验证等级"
+  ],
+  "source_count": 23,
+  "unique_source_topics": 22,
+  "sources": [
+    {
+      "id": "CL-0005",
+      "title": "Blender CLI 建模与动画",
+      "original_title": "GPT6的强大建模功能，革完了程序员的命，开始快速迭代革建模人的命了？？？人傻了，进来看看拖拉机吧 1",
+      "original_path": "Clippings/111GPT6%E7%9A%84%E5%BC%BA%E5%A4%A7%E5%BB%BA%E6%A8%A1%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%9D%A9%E5%AE%8C%E4%BA%86%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%91%BD%EF%BC%8C%E5%BC%80%E5%A7%8B%E5%BF%AB%E9%80%9F%E8%BF%AD%E4%BB%A3%E9%9D%A9%E5%BB%BA%E6%A8%A1%E4%BA%BA%E7%9A%84%E5%91%BD%E4%BA%86%EF%BC%9F%EF%BC%9F%EF%BC%9F%E4%BA%BA%E5%82%BB%E4%BA%86%EF%BC%8C%E8%BF%9B%E6%9D%A5%E7%9C%8B%E7%9C%8B%E6%8B%96%E6%8B%89%E6%9C%BA%E5%90%A7%201.md",
+      "level": "E1 台账摘要",
+      "status": "方法选装 · 正文 / 工具待补证",
+      "used_in": [
+        "twin"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0005"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2876986/2"
+      ],
+      "github_matches": [],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0008",
+      "title": "PCB Skill / 电路板设计",
+      "original_title": "PCB skill 现已开源！让 ai 工作 24h 给你造块板子出来",
+      "original_path": "Clippings/111PCB%20skill%20%E7%8E%B0%E5%B7%B2%E5%BC%80%E6%BA%90%EF%BC%81%E8%AE%A9%20ai%20%E5%B7%A5%E4%BD%9C%2024h%20%E7%BB%99%E4%BD%A0%E9%80%A0%E5%9D%97%E6%9D%BF%E5%AD%90%E5%87%BA%E6%9D%A5.md",
+      "level": "E1 台账摘要",
+      "status": "专业选装 · 身份待核",
+      "used_in": [
+        "twin"
+      ],
+      "usage_note": "台账仅有 PCB Skill 开源线索，尚无准确仓库身份；先定义 NetlistContract 与 DRC 证据，不宣称已接入。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0007"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2875338"
+      ],
+      "github_matches": [],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0004",
+      "title": "双 Shadow Mind 审计",
+      "original_title": "GPT 写的烂代码终于找到根治手段了哈哈哈",
+      "original_path": "Clippings/111GPT%20%E5%86%99%E7%9A%84%E7%83%82%E4%BB%A3%E7%A0%81%E7%BB%88%E4%BA%8E%E6%89%BE%E5%88%B0%E6%A0%B9%E6%B2%BB%E6%89%8B%E6%AE%B5%E4%BA%86%E5%93%88%E5%93%88%E5%93%88.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "goal",
+        "spec"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0004"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2759945/2"
+      ],
+      "github_matches": [
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "url": "https://github.com/liu-zhengdong/pi-shadow-mind",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-013",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "readme_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "liuzhengdongfortest/pi-shadow-mind",
+          "url": "https://github.com/liuzhengdongfortest/pi-shadow-mind",
+          "relation": "secondary_source_repo_lead",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入",
+          "relation_note": "来源索引里提及的插件/别名/附属线索；未确认主实现或版本关系"
+        }
+      ],
+      "protocol_contracts": [
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 128,
+          "line_end": 150,
+          "section": "工具白名单与写入并发边界",
+          "short_summary": "默认 read/grep/find/ls + report_to_main；工具权限显式；上游没有文件互斥。",
+          "local_mapping": "两名审计者固定只读，生成 findings；实施Agent独占工作树写入权，文档修改经计划节点提交。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 342,
+          "line_end": 350,
+          "section": "Final response",
+          "short_summary": "审查按 generation 聚合；旧批次失效；并发硬上限；可限定一轮。",
+          "local_mapping": "论文/证据变更提高 review_generation；旧报告不得覆盖新版本；定向复核两名审计者，最多一轮后人工处理。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 150,
+          "line_end": 152,
+          "section": "report_to_main 与保持沉默",
+          "short_summary": "一次激活最多上报一条意见，保持沉默不表示未执行工作。",
+          "local_mapping": "产品契约要求 explicit passed/failed/blocked；没有报告只能 pending，不能把沉默当验收通过。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        }
+      ]
+    },
+    {
+      "id": "CL-0009",
+      "title": "answer-me-with-html 可视化交付",
+      "original_title": "【answer-me-with-html】一天 1k star ！ 这个Skill 让 Agent 输出可视化结果！",
+      "original_path": "Clippings/111%E3%80%90answer-me-with-html%E3%80%91%E4%B8%80%E5%A4%A9%201k%20star%20%EF%BC%81%20%E8%BF%99%E4%B8%AASkill%20%E8%AE%A9%20Agent%20%E8%BE%93%E5%87%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%93%E6%9E%9C%EF%BC%81.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "research",
+        "twin",
+        "defense"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0010"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2984649"
+      ],
+      "github_matches": [
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "url": "https://github.com/QingYunA/answer-me-with-html",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "readme_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": [
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 51,
+          "line_end": 85,
+          "section": "内容草稿与CLI呈现",
+          "short_summary": "模型写Markdown内容，CLI确定布局与图坐标；有错误时不生成成功页面。",
+          "local_mapping": "答辩成果卡由结构化内容+固定模板渲染；避免每个Agent重复写样式。原型展示方法映射，未执行该CLI。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 89,
+          "line_end": 98,
+          "section": "单panel更新",
+          "short_summary": "HTML保留 #am-source；patch按panel更新；找不到panel不改文件。",
+          "local_mapping": "证据变更仅触发受影响章节/讲稿/图卡；保留内容源与不可变产物版本。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 145,
+          "line_end": 153,
+          "section": "真实代码、变更视图、数据标识",
+          "short_summary": "+/-/~变更标记生成前后视图；src/lines引用真实代码；草图明确标sketch；不编数据。",
+          "local_mapping": "资源融合画布显示新增/移除依赖，示例数值标模拟；每个结果绑定文件版本和证据。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        }
+      ]
+    },
+    {
+      "id": "CL-0010",
+      "title": "PI-Desktop 多模型与子 Agent 可视化",
+      "original_title": "【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了",
+      "original_path": "Clippings/111%E3%80%90PI-Desktop%E3%80%91%E4%B8%A4%E4%B8%AA%E6%9C%88%EF%BC%8C300%20%E4%BA%BF%20Token%EF%BC%8C%E7%BB%88%E4%BA%8E%E6%8A%8A%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81%E7%9A%84%20Agent%20%E6%A1%8C%E9%9D%A2%E7%AB%AF%E6%90%93%E5%87%BA%E6%9D%A5%E4%BA%86.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "cockpit"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0009"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2869113"
+      ],
+      "github_matches": [
+        {
+          "repo": "vastsa/PI-Desktop",
+          "url": "https://github.com/vastsa/PI-Desktop",
+          "relation": "direct_source_repo",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "7949d6ff693646397828da3ac3f43b4d3f8a111d",
+          "readme_url": "https://raw.githubusercontent.com/vastsa/PI-Desktop/7949d6ff693646397828da3ac3f43b4d3f8a111d/README.md",
+          "runtime_verified": false,
+          "license": "LGPL-3.0",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "vastsa/pi-desktop-plugins",
+          "url": "https://github.com/vastsa/pi-desktop-plugins",
+          "relation": "secondary_source_repo_lead",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入",
+          "relation_note": "来源索引里提及的插件/别名/附属线索；未确认主实现或版本关系"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0011",
+      "title": "Anneal 规格开发流水线",
+      "original_title": "【开源】你只管写spec，它帮你清空任务看板。一个无人值守AI Agent开发自动流水线的黑灯工厂",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91%E4%BD%A0%E5%8F%AA%E7%AE%A1%E5%86%99spec%EF%BC%8C%E5%AE%83%E5%B8%AE%E4%BD%A0%E6%B8%85%E7%A9%BA%E4%BB%BB%E5%8A%A1%E7%9C%8B%E6%9D%BF%E3%80%82%E4%B8%80%E4%B8%AA%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88AI%20Agent%E5%BC%80%E5%8F%91%E8%87%AA%E5%8A%A8%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E9%BB%91%E7%81%AF%E5%B7%A5%E5%8E%82.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "spec"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0011"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2834795"
+      ],
+      "github_matches": [
+        {
+          "repo": "mosonlab/anneal",
+          "url": "https://github.com/mosonlab/anneal",
+          "relation": "direct_source_repo",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "bfa821b066355dfd321d15e43162a9047cfa4091",
+          "readme_url": "https://raw.githubusercontent.com/mosonlab/anneal/bfa821b066355dfd321d15e43162a9047cfa4091/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0012",
+      "title": "DeepSeek 式项目维护与决策沉淀",
+      "original_title": "【开源】像 DeepSeek 团队一样维护项目",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91%E5%83%8F%20DeepSeek%20%E5%9B%A2%E9%98%9F%E4%B8%80%E6%A0%B7%E7%BB%B4%E6%8A%A4%E9%A1%B9%E7%9B%AE.md",
+      "level": "E1 台账摘要",
+      "status": "机制参考 · 待正文核验",
+      "used_in": [
+        "goal",
+        "research",
+        "spec"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。 原帖未提供 GitHub 同源身份；write-notes-like-deepseek 是主题相近的配套候选，不能当作该文章对应项目。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0012"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2874256/5"
+      ],
+      "github_matches": [],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0014",
+      "title": "apk-reverse 软件研究技能",
+      "original_title": "【开源】安卓逆向专用skills apk-reverse 基于逆向项目经验总结和提炼",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E4%B8%93%E7%94%A8skills%20apk-reverse%20%E5%9F%BA%E4%BA%8E%E9%80%86%E5%90%91%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93%E5%92%8C%E6%8F%90%E7%82%BC.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "software-lab"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0014"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2923820"
+      ],
+      "github_matches": [
+        {
+          "repo": "newliver666/apk-reverse",
+          "url": "https://github.com/newliver666/apk-reverse",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd",
+          "readme_url": "https://raw.githubusercontent.com/newliver666/apk-reverse/7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/newliver666/apk-reverse/7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "ejfkdev/ddc",
+          "url": "https://github.com/ejfkdev/ddc",
+          "relation": "secondary_source_repo_lead",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入",
+          "relation_note": "来源索引里提及的插件/别名/附属线索；未确认主实现或版本关系"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0015",
+      "title": "Rovai 群聊式多 Agent 工作台",
+      "original_title": "【开源】群聊式多 Agent 工作台  Rovai 0.3 更新：使命板、远程连接与实时群聊",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91%E7%BE%A4%E8%81%8A%E5%BC%8F%E5%A4%9A%20Agent%20%E5%B7%A5%E4%BD%9C%E5%8F%B0%20%20Rovai%200.3%20%E6%9B%B4%E6%96%B0%EF%BC%9A%E4%BD%BF%E5%91%BD%E6%9D%BF%E3%80%81%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E5%AE%9E%E6%97%B6%E7%BE%A4%E8%81%8A.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "cockpit"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0015"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2929826/1"
+      ],
+      "github_matches": [
+        {
+          "repo": "murray17/rovai-ai",
+          "url": "https://github.com/murray17/rovai-ai",
+          "relation": "direct_source_repo",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "c2ff826e66f5d34faa05449d33616c5c86772018",
+          "readme_url": "https://raw.githubusercontent.com/murray17/rovai-ai/c2ff826e66f5d34faa05449d33616c5c86772018/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0017",
+      "title": "UI Design Guide 界面设计",
+      "original_title": "【开源推广】UI Design Guide · 界面设计指南：灵感、设计、动效、UI Skill",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E6%8E%A8%E5%B9%BF%E3%80%91UI%20Design%20Guide%20%C2%B7%20%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%9A%E7%81%B5%E6%84%9F%E3%80%81%E8%AE%BE%E8%AE%A1%E3%80%81%E5%8A%A8%E6%95%88%E3%80%81UI%20Skill.md",
+      "level": "E1 台账摘要",
+      "status": "方法选装 · 正文 / 工具待补证",
+      "used_in": [
+        "defense",
+        "software-lab"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0017"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2863821/8"
+      ],
+      "github_matches": [],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0020",
+      "title": "Goalcraft 目标契约",
+      "original_title": "专门优化 goal 目标 提示词的skill",
+      "original_path": "Clippings/111%E4%B8%93%E9%97%A8%E4%BC%98%E5%8C%96%20goal%20%E7%9B%AE%E6%A0%87%20%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%9A%84skill.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "goal"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0020"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2668118"
+      ],
+      "github_matches": [
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "url": "https://github.com/xiaoyangtx996/goalcraft-skill",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-034",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "readme_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": [
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/SKILL.md",
+          "line_start": 24,
+          "line_end": 30,
+          "section": "五条原则",
+          "short_summary": "目标生成与执行分开；约束填实；成功必须可观察。",
+          "local_mapping": "组合编译器生成 contract，不直接派发；approved 后交唯一业务调度器。",
+          "sha256": "105ee734b0ea5b4e94949c6ae038852f27a0aa46b951fb2c40e4e855a9ebdcee",
+          "runtime_verified": false
+        },
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/SKILL.md",
+          "line_start": 101,
+          "line_end": 110,
+          "section": "交付验收门 G1–G6",
+          "short_summary": "无占位、命令真实、结果可核对、权限诚实；没有用户时限不编造时限。",
+          "local_mapping": "编译结果显示路径/验收/工具自测门禁；缺字段标 blocked，不能输出假通过。",
+          "sha256": "105ee734b0ea5b4e94949c6ae038852f27a0aa46b951fb2c40e4e855a9ebdcee",
+          "runtime_verified": false
+        },
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "path": "references/field-spec.md",
+          "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/references/field-spec.md",
+          "line_start": 1,
+          "line_end": 54,
+          "section": "字段说明",
+          "short_summary": "inputs/constraints/success_criteria/short_test/deliverables 各有字段语义。",
+          "local_mapping": "映射输入证据版本、目标路径、验证入口、必交文件与模型预算；金额预算由产品另定义，非上游默认为时限。",
+          "sha256": "b840d0340717736a5cf588e247d1b050491e1f4fb264d87dae850c1840f536f4",
+          "runtime_verified": false
+        }
+      ]
+    },
+    {
+      "id": "CL-0021",
+      "title": "Base UI React 组件库",
+      "original_title": "为 AI Coding 准备的 React 组件库 1",
+      "original_path": "Clippings/111%E4%B8%BA%20AI%20Coding%20%E5%87%86%E5%A4%87%E7%9A%84%20React%20%E7%BB%84%E4%BB%B6%E5%BA%93%201.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "defense"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0021"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2771937/3"
+      ],
+      "github_matches": [
+        {
+          "repo": "gamecrafters-io/base-ui",
+          "url": "https://github.com/gamecrafters-io/base-ui",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "f23322221a51c19a747c8a27e0b6e75bd674efc5",
+          "readme_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0022",
+      "title": "Base UI React 组件库（同主题副本）",
+      "original_title": "为 AI Coding 准备的 React 组件库",
+      "original_path": "Clippings/111%E4%B8%BA%20AI%20Coding%20%E5%87%86%E5%A4%87%E7%9A%84%20React%20%E7%BB%84%E4%BB%B6%E5%BA%93.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "defense"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": "CL-0021",
+      "source_index_ids": [
+        "C0022"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2771937"
+      ],
+      "github_matches": [
+        {
+          "repo": "gamecrafters-io/base-ui",
+          "url": "https://github.com/gamecrafters-io/base-ui",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "f23322221a51c19a747c8a27e0b6e75bd674efc5",
+          "readme_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0023",
+      "title": "PavedPath / GitHub Solution Research",
+      "original_title": "分享一个自己做的Skills，主要用来给智能体去GitHub上面找解决方案",
+      "original_path": "Clippings/111%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E5%81%9A%E7%9A%84Skills%EF%BC%8C%E4%B8%BB%E8%A6%81%E7%94%A8%E6%9D%A5%E7%BB%99%E6%99%BA%E8%83%BD%E4%BD%93%E5%8E%BBGitHub%E4%B8%8A%E9%9D%A2%E6%89%BE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "spec",
+        "software-lab"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0023"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2383560"
+      ],
+      "github_matches": [
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "url": "https://github.com/Jia-Ethan/pavedpath-code",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "readme_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": [
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 25,
+          "line_end": 37,
+          "section": "Default Workflow",
+          "short_summary": "先定义本地症状与版本，再读issue/PR/源码；提取最小适配并本地验证。",
+          "local_mapping": "缺能力或适配失败产生 investigation unit，输出匹配条件、最小改动、验证计划；不自主改技术路线。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 57,
+          "line_end": 63,
+          "section": "控制者对子Agent证据复核",
+          "short_summary": "子Agent分面只读研究，结果去重，控制者直接核验最强论断。",
+          "local_mapping": "工程检索组分接口/许可证/版本三个研究角色；主控输出 verified_claims 和 rejected_options。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 94,
+          "line_end": 121,
+          "section": "Evidence Standard / Output Contract",
+          "short_summary": "强证据有匹配条件、适用性、拒绝理由与本地验证；链接和Stars不能代替结论。",
+          "local_mapping": "资源卡区分来源线索/固定文档核对/运行通过；组合方案必须携带 required_validation。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        }
+      ]
+    },
+    {
+      "id": "CL-0024",
+      "title": "CF / Turnstile 自动化资料",
+      "original_title": "开源推广 CF过盾 SKILL",
+      "original_path": "Clippings/111%E5%BC%80%E6%BA%90%E6%8E%A8%E5%B9%BF%20CF%E8%BF%87%E7%9B%BE%20SKILL.md",
+      "level": "E1 台账摘要",
+      "status": "隔离评估 · 不进入主链",
+      "used_in": [],
+      "usage_note": "保留浏览器兼容性/访问边界研究线索；采集使用官方 API、用户授权会话与合法全文渠道。主链不依赖反拦截能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0024"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2873684/3"
+      ],
+      "github_matches": [
+        {
+          "repo": "Sophomoresty/turnstile-bypass",
+          "url": "https://github.com/Sophomoresty/turnstile-bypass",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-005",
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0025",
+      "title": "WebCodex MCP 本机协作",
+      "original_title": "开源推广 webcodex v0.4.6发布，一款自我迭代的线上mcp工具",
+      "original_path": "Clippings/111%E5%BC%80%E6%BA%90%E6%8E%A8%E5%B9%BF%20webcodex%20v0.4.6%E5%8F%91%E5%B8%83%EF%BC%8C%E4%B8%80%E6%AC%BE%E8%87%AA%E6%88%91%E8%BF%AD%E4%BB%A3%E7%9A%84%E7%BA%BF%E4%B8%8Amcp%E5%B7%A5%E5%85%B7.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "cockpit"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0025"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2783117/2"
+      ],
+      "github_matches": [
+        {
+          "repo": "yyjeqhc/webcodex",
+          "url": "https://github.com/yyjeqhc/webcodex",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "203c65bca3bf4f9c24bc9590131c82d1c639e960",
+          "readme_url": "https://raw.githubusercontent.com/yyjeqhc/webcodex/203c65bca3bf4f9c24bc9590131c82d1c639e960/README.md",
+          "runtime_verified": false,
+          "license": "Apache-2.0",
+          "license_url": "https://raw.githubusercontent.com/yyjeqhc/webcodex/203c65bca3bf4f9c24bc9590131c82d1c639e960/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0019",
+      "title": "Zotero 科研笔记与引用校验",
+      "original_title": "【长期更新】我 在 L 站 科 研",
+      "original_path": "Clippings/111%E3%80%90%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0%E3%80%91%E6%88%91%20%E5%9C%A8%20L%20%E7%AB%99%20%E7%A7%91%20%E7%A0%94.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "research"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0019"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/1417107"
+      ],
+      "github_matches": [
+        {
+          "repo": "MLNLP-World/Paper-Writing-Tips",
+          "url": "https://github.com/MLNLP-World/Paper-Writing-Tips",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-025",
+          "commit": "50712564062249b28b8493ebdc35f8b3a3b88512",
+          "readme_url": "https://raw.githubusercontent.com/MLNLP-World/Paper-Writing-Tips/50712564062249b28b8493ebdc35f8b3a3b88512/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "Leey21/awesome-ai-research-writing",
+          "url": "https://github.com/Leey21/awesome-ai-research-writing",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-182",
+          "commit": "df0af726a79109b8760c1b80d5dfc36ed44a6f1f",
+          "readme_url": "https://raw.githubusercontent.com/Leey21/awesome-ai-research-writing/df0af726a79109b8760c1b80d5dfc36ed44a6f1f/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "QAbot-zh/citation-checker",
+          "url": "https://github.com/QAbot-zh/citation-checker",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "eb34cfaad861b3d1db32f0ca694ac8d380bb5d26",
+          "readme_url": "https://raw.githubusercontent.com/QAbot-zh/citation-checker/eb34cfaad861b3d1db32f0ca694ac8d380bb5d26/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "pengsida/learning_research",
+          "url": "https://github.com/pengsida/learning_research",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "001978e4bc2ad79f670dc44ec11816e1d9c4c610",
+          "readme_url": "https://raw.githubusercontent.com/pengsida/learning_research/001978e4bc2ad79f670dc44ec11816e1d9c4c610/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0006",
+      "title": "image2 学术答辩视觉策略",
+      "original_title": "image2 直出答辩学术PPT 焚诀  Prompt is all you need",
+      "original_path": "Clippings/111image2%20%E7%9B%B4%E5%87%BA%E7%AD%94%E8%BE%A9%E5%AD%A6%E6%9C%AFPPT%20%E7%84%9A%E8%AF%80%20%20Prompt%20is%20all%20you%20need.md",
+      "level": "E1 台账摘要",
+      "status": "方法选装 · 正文 / 工具待补证",
+      "used_in": [
+        "twin",
+        "defense"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0008"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2326431"
+      ],
+      "github_matches": [],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0018",
+      "title": "Chromix 浏览器自动化资料",
+      "original_title": "【开源推广】做浏览器自动化老被 Cloudflare 拦？开源了个源码级指纹 Chromium：Chromix",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E6%8E%A8%E5%B9%BF%E3%80%91%E5%81%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E8%80%81%E8%A2%AB%20Cloudflare%20%E6%8B%A6%EF%BC%9F%E5%BC%80%E6%BA%90%E4%BA%86%E4%B8%AA%E6%BA%90%E7%A0%81%E7%BA%A7%E6%8C%87%E7%BA%B9%20Chromium%EF%BC%9AChromix.md",
+      "level": "E1 台账摘要",
+      "status": "隔离评估 · 不进入主链",
+      "used_in": [],
+      "usage_note": "保留浏览器兼容性/访问边界研究线索；采集使用官方 API、用户授权会话与合法全文渠道。主链不依赖反拦截能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0018"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2870222"
+      ],
+      "github_matches": [
+        {
+          "repo": "xiaozhou26/Chromix",
+          "url": "https://github.com/xiaozhou26/Chromix",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-004",
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0026",
+      "title": "AgentDock 远程工具运行时",
+      "original_title": "超级扩展GPT网页版功能，远程电脑，加入MCP，Skill，Codex以及网页UI",
+      "original_path": "Clippings/111%E8%B6%85%E7%BA%A7%E6%89%A9%E5%B1%95GPT%E7%BD%91%E9%A1%B5%E7%89%88%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%BF%9C%E7%A8%8B%E7%94%B5%E8%84%91%EF%BC%8C%E5%8A%A0%E5%85%A5MCP%EF%BC%8CSkill%EF%BC%8CCodex%E4%BB%A5%E5%8F%8A%E7%BD%91%E9%A1%B5UI.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "cockpit"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0026"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2827412"
+      ],
+      "github_matches": [
+        {
+          "repo": "uvwt/agentdock",
+          "url": "https://github.com/uvwt/agentdock",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-043",
+          "commit": "a19d133768fd95d366c36ec6e0839d41311855ca",
+          "readme_url": "https://raw.githubusercontent.com/uvwt/agentdock/a19d133768fd95d366c36ec6e0839d41311855ca/README.md",
+          "runtime_verified": false,
+          "license": "Apache-2.0",
+          "license_url": "https://raw.githubusercontent.com/uvwt/agentdock/a19d133768fd95d366c36ec6e0839d41311855ca/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0007",
+      "title": "Keysmith 模型行为研究",
+      "original_title": "Keysmith系列更新：Keysmith-Switch，更简单易用的模型破解工具",
+      "original_path": "Clippings/111Keysmith%E7%B3%BB%E5%88%97%E6%9B%B4%E6%96%B0%EF%BC%9AKeysmith-Switch%EF%BC%8C%E6%9B%B4%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E6%A8%A1%E5%9E%8B%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7.md",
+      "level": "E1 台账摘要",
+      "status": "暂缓生产接入",
+      "used_in": [],
+      "usage_note": "保留模型行为研究索引。生产链沿用已配置模型和有限同能力渠道重试，拒绝或能力不足交人工处理。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0006"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2984494"
+      ],
+      "github_matches": [
+        {
+          "repo": "Jia-Ethan/keysmith-switch",
+          "url": "https://github.com/Jia-Ethan/keysmith-switch",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        },
+        {
+          "repo": "Jia-Ethan/keysmith-switch-releases",
+          "url": "https://github.com/Jia-Ethan/keysmith-switch-releases",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        },
+        {
+          "repo": "Jia-Ethan/keysmith-switch-extensions",
+          "url": "https://github.com/Jia-Ethan/keysmith-switch-extensions",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0013",
+      "title": "网站模块与证据溯源研究",
+      "original_title": "【开源】复刻网站的焚决来啦！",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E3%80%91%E5%A4%8D%E5%88%BB%E7%BD%91%E7%AB%99%E7%9A%84%E7%84%9A%E5%86%B3%E6%9D%A5%E5%95%A6%EF%BC%81.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "software-lab"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0013"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2834831"
+      ],
+      "github_matches": [
+        {
+          "repo": "boyang-hu/website-rebuild-skill",
+          "url": "https://github.com/boyang-hu/website-rebuild-skill",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "830647fbe4e31cda85319df69b48514bd224ad79",
+          "readme_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/830647fbe4e31cda85319df69b48514bd224ad79/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/830647fbe4e31cda85319df69b48514bd224ad79/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    },
+    {
+      "id": "CL-0016",
+      "title": "Co-Space 共享项目空间",
+      "original_title": "【开源推广】Co-Space AI Coding协作终极方案",
+      "original_path": "Clippings/111%E3%80%90%E5%BC%80%E6%BA%90%E6%8E%A8%E5%B9%BF%E3%80%91Co-Space%20AI%20Coding%E5%8D%8F%E4%BD%9C%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88.md",
+      "level": "E1 台账摘要 / E2 对应仓库固定版本核对",
+      "status": "设计采用 · 固定仓库核对 / 适配待自测",
+      "used_in": [
+        "cockpit"
+      ],
+      "usage_note": "以上传台账摘要为设计依据；未取得该 Clippings 正文，不能把文章描述当已验证能力。",
+      "duplicate_of": null,
+      "source_index_ids": [
+        "C0016"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2980125"
+      ],
+      "github_matches": [
+        {
+          "repo": "JingxuanKang/cospace",
+          "url": "https://github.com/JingxuanKang/cospace",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "e3ff959950c4c94797147b074662659ac75598fd",
+          "readme_url": "https://raw.githubusercontent.com/JingxuanKang/cospace/e3ff959950c4c94797147b074662659ac75598fd/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/JingxuanKang/cospace/e3ff959950c4c94797147b074662659ac75598fd/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "protocol_contracts": []
+    }
+  ],
+  "repos": [
+    {
+      "repo": "Cai-aa/CAD-Agent-Hub",
+      "url": "https://github.com/Cai-aa/CAD-Agent-Hub",
+      "priority": "P2专业",
+      "module": "CAD/CAE",
+      "reuse": "Windows MCP适配器",
+      "boundary": "调用已安装CAD软件与原生Analysis/求解桥；软件、许可证与版本外置",
+      "validation": "原生重开、尺寸、装配、求解及证据；不以截图验收",
+      "source_ids": [
+        "GH-006"
+      ],
+      "commit": "65e1d8362ba92c5f3465f0443f3c471dfca2e9a7",
+      "readme_url": "https://raw.githubusercontent.com/Cai-aa/CAD-Agent-Hub/65e1d8362ba92c5f3465f0443f3c471dfca2e9a7/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "Jia-Ethan/pavedpath-code",
+      "checked_at": "2026-10-10T04:09:39.825569+00:00",
+      "runtime_verified": false,
+      "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "d12eb68abf7e0afb8e1fcfa2c8d02210ec0b85c1083a7748aa0cfd17a63bf98a",
+      "readme_bytes": 19411,
+      "license_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "3606450b38624daef7664208bf1dfa1bc3d3a47fd0044bfece6b560d6b85ef05",
+      "license_bytes": 1066,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/Jia-Ethan/pavedpath-code",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "JingxuanKang/cospace",
+      "checked_at": "2026-10-10T04:09:39.825370+00:00",
+      "runtime_verified": false,
+      "commit": "e3ff959950c4c94797147b074662659ac75598fd",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/JingxuanKang/cospace/e3ff959950c4c94797147b074662659ac75598fd/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "1c18cd9b84270cbd38dfbc6de434d8075b3124559c9a1a478509649574212f4e",
+      "readme_bytes": 10450,
+      "license_url": "https://raw.githubusercontent.com/JingxuanKang/cospace/e3ff959950c4c94797147b074662659ac75598fd/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "636fdb245406f69a5327cacb6fb15a48505bd585b9e7f590b81d68e0539232b9",
+      "license_bytes": 1070,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/JingxuanKang/cospace",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "Leey21/awesome-ai-research-writing",
+      "checked_at": "2026-10-10T04:09:41.106085+00:00",
+      "runtime_verified": false,
+      "commit": "df0af726a79109b8760c1b80d5dfc36ed44a6f1f",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/Leey21/awesome-ai-research-writing/df0af726a79109b8760c1b80d5dfc36ed44a6f1f/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "683ccab5559a3cb029736ca3dd70e3ff674aadcae0e2af3dbad9ef307093a7ef",
+      "readme_bytes": 56740,
+      "status": "固定提交README核对；未运行",
+      "license": "未在常见根路径取得；待核对",
+      "url": "https://github.com/Leey21/awesome-ai-research-writing",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "MLNLP-World/Paper-Writing-Tips",
+      "checked_at": "2026-10-10T04:09:41.052059+00:00",
+      "runtime_verified": false,
+      "commit": "50712564062249b28b8493ebdc35f8b3a3b88512",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/MLNLP-World/Paper-Writing-Tips/50712564062249b28b8493ebdc35f8b3a3b88512/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "6548a05a4170a276588d985efef8ad81f46e02b4190680f3fb1df329a6866989",
+      "readme_bytes": 26825,
+      "status": "固定提交README核对；未运行",
+      "license": "未在常见根路径取得；待核对",
+      "url": "https://github.com/MLNLP-World/Paper-Writing-Tips",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "QAbot-zh/citation-checker",
+      "checked_at": "2026-10-10T04:09:40.984983+00:00",
+      "runtime_verified": false,
+      "commit": "eb34cfaad861b3d1db32f0ca694ac8d380bb5d26",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/QAbot-zh/citation-checker/eb34cfaad861b3d1db32f0ca694ac8d380bb5d26/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "82996df097b5bfaa649918dbcd0cff81b36a7546053754cd797f1a726e33b35f",
+      "readme_bytes": 8124,
+      "status": "固定提交README核对；未运行",
+      "license": "未在常见根路径取得；待核对",
+      "url": "https://github.com/QAbot-zh/citation-checker",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "QingYunA/answer-me-with-html",
+      "checked_at": "2026-10-10T04:09:39.825030+00:00",
+      "runtime_verified": false,
+      "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "16d2b6d13f4bfd545435c5d52ee3c9d5c9b8c219ef359b4facd1c2ed589d0041",
+      "readme_bytes": 18390,
+      "license_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "752a1a34b40ae8e64e86f546ec699a691aff573179e1f96997e82757b2ee5d3f",
+      "license_bytes": 1089,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/QingYunA/answer-me-with-html",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "boyang-hu/website-rebuild-skill",
+      "checked_at": "2026-10-10T04:09:39.827348+00:00",
+      "runtime_verified": false,
+      "commit": "830647fbe4e31cda85319df69b48514bd224ad79",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/830647fbe4e31cda85319df69b48514bd224ad79/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "7c2a8f80db9d3b2b24039d4127b358dde1bd0cf41c0f9f78edc41c5436fd3863",
+      "readme_bytes": 32741,
+      "license_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/830647fbe4e31cda85319df69b48514bd224ad79/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "54dbfbc5ea64c294cc8fce9eee9afe9e5290b63fd63e33a083342c4f5377e52f",
+      "license_bytes": 1066,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/boyang-hu/website-rebuild-skill",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "bulaofen0036-coder/TIA_Portal_Openness_MCP",
+      "url": "https://github.com/bulaofen0036-coder/TIA_Portal_Openness_MCP",
+      "priority": "P2专业",
+      "module": "博途PLC",
+      "reuse": "Windows MCP/CLI",
+      "boundary": "项目描述/生成/编译/导出分任务；会话锁；接入已有PLC Agent",
+      "validation": "目标V20/V21与CPU、编译、PLCSIM、互锁场景",
+      "source_ids": [
+        "GH-010"
+      ],
+      "commit": "3e8f8810924657a1adc4b41c0166a0829ad1caf7",
+      "readme_url": "https://raw.githubusercontent.com/bulaofen0036-coder/TIA_Portal_Openness_MCP/3e8f8810924657a1adc4b41c0166a0829ad1caf7/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "czm15053/write-notes-like-deepseek",
+      "url": "https://github.com/czm15053/write-notes-like-deepseek",
+      "priority": "P0参考",
+      "module": "工程决策板",
+      "reuse": "记录方法参考",
+      "boundary": "采用 proposed/implemented/rejected/archived 生命周期，数据库是唯一事实源；许可证待确认，暂不复制源码",
+      "validation": "有效决定加载、否决理由、取代与证据绑定",
+      "source_ids": [
+        "GH-003"
+      ],
+      "commit": "0e8200c0f80d37a1c75e585a65b35401ae198462",
+      "readme_url": "https://raw.githubusercontent.com/czm15053/write-notes-like-deepseek/0e8200c0f80d37a1c75e585a65b35401ae198462/README.md",
+      "license": "未在常见根路径取得；待核对",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "docling-project/docling",
+      "url": "https://github.com/docling-project/docling",
+      "priority": "P0",
+      "module": "全文结构解析",
+      "reuse": "Python Worker",
+      "boundary": "解析任务书与PDF；逐对象存章节、表格、公式、图像与源页",
+      "validation": "多栏、长表、公式、扫描件与覆盖",
+      "source_ids": [
+        "GH-094"
+      ],
+      "commit": "d0f55469c56d38d93ed47049b8c9d17f6785e94b",
+      "readme_url": "https://raw.githubusercontent.com/docling-project/docling/d0f55469c56d38d93ed47049b8c9d17f6785e94b/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "dr-dumpling/paper-search-cli",
+      "url": "https://github.com/dr-dumpling/paper-search-cli",
+      "priority": "P0",
+      "module": "文献检索",
+      "reuse": "CLI JSON 适配器",
+      "boundary": "检索日志、文献元数据、引用扩展、全文候选发现；取得全文另设任务",
+      "validation": "返回真实DOI、年份、OA全文、只有摘要失败",
+      "source_ids": [],
+      "commit": "d2026493d0ddb58639d9d13edbab5a13768869a5",
+      "readme_url": "https://raw.githubusercontent.com/dr-dumpling/paper-search-cli/d2026493d0ddb58639d9d13edbab5a13768869a5/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "gamecrafters-io/base-ui",
+      "checked_at": "2026-10-10T04:09:40.953434+00:00",
+      "runtime_verified": false,
+      "commit": "f23322221a51c19a747c8a27e0b6e75bd674efc5",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "50587427f688e0deef00f82e0da2a3561be91f6c9b3a8a61a6bfbf2c87f5c122",
+      "readme_bytes": 10623,
+      "license_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "c6b8af949e878faac3880e571b0f9678e889e6c3710eeb74e64f781d439d5430",
+      "license_bytes": 1067,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/gamecrafters-io/base-ui",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "iOfficeAI/OfficeCLI",
+      "url": "https://github.com/iOfficeAI/OfficeCLI",
+      "priority": "P0",
+      "module": "文档制作",
+      "reuse": "CLI 工具 Worker",
+      "boundary": "用学校模板生成DOCX与后续PPT；PDF渲染后端另配置",
+      "validation": "公式、域刷新、分页、模板与保留手改",
+      "source_ids": [
+        "GH-125"
+      ],
+      "commit": "699cafbc8f0b8a7841c6cca53dafd0c24e982f56",
+      "readme_url": "https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/699cafbc8f0b8a7841c6cca53dafd0c24e982f56/README.md",
+      "license": "Apache-2.0",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "jgraph/drawio-mcp",
+      "url": "https://github.com/jgraph/drawio-mcp",
+      "priority": "P1",
+      "module": "可编辑工程图",
+      "reuse": "MCP 图表工具",
+      "boundary": "需要自由编辑时导出drawio与SVG；数据曲线仍由数据脚本生成",
+      "validation": "源图可编辑、标签与论文PDF一致",
+      "source_ids": [
+        "GH-114"
+      ],
+      "commit": "eebe7def96409a15511a51fda958f4a620c2300a",
+      "readme_url": "https://raw.githubusercontent.com/jgraph/drawio-mcp/eebe7def96409a15511a51fda958f4a620c2300a/README.md",
+      "license": "Apache-2.0",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "johannesPettersson80/codesys-mcp-toolkit",
+      "url": "https://github.com/johannesPettersson80/codesys-mcp-toolkit",
+      "priority": "P2专业",
+      "module": "CODESYS",
+      "reuse": "MCP适配器",
+      "boundary": "POU创建、代码编辑、项目与编译；CODESYS不是TIA替代品",
+      "validation": "目标V3、脚本引擎、原生工程重开与编译",
+      "source_ids": [
+        "GH-222"
+      ],
+      "commit": "1195a6724017b831b4f2e24d15541dbdc57429b7",
+      "readme_url": "https://raw.githubusercontent.com/johannesPettersson80/codesys-mcp-toolkit/1195a6724017b831b4f2e24d15541dbdc57429b7/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "liu-zhengdong/pi-shadow-mind",
+      "checked_at": "2026-10-10T04:09:39.823982+00:00",
+      "runtime_verified": false,
+      "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "29f95492b9cbdbdc0ae044c78db4cccf567e8b3e69db9d554f75aa206d7da7ea",
+      "readme_bytes": 8228,
+      "license_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "4541b49a6d59778611da8e44a6e8e1d0f05a93513ab4c09423b320f6179b2ae7",
+      "license_bytes": 1076,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/liu-zhengdong/pi-shadow-mind",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "mindfold-ai/Trellis",
+      "url": "https://github.com/mindfold-ai/Trellis",
+      "priority": "P0开发",
+      "module": "规范与接手",
+      "reuse": "开发方法接入",
+      "boundary": "采用任务上下文与规范目录；Comet 每次开发任务只选一个主工作流",
+      "validation": "开发任务规格、交接内容与验收记录",
+      "source_ids": [
+        "GH-150"
+      ],
+      "commit": "f089cb3286071199e84118dee86b6d76aab032f1",
+      "readme_url": "https://raw.githubusercontent.com/mindfold-ai/Trellis/f089cb3286071199e84118dee86b6d76aab032f1/README.md",
+      "license": "AGPL",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "mosonlab/anneal",
+      "url": "https://github.com/mosonlab/anneal",
+      "priority": "P1开发",
+      "module": "工作站开发",
+      "reuse": "独立开发流水线",
+      "boundary": "只建设工作站与适配器；不把编码链合并PR当成毕业项目完成",
+      "validation": "Windows 支持、阶段关卡、开发验收",
+      "source_ids": [],
+      "commit": "bfa821b066355dfd321d15e43162a9047cfa4091",
+      "readme_url": "https://raw.githubusercontent.com/mosonlab/anneal/bfa821b066355dfd321d15e43162a9047cfa4091/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "murray17/rovai-ai",
+      "url": "https://github.com/murray17/rovai-ai",
+      "priority": "P0参考",
+      "module": "协作会议室",
+      "reuse": "交互与角色协作参考",
+      "boundary": "复用长期角色与讨论交接方式；首版由工作站实现会议协议，不再运行第二套调度器",
+      "validation": "有期限两轮讨论、引用证据、会议结论转决策",
+      "source_ids": [],
+      "commit": "c2ff826e66f5d34faa05449d33616c5c86772018",
+      "readme_url": "https://raw.githubusercontent.com/murray17/rovai-ai/c2ff826e66f5d34faa05449d33616c5c86772018/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "newliver666/apk-reverse",
+      "checked_at": "2026-10-10T04:09:39.827563+00:00",
+      "runtime_verified": false,
+      "commit": "7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/newliver666/apk-reverse/7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "cf447ccca05be70feb24af36fae741f1032ca200c14c929942b45d028cff2b67",
+      "readme_bytes": 47360,
+      "license_url": "https://raw.githubusercontent.com/newliver666/apk-reverse/7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "ed9f20bb2778d834ff8c66f7c61b345e7a88c25354845aed1555b445df188b1f",
+      "license_bytes": 1081,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/newliver666/apk-reverse",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "paperclipai/paperclip",
+      "url": "https://github.com/paperclipai/paperclip",
+      "priority": "P0",
+      "module": "团队与委派",
+      "reuse": "插件与外部执行适配器",
+      "boundary": "复用角色、任务所有者、唤醒队列与运行日志；关闭或拦截不符合约定的自主恢复；工作站持有业务关卡",
+      "validation": "插件注册、任务映射、重复回调、取消、失败恢复策略",
+      "source_ids": [],
+      "commit": "5badea47987aed32b86f36da6bc6c40ceed2995a",
+      "readme_url": "https://raw.githubusercontent.com/paperclipai/paperclip/5badea47987aed32b86f36da6bc6c40ceed2995a/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "pengsida/learning_research",
+      "checked_at": "2026-10-10T04:09:41.046342+00:00",
+      "runtime_verified": false,
+      "commit": "001978e4bc2ad79f670dc44ec11816e1d9c4c610",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/pengsida/learning_research/001978e4bc2ad79f670dc44ec11816e1d9c4c610/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "fb4ebec663d1dcb633466be66d26225ffb6dd1176faafc96d54c44142acd2a9b",
+      "readme_bytes": 5059,
+      "status": "固定提交README核对；未运行",
+      "license": "未在常见根路径取得；待核对",
+      "url": "https://github.com/pengsida/learning_research",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "shilong20/getbib",
+      "url": "https://github.com/shilong20/getbib",
+      "priority": "P1",
+      "module": "引用归一",
+      "reuse": "CLI 适配器",
+      "boundary": "BibTeX/引用整理补充，与来源事实核对后才入库",
+      "validation": "错误DOI、去重、学校引用样式",
+      "source_ids": [
+        "GH-163"
+      ],
+      "commit": "7b8332dfed75848711175ab792e66d18daf76813",
+      "readme_url": "https://raw.githubusercontent.com/shilong20/getbib/7b8332dfed75848711175ab792e66d18daf76813/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "the-shy123456/thesis-docx",
+      "url": "https://github.com/the-shy123456/thesis-docx",
+      "priority": "P0",
+      "module": "格式审计",
+      "reuse": "独立检查适配器",
+      "boundary": "作者与审计分开；固定模板参数后检查Word及PDF",
+      "validation": "学校模板、复杂长表与逐页报告",
+      "source_ids": [
+        "GH-091"
+      ],
+      "commit": "df5ad2e8c5e786ecf4fcfd8023b6ed4f789a38dc",
+      "readme_url": "https://raw.githubusercontent.com/the-shy123456/thesis-docx/df5ad2e8c5e786ecf4fcfd8023b6ed4f789a38dc/README.md",
+      "license": "MIT",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "tt-a1i/archify",
+      "url": "https://github.com/tt-a1i/archify",
+      "priority": "P0",
+      "module": "架构与流程图",
+      "reuse": "CLI JSON渲染；本次实际使用",
+      "boundary": "用可编辑类型JSON生成离线互动HTML；点击查看上下游关系，决策版本绑定图源",
+      "validation": "本次validate/deliver/check/browser-check；设计图不宣称运行事实",
+      "source_ids": [
+        "GH-001"
+      ],
+      "commit": "7f483b61e8f68d0d5c3219d2c943c5381c8db0b1",
+      "readme_url": "https://raw.githubusercontent.com/tt-a1i/archify/7f483b61e8f68d0d5c3219d2c943c5381c8db0b1/README.md",
+      "license": "MIT",
+      "runtime_verified": true,
+      "evidence_level": "本次工具生成验证"
+    },
+    {
+      "repo": "uvwt/agentdock",
+      "checked_at": "2026-10-10T04:09:39.824574+00:00",
+      "runtime_verified": false,
+      "commit": "a19d133768fd95d366c36ec6e0839d41311855ca",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/uvwt/agentdock/a19d133768fd95d366c36ec6e0839d41311855ca/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "a1b069d26ad5f1362eb5f5f0a33a67853dad6eb27e863c52743ebde9e149c18b",
+      "readme_bytes": 12525,
+      "license_url": "https://raw.githubusercontent.com/uvwt/agentdock/a19d133768fd95d366c36ec6e0839d41311855ca/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "52329d75f907341ab1b9ef45c762b3b113cf2cf54182aad3abb052816fe16ef1",
+      "license_bytes": 11319,
+      "status": "固定提交README核对；未运行",
+      "license": "Apache-2.0",
+      "url": "https://github.com/uvwt/agentdock",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "vastsa/PI-Desktop",
+      "url": "https://github.com/vastsa/PI-Desktop",
+      "priority": "P1",
+      "module": "宿主与执行",
+      "reuse": "插件备选 / Pi 执行器",
+      "boundary": "优先作为执行端；如 Paperclip 插件限制过大，工作站面板可嵌入 PI；避免双重派发",
+      "validation": "插件面板、后台服务、文件隔离、会话恢复；LGPL 义务",
+      "source_ids": [],
+      "commit": "7949d6ff693646397828da3ac3f43b4d3f8a111d",
+      "readme_url": "https://raw.githubusercontent.com/vastsa/PI-Desktop/7949d6ff693646397828da3ac3f43b4d3f8a111d/README.md",
+      "license": "LGPL-3.0",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    },
+    {
+      "repo": "xiaoyangtx996/goalcraft-skill",
+      "checked_at": "2026-10-10T04:09:39.824370+00:00",
+      "runtime_verified": false,
+      "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "225907d9c13b1ef3eabc278c242e6e8a0be9e5cf3e3801a340e7934e647019b1",
+      "readme_bytes": 4013,
+      "license_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "license_bytes": 1056,
+      "status": "固定提交README核对；未运行",
+      "license": "MIT",
+      "url": "https://github.com/xiaoyangtx996/goalcraft-skill",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "yyjeqhc/webcodex",
+      "checked_at": "2026-10-10T04:09:40.960633+00:00",
+      "runtime_verified": false,
+      "commit": "203c65bca3bf4f9c24bc9590131c82d1c639e960",
+      "git_read_exit": 0,
+      "readme_url": "https://raw.githubusercontent.com/yyjeqhc/webcodex/203c65bca3bf4f9c24bc9590131c82d1c639e960/README.md",
+      "readme_path": "README.md",
+      "readme_sha256": "17168b1a043af26eb73a9f804a64ee2930ebda57ac38de961bf9d2678fff5bdd",
+      "readme_bytes": 11072,
+      "license_url": "https://raw.githubusercontent.com/yyjeqhc/webcodex/203c65bca3bf4f9c24bc9590131c82d1c639e960/LICENSE",
+      "license_path": "LICENSE",
+      "license_sha256": "c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c",
+      "license_bytes": 11358,
+      "status": "固定提交README核对；未运行",
+      "license": "Apache-2.0",
+      "url": "https://github.com/yyjeqhc/webcodex",
+      "evidence_level": "E2 · 固定提交README/核心协议核对；未运行接入"
+    },
+    {
+      "repo": "bestruirui/octopus",
+      "url": "https://github.com/bestruirui/octopus",
+      "priority": "P0",
+      "module": "API容错",
+      "reuse": "一个主网关",
+      "boundary": "沿用已有渠道、同模型多Key与故障转移；必须实测断流与错误屏蔽，不接受假成功",
+      "validation": "429/5xx、超时、断流、全渠道失败、工具调用只提交一次",
+      "source_ids": [],
+      "commit": "d1a26bdd8770a05ee03e73d867c2cf5af9fa2951",
+      "readme_url": "https://raw.githubusercontent.com/bestruirui/octopus/d1a26bdd8770a05ee03e73d867c2cf5af9fa2951/README.md",
+      "license": "AGPL",
+      "runtime_verified": false,
+      "evidence_level": "固定提交README及许可证核对；未运行接入"
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "goal",
+      "title": "目标契约工厂",
+      "tag": "01 · 需求不漂移",
+      "question": "怎样让“帮我做毕设”变成 Agent 能交接的可检验目标？",
+      "innovation": "Goalcraft 拆目标，双 Shadow 审计分别对结构和目标发问，Notes 记录被否决理由。下一位 Agent 接到的是有效决定与证据包。",
+      "source_ids": [
+        "CL-0020",
+        "CL-0004",
+        "CL-0012"
+      ],
+      "repos": [
+        "xiaoyangtx996/goalcraft-skill",
+        "liu-zhengdong/pi-shadow-mind",
+        "czm15053/write-notes-like-deepseek",
+        "paperclipai/paperclip"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "goal-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "goal-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0004",
+            "CL-0012"
+          ],
+          "depends_on": [
+            "goal-contract"
+          ],
+          "output_type": "GoalContractDraft",
+          "mode": "parallel",
+          "branches": [
+            "任务书约束提取",
+            "验收指标编制",
+            "技术方案对照"
+          ]
+        },
+        {
+          "id": "goal-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "goal-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "goal-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "goal-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "goal-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "goal-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "GoalContractDraft",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "general",
+      "protocol_contracts": [
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/SKILL.md",
+          "line_start": 24,
+          "line_end": 30,
+          "section": "五条原则",
+          "short_summary": "目标生成与执行分开；约束填实；成功必须可观察。",
+          "local_mapping": "组合编译器生成 contract，不直接派发；approved 后交唯一业务调度器。",
+          "sha256": "105ee734b0ea5b4e94949c6ae038852f27a0aa46b951fb2c40e4e855a9ebdcee",
+          "runtime_verified": false
+        },
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/SKILL.md",
+          "line_start": 101,
+          "line_end": 110,
+          "section": "交付验收门 G1–G6",
+          "short_summary": "无占位、命令真实、结果可核对、权限诚实；没有用户时限不编造时限。",
+          "local_mapping": "编译结果显示路径/验收/工具自测门禁；缺字段标 blocked，不能输出假通过。",
+          "sha256": "105ee734b0ea5b4e94949c6ae038852f27a0aa46b951fb2c40e4e855a9ebdcee",
+          "runtime_verified": false
+        },
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "path": "references/field-spec.md",
+          "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/references/field-spec.md",
+          "line_start": 1,
+          "line_end": 54,
+          "section": "字段说明",
+          "short_summary": "inputs/constraints/success_criteria/short_test/deliverables 各有字段语义。",
+          "local_mapping": "映射输入证据版本、目标路径、验证入口、必交文件与模型预算；金额预算由产品另定义，非上游默认为时限。",
+          "sha256": "b840d0340717736a5cf588e247d1b050491e1f4fb264d87dae850c1840f536f4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 128,
+          "line_end": 150,
+          "section": "工具白名单与写入并发边界",
+          "short_summary": "默认 read/grep/find/ls + report_to_main；工具权限显式；上游没有文件互斥。",
+          "local_mapping": "两名审计者固定只读，生成 findings；实施Agent独占工作树写入权，文档修改经计划节点提交。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 342,
+          "line_end": 350,
+          "section": "Final response",
+          "short_summary": "审查按 generation 聚合；旧批次失效；并发硬上限；可限定一轮。",
+          "local_mapping": "论文/证据变更提高 review_generation；旧报告不得覆盖新版本；定向复核两名审计者，最多一轮后人工处理。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 150,
+          "line_end": 152,
+          "section": "report_to_main 与保持沉默",
+          "short_summary": "一次激活最多上报一条意见，保持沉默不表示未执行工作。",
+          "local_mapping": "产品契约要求 explicit passed/failed/blocked；没有报告只能 pending，不能把沉默当验收通过。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        }
+      ],
+      "repo_relations": [
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "czm15053/write-notes-like-deepseek",
+          "relation": "配套候选；不是 CL-0012 同源项目"
+        },
+        {
+          "repo": "paperclipai/paperclip",
+          "relation": "已有精选配套能力"
+        }
+      ]
+    },
+    {
+      "id": "cockpit",
+      "title": "共享驾驶舱",
+      "tag": "02 · 讨论落到任务",
+      "question": "多位学生与多模型怎样看见同一个项目、保留每个决定？",
+      "innovation": "Co-Space 的共享空间 + PI 子 Agent 可视化 + Rovai 两轮会议，工作站保存唯一任务状态；Core 是唯一委派入口，Paperclip 是可选适配器。桌面端只提供执行与观察。",
+      "source_ids": [
+        "CL-0016",
+        "CL-0010",
+        "CL-0015",
+        "CL-0025",
+        "CL-0026"
+      ],
+      "repos": [
+        "paperclipai/paperclip",
+        "vastsa/PI-Desktop",
+        "murray17/rovai-ai",
+        "uvwt/agentdock",
+        "JingxuanKang/cospace",
+        "yyjeqhc/webcodex"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "cockpit-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "cockpit-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0016",
+            "CL-0010",
+            "CL-0015",
+            "CL-0025",
+            "CL-0026"
+          ],
+          "depends_on": [
+            "cockpit-contract"
+          ],
+          "output_type": "SessionHandoff",
+          "mode": "parallel",
+          "branches": [
+            "共享上下文制作",
+            "本机执行能力自测",
+            "方案异议收敛"
+          ]
+        },
+        {
+          "id": "cockpit-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "cockpit-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "cockpit-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "cockpit-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "cockpit-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "cockpit-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "SessionHandoff",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "general",
+      "protocol_contracts": [],
+      "repo_relations": [
+        {
+          "repo": "paperclipai/paperclip",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "vastsa/PI-Desktop",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "murray17/rovai-ai",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "uvwt/agentdock",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "JingxuanKang/cospace",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "yyjeqhc/webcodex",
+          "relation": "直接来源仓库"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "研究证据活页",
+      "tag": "03 · 引文能回到原页",
+      "question": "论文一段结论能否回溯文献原页、翻译与使用版本？",
+      "innovation": "Zotero/RSS 线索驱动 Paper Search 检索，Docling 切成可定位的证据单元，OfficeCLI 与 HTML 共享同一段落绑定。改一个结论即可找到使用它的章节。",
+      "source_ids": [
+        "CL-0019",
+        "CL-0009",
+        "CL-0012"
+      ],
+      "repos": [
+        "dr-dumpling/paper-search-cli",
+        "docling-project/docling",
+        "shilong20/getbib",
+        "iOfficeAI/OfficeCLI",
+        "the-shy123456/thesis-docx",
+        "MLNLP-World/Paper-Writing-Tips",
+        "Leey21/awesome-ai-research-writing",
+        "QAbot-zh/citation-checker",
+        "pengsida/learning_research",
+        "QingYunA/answer-me-with-html"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "research-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "research-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0019",
+            "CL-0009",
+            "CL-0012"
+          ],
+          "depends_on": [
+            "research-contract"
+          ],
+          "output_type": "CitationEvidence",
+          "mode": "parallel",
+          "branches": [
+            "文献去重与 DOI 核对",
+            "原文段落 / 表格解析",
+            "术语与翻译对照"
+          ]
+        },
+        {
+          "id": "research-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "research-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "research-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "research-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "research-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "research-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "CitationEvidence",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "general",
+      "protocol_contracts": [
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 51,
+          "line_end": 85,
+          "section": "内容草稿与CLI呈现",
+          "short_summary": "模型写Markdown内容，CLI确定布局与图坐标；有错误时不生成成功页面。",
+          "local_mapping": "答辩成果卡由结构化内容+固定模板渲染；避免每个Agent重复写样式。原型展示方法映射，未执行该CLI。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 89,
+          "line_end": 98,
+          "section": "单panel更新",
+          "short_summary": "HTML保留 #am-source；patch按panel更新；找不到panel不改文件。",
+          "local_mapping": "证据变更仅触发受影响章节/讲稿/图卡；保留内容源与不可变产物版本。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 145,
+          "line_end": 153,
+          "section": "真实代码、变更视图、数据标识",
+          "short_summary": "+/-/~变更标记生成前后视图；src/lines引用真实代码；草图明确标sketch；不编数据。",
+          "local_mapping": "资源融合画布显示新增/移除依赖，示例数值标模拟；每个结果绑定文件版本和证据。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        }
+      ],
+      "repo_relations": [
+        {
+          "repo": "dr-dumpling/paper-search-cli",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "docling-project/docling",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "shilong20/getbib",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "iOfficeAI/OfficeCLI",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "the-shy123456/thesis-docx",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "MLNLP-World/Paper-Writing-Tips",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "Leey21/awesome-ai-research-writing",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "QAbot-zh/citation-checker",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "pengsida/learning_research",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "relation": "直接来源仓库"
+        }
+      ]
+    },
+    {
+      "id": "twin",
+      "title": "跨专业数字样机",
+      "tag": "04 · 工程与论文同源",
+      "question": "机械、PCB 与 PLC 各自做完，能否证明它们真正对得上？",
+      "innovation": "把 Blender 场景作为可视化外壳，CAD 尺寸、PCB 引脚、PLC I/O 共享 InterfaceContract。并行产物先汇合做接口检查，再给章节与答辩同一份实验证据。",
+      "source_ids": [
+        "CL-0005",
+        "CL-0008",
+        "CL-0006",
+        "CL-0009"
+      ],
+      "repos": [
+        "Cai-aa/CAD-Agent-Hub",
+        "bulaofen0036-coder/TIA_Portal_Openness_MCP",
+        "johannesPettersson80/codesys-mcp-toolkit",
+        "jgraph/drawio-mcp",
+        "iOfficeAI/OfficeCLI",
+        "QingYunA/answer-me-with-html"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "twin-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "twin-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0005",
+            "CL-0008",
+            "CL-0006",
+            "CL-0009"
+          ],
+          "depends_on": [
+            "twin-contract"
+          ],
+          "output_type": "InterfaceContract",
+          "mode": "parallel",
+          "branches": [
+            "机械建模 / 渲染",
+            "PCB 网络表 / 引脚定义",
+            "PLC I/O 与互锁测试"
+          ]
+        },
+        {
+          "id": "twin-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "twin-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "twin-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "twin-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "twin-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "twin-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "InterfaceContract",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "mechatronics",
+      "protocol_contracts": [
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 51,
+          "line_end": 85,
+          "section": "内容草稿与CLI呈现",
+          "short_summary": "模型写Markdown内容，CLI确定布局与图坐标；有错误时不生成成功页面。",
+          "local_mapping": "答辩成果卡由结构化内容+固定模板渲染；避免每个Agent重复写样式。原型展示方法映射，未执行该CLI。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 89,
+          "line_end": 98,
+          "section": "单panel更新",
+          "short_summary": "HTML保留 #am-source；patch按panel更新；找不到panel不改文件。",
+          "local_mapping": "证据变更仅触发受影响章节/讲稿/图卡；保留内容源与不可变产物版本。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 145,
+          "line_end": 153,
+          "section": "真实代码、变更视图、数据标识",
+          "short_summary": "+/-/~变更标记生成前后视图；src/lines引用真实代码；草图明确标sketch；不编数据。",
+          "local_mapping": "资源融合画布显示新增/移除依赖，示例数值标模拟；每个结果绑定文件版本和证据。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        }
+      ],
+      "repo_relations": [
+        {
+          "repo": "Cai-aa/CAD-Agent-Hub",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "bulaofen0036-coder/TIA_Portal_Openness_MCP",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "johannesPettersson80/codesys-mcp-toolkit",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "jgraph/drawio-mcp",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "iOfficeAI/OfficeCLI",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "relation": "直接来源仓库"
+        }
+      ]
+    },
+    {
+      "id": "spec",
+      "title": "规格开发流水线",
+      "tag": "05 · 开发不黑箱",
+      "question": "编码 Agent 怎样复用 GitHub 解法，同时可解释取舍和验收？",
+      "innovation": "GitHub Solution Research 先交 repo/issue/PR/代码证据，Anneal 作为唯一开发流水线，Trellis 只提供规格和上下文格式；双 Shadow 独立审计后写 Notes。",
+      "source_ids": [
+        "CL-0011",
+        "CL-0023",
+        "CL-0004",
+        "CL-0012"
+      ],
+      "repos": [
+        "mosonlab/anneal",
+        "mindfold-ai/Trellis",
+        "liu-zhengdong/pi-shadow-mind",
+        "czm15053/write-notes-like-deepseek",
+        "Jia-Ethan/pavedpath-code"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "spec-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "spec-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0011",
+            "CL-0023",
+            "CL-0004",
+            "CL-0012"
+          ],
+          "depends_on": [
+            "spec-contract"
+          ],
+          "output_type": "PatchEvidence",
+          "mode": "parallel",
+          "branches": [
+            "解决方案证据搜索",
+            "规格与模块契约编写",
+            "隔离工作区实现 / 测试"
+          ]
+        },
+        {
+          "id": "spec-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "spec-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "spec-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "spec-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "spec-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "spec-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "PatchEvidence",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "software",
+      "protocol_contracts": [
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 128,
+          "line_end": 150,
+          "section": "工具白名单与写入并发边界",
+          "short_summary": "默认 read/grep/find/ls + report_to_main；工具权限显式；上游没有文件互斥。",
+          "local_mapping": "两名审计者固定只读，生成 findings；实施Agent独占工作树写入权，文档修改经计划节点提交。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 342,
+          "line_end": 350,
+          "section": "Final response",
+          "short_summary": "审查按 generation 聚合；旧批次失效；并发硬上限；可限定一轮。",
+          "local_mapping": "论文/证据变更提高 review_generation；旧报告不得覆盖新版本；定向复核两名审计者，最多一轮后人工处理。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 150,
+          "line_end": 152,
+          "section": "report_to_main 与保持沉默",
+          "short_summary": "一次激活最多上报一条意见，保持沉默不表示未执行工作。",
+          "local_mapping": "产品契约要求 explicit passed/failed/blocked；没有报告只能 pending，不能把沉默当验收通过。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 25,
+          "line_end": 37,
+          "section": "Default Workflow",
+          "short_summary": "先定义本地症状与版本，再读issue/PR/源码；提取最小适配并本地验证。",
+          "local_mapping": "缺能力或适配失败产生 investigation unit，输出匹配条件、最小改动、验证计划；不自主改技术路线。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 57,
+          "line_end": 63,
+          "section": "控制者对子Agent证据复核",
+          "short_summary": "子Agent分面只读研究，结果去重，控制者直接核验最强论断。",
+          "local_mapping": "工程检索组分接口/许可证/版本三个研究角色；主控输出 verified_claims 和 rejected_options。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 94,
+          "line_end": 121,
+          "section": "Evidence Standard / Output Contract",
+          "short_summary": "强证据有匹配条件、适用性、拒绝理由与本地验证；链接和Stars不能代替结论。",
+          "local_mapping": "资源卡区分来源线索/固定文档核对/运行通过；组合方案必须携带 required_validation。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        }
+      ],
+      "repo_relations": [
+        {
+          "repo": "mosonlab/anneal",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "mindfold-ai/Trellis",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "czm15053/write-notes-like-deepseek",
+          "relation": "配套候选；不是 CL-0012 同源项目"
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "relation": "直接来源仓库"
+        }
+      ]
+    },
+    {
+      "id": "defense",
+      "title": "证据答辩剧场",
+      "tag": "06 · 讲故事不造事实",
+      "question": "一套证据怎样产生可编辑 PPT、交互演示和反方问答？",
+      "innovation": "image2 只设计视觉草稿，OfficeCLI 生成可编辑文字与数据图；HTML 做结论→原始证据的点击跳转，UI Guide 与 React 统一阅读层。答辩对手 Agent 只能引用证据提出质疑。",
+      "source_ids": [
+        "CL-0006",
+        "CL-0009",
+        "CL-0017",
+        "CL-0021",
+        "CL-0022"
+      ],
+      "repos": [
+        "iOfficeAI/OfficeCLI",
+        "the-shy123456/thesis-docx",
+        "tt-a1i/archify",
+        "jgraph/drawio-mcp",
+        "QingYunA/answer-me-with-html",
+        "gamecrafters-io/base-ui"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "defense-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "defense-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0006",
+            "CL-0009",
+            "CL-0017",
+            "CL-0021",
+            "CL-0022"
+          ],
+          "depends_on": [
+            "defense-contract"
+          ],
+          "output_type": "PresentationBinding",
+          "mode": "parallel",
+          "branches": [
+            "论证主线与讲稿",
+            "可编辑幻灯片制作",
+            "反方提问与来源核对"
+          ]
+        },
+        {
+          "id": "defense-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "defense-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "defense-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "defense-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "defense-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "defense-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "PresentationBinding",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "general",
+      "protocol_contracts": [
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 51,
+          "line_end": 85,
+          "section": "内容草稿与CLI呈现",
+          "short_summary": "模型写Markdown内容，CLI确定布局与图坐标；有错误时不生成成功页面。",
+          "local_mapping": "答辩成果卡由结构化内容+固定模板渲染；避免每个Agent重复写样式。原型展示方法映射，未执行该CLI。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 89,
+          "line_end": 98,
+          "section": "单panel更新",
+          "short_summary": "HTML保留 #am-source；patch按panel更新；找不到panel不改文件。",
+          "local_mapping": "证据变更仅触发受影响章节/讲稿/图卡；保留内容源与不可变产物版本。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "path": "skills/answer-me-with-html/SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+          "line_start": 145,
+          "line_end": 153,
+          "section": "真实代码、变更视图、数据标识",
+          "short_summary": "+/-/~变更标记生成前后视图；src/lines引用真实代码；草图明确标sketch；不编数据。",
+          "local_mapping": "资源融合画布显示新增/移除依赖，示例数值标模拟；每个结果绑定文件版本和证据。",
+          "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+          "runtime_verified": false
+        }
+      ],
+      "repo_relations": [
+        {
+          "repo": "iOfficeAI/OfficeCLI",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "the-shy123456/thesis-docx",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "tt-a1i/archify",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "jgraph/drawio-mcp",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "gamecrafters-io/base-ui",
+          "relation": "直接来源仓库"
+        }
+      ]
+    },
+    {
+      "id": "software-lab",
+      "title": "授权软件显微镜",
+      "tag": "07 · 还原机制与证据",
+      "question": "如何研究自己的 APK / 网站，并形成可复现实验而非截图拼贴？",
+      "innovation": "把 apk-reverse 与网站模块研究作为选装方法，模块树每个推断绑定可见源位置。UI 复现后用事实与目标双审计，输出机制报告与原创实现。",
+      "source_ids": [
+        "CL-0014",
+        "CL-0013",
+        "CL-0023",
+        "CL-0017"
+      ],
+      "repos": [
+        "uvwt/agentdock",
+        "mindfold-ai/Trellis",
+        "liu-zhengdong/pi-shadow-mind",
+        "newliver666/apk-reverse",
+        "boyang-hu/website-rebuild-skill",
+        "Jia-Ethan/pavedpath-code"
+      ],
+      "agents": [
+        {
+          "id": "author",
+          "name": "主创 Agent",
+          "authority": "提出方案 / 制作成果，不可审计自己的成果"
+        },
+        {
+          "id": "researcher",
+          "name": "资料与事实 Agent",
+          "authority": "提供来源锚点，不直接批准最终成果"
+        },
+        {
+          "id": "engineer",
+          "name": "专业工程 Agent",
+          "authority": "原生工程与实验，受会话锁与工具权限约束"
+        },
+        {
+          "id": "evidence",
+          "name": "证据整理 Agent",
+          "authority": "产物封装、版本与引用关系"
+        },
+        {
+          "id": "structure-auditor",
+          "name": "结构质量审计者",
+          "authority": "独立会话，只读产物，检查结构/可复现/格式"
+        },
+        {
+          "id": "goal-auditor",
+          "name": "目标一致性审计者",
+          "authority": "独立会话，只读已批准目标，检查需求覆盖与边界"
+        },
+        {
+          "id": "human",
+          "name": "学生 / 导师",
+          "authority": "需求冻结、变更路线、恢复与最终交付批准"
+        }
+      ],
+      "steps": [
+        {
+          "id": "software-lab-contract",
+          "name": "目标与边界冻结",
+          "agents": [
+            "author",
+            "researcher"
+          ],
+          "source_ids": [
+            "CL-0020",
+            "CL-0012"
+          ],
+          "depends_on": [],
+          "output_type": "GoalContract",
+          "mode": "human_gate"
+        },
+        {
+          "id": "software-lab-parallel",
+          "name": "并行研究与制作",
+          "agents": [
+            "researcher",
+            "engineer",
+            "author"
+          ],
+          "source_ids": [
+            "CL-0014",
+            "CL-0013",
+            "CL-0023",
+            "CL-0017"
+          ],
+          "depends_on": [
+            "software-lab-contract"
+          ],
+          "output_type": "SoftwareObservation",
+          "mode": "parallel",
+          "branches": [
+            "自有 APK / 站点模块定位",
+            "机制笔记与行为对照",
+            "原创原型与可复现测试"
+          ]
+        },
+        {
+          "id": "software-lab-join",
+          "name": "类型化证据汇合",
+          "agents": [
+            "evidence"
+          ],
+          "source_ids": [
+            "CL-0012"
+          ],
+          "depends_on": [
+            "software-lab-parallel"
+          ],
+          "output_type": "EvidenceBundle",
+          "mode": "join"
+        },
+        {
+          "id": "software-lab-audit",
+          "name": "两名独立审计者",
+          "agents": [
+            "structure-auditor",
+            "goal-auditor"
+          ],
+          "source_ids": [
+            "CL-0004"
+          ],
+          "depends_on": [
+            "software-lab-join"
+          ],
+          "output_type": "AuditPair",
+          "mode": "parallel"
+        },
+        {
+          "id": "software-lab-human",
+          "name": "人工接受与发布",
+          "agents": [
+            "human"
+          ],
+          "source_ids": [],
+          "depends_on": [
+            "software-lab-audit"
+          ],
+          "output_type": "ReleaseDecision",
+          "mode": "human_gate"
+        }
+      ],
+      "handoffs": [
+        {
+          "from": "author",
+          "to": "researcher",
+          "type": "GoalContract",
+          "required": [
+            "goal_id",
+            "acceptance_criteria",
+            "constraints",
+            "version",
+            "human_approval"
+          ]
+        },
+        {
+          "from": "researcher / engineer",
+          "to": "evidence",
+          "type": "SoftwareObservation",
+          "required": [
+            "artifact_uri",
+            "sha256",
+            "native_format",
+            "source_anchor",
+            "tool_version",
+            "goal_version",
+            "test_result"
+          ]
+        },
+        {
+          "from": "evidence",
+          "to": "structure-auditor / goal-auditor",
+          "type": "EvidenceBundle",
+          "required": [
+            "claims",
+            "source_pages",
+            "parameters",
+            "depends_on",
+            "revision",
+            "author_id"
+          ]
+        },
+        {
+          "from": "structure-auditor / goal-auditor",
+          "to": "human",
+          "type": "AuditPair",
+          "required": [
+            "reviewer_id",
+            "review_session_id",
+            "independent_of_author",
+            "findings",
+            "decision"
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "G0",
+          "name": "冻结目标契约",
+          "owner": "human",
+          "rule": "目标、可检验条件、学校要求与数据范围已确认"
+        },
+        {
+          "id": "G1",
+          "name": "双审计收敛",
+          "owner": "human",
+          "rule": "两审计会话独立于作者；缺证据或任一拒绝则停止依赖"
+        },
+        {
+          "id": "G2",
+          "name": "批准变更与成果",
+          "owner": "human",
+          "rule": "受影响证据重新核对后批准新版本，发布前保留可编辑源文件"
+        }
+      ],
+      "change_impact": {
+        "parameter": "响应时限",
+        "unit": "ms",
+        "baseline": 200,
+        "goal": [
+          "requirement_contract"
+        ],
+        "edges": [
+          [
+            "requirement_contract",
+            "control_algo"
+          ],
+          [
+            "requirement_contract",
+            "cad_interface"
+          ],
+          [
+            "requirement_contract",
+            "pcb_interface"
+          ],
+          [
+            "requirement_contract",
+            "plc_project"
+          ],
+          [
+            "control_algo",
+            "experiment"
+          ],
+          [
+            "cad_interface",
+            "experiment"
+          ],
+          [
+            "pcb_interface",
+            "experiment"
+          ],
+          [
+            "plc_project",
+            "experiment"
+          ],
+          [
+            "experiment",
+            "chapter"
+          ],
+          [
+            "chapter",
+            "slides"
+          ]
+        ],
+        "nodes": [
+          {
+            "id": "requirement_contract",
+            "name": "目标契约",
+            "type": "GoalContract"
+          },
+          {
+            "id": "control_algo",
+            "name": "控制算法 / 计算规则",
+            "type": "AlgorithmSpec"
+          },
+          {
+            "id": "cad_interface",
+            "name": "CAD 接口尺寸",
+            "type": "NativeCAD"
+          },
+          {
+            "id": "pcb_interface",
+            "name": "PCB 接口与时序",
+            "type": "NetlistContract"
+          },
+          {
+            "id": "plc_project",
+            "name": "PLC / 程序原生工程",
+            "type": "NativeProject"
+          },
+          {
+            "id": "experiment",
+            "name": "实验日志与曲线",
+            "type": "TestEvidence"
+          },
+          {
+            "id": "chapter",
+            "name": "论文章节与图表",
+            "type": "ChapterBinding"
+          },
+          {
+            "id": "slides",
+            "name": "答辩页与问答",
+            "type": "PresentationBinding"
+          },
+          {
+            "id": "literature",
+            "name": "原始文献库",
+            "type": "CitationRecord"
+          },
+          {
+            "id": "decision_notes",
+            "name": "未被取代的决策笔记",
+            "type": "DecisionRecord"
+          }
+        ],
+        "impact_classification": {
+          "confirmed_stale": [
+            "requirement_contract",
+            "control_algo",
+            "plc_project",
+            "experiment",
+            "chapter",
+            "slides"
+          ],
+          "needs_impact_review": [
+            "cad_interface",
+            "pcb_interface"
+          ],
+          "unaffected": [
+            "literature",
+            "decision_notes"
+          ]
+        }
+      },
+      "readiness": {
+        "design": "资源机制已映射为设计契约",
+        "prototype": "离线示例可点击，状态在此浏览器保存",
+        "runtime": "全部执行示例模拟；未真实接入 Agent / API / 工程工具",
+        "blockers": [
+          "未提供的 Clippings 原始正文 / 媒体补齐",
+          "适配器安装与合约自测",
+          "学校模板 / 专业工具版本 / 可用模型确认"
+        ]
+      },
+      "major": "software",
+      "protocol_contracts": [
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 128,
+          "line_end": 150,
+          "section": "工具白名单与写入并发边界",
+          "short_summary": "默认 read/grep/find/ls + report_to_main；工具权限显式；上游没有文件互斥。",
+          "local_mapping": "两名审计者固定只读，生成 findings；实施Agent独占工作树写入权，文档修改经计划节点提交。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 342,
+          "line_end": 350,
+          "section": "Final response",
+          "short_summary": "审查按 generation 聚合；旧批次失效；并发硬上限；可限定一轮。",
+          "local_mapping": "论文/证据变更提高 review_generation；旧报告不得覆盖新版本；定向复核两名审计者，最多一轮后人工处理。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "path": "DESIGN.md",
+          "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+          "line_start": 150,
+          "line_end": 152,
+          "section": "report_to_main 与保持沉默",
+          "short_summary": "一次激活最多上报一条意见，保持沉默不表示未执行工作。",
+          "local_mapping": "产品契约要求 explicit passed/failed/blocked；没有报告只能 pending，不能把沉默当验收通过。",
+          "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 25,
+          "line_end": 37,
+          "section": "Default Workflow",
+          "short_summary": "先定义本地症状与版本，再读issue/PR/源码；提取最小适配并本地验证。",
+          "local_mapping": "缺能力或适配失败产生 investigation unit，输出匹配条件、最小改动、验证计划；不自主改技术路线。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 57,
+          "line_end": 63,
+          "section": "控制者对子Agent证据复核",
+          "short_summary": "子Agent分面只读研究，结果去重，控制者直接核验最强论断。",
+          "local_mapping": "工程检索组分接口/许可证/版本三个研究角色；主控输出 verified_claims 和 rejected_options。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "path": "SKILL.md",
+          "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+          "line_start": 94,
+          "line_end": 121,
+          "section": "Evidence Standard / Output Contract",
+          "short_summary": "强证据有匹配条件、适用性、拒绝理由与本地验证；链接和Stars不能代替结论。",
+          "local_mapping": "资源卡区分来源线索/固定文档核对/运行通过；组合方案必须携带 required_validation。",
+          "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+          "runtime_verified": false
+        }
+      ],
+      "repo_relations": [
+        {
+          "repo": "uvwt/agentdock",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "mindfold-ai/Trellis",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "relation": "已有精选配套能力"
+        },
+        {
+          "repo": "newliver666/apk-reverse",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "boyang-hu/website-rebuild-skill",
+          "relation": "直接来源仓库"
+        },
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "relation": "直接来源仓库"
+        }
+      ]
+    }
+  ],
+  "typed_evidence_schema": {
+    "required": [
+      "artifact_uri",
+      "sha256",
+      "source_anchor",
+      "goal_version",
+      "parameter_version",
+      "tool_version",
+      "author_id",
+      "revision",
+      "depends_on",
+      "validation_status"
+    ],
+    "artifact_uri": "由后端文件存储生成，本原型不写入真实工程",
+    "validation_status": [
+      "draft",
+      "stale",
+      "checks_passed",
+      "human_accepted",
+      "rejected"
+    ]
+  },
+  "addons": [
+    {
+      "id": "pcb",
+      "name": "PCB 接口选装",
+      "source_ids": [
+        "CL-0008"
+      ],
+      "requires": "准确 Skill 仓库 / 工具许可证 / 目标器件",
+      "artifact_type": "NetlistContract"
+    },
+    {
+      "id": "desktop",
+      "name": "本机执行端选装",
+      "source_ids": [
+        "CL-0010",
+        "CL-0025",
+        "CL-0026"
+      ],
+      "requires": "执行端二选一、权限自测与会话锁",
+      "artifact_type": "WorkerCapabilityReport"
+    },
+    {
+      "id": "software",
+      "name": "自有软件研究选装",
+      "source_ids": [
+        "CL-0014",
+        "CL-0013"
+      ],
+      "requires": "自有或已获授权的 APK / 网站样本与范围确认",
+      "artifact_type": "SoftwareObservation"
+    }
+  ],
+  "retry_policy": {
+    "max_attempts_total": 3,
+    "retryable": [
+      "429",
+      "5xx",
+      "timeout"
+    ],
+    "same_capability_only": true,
+    "shared_gateway_budget": true,
+    "business_failure_action": "save_checkpoint_pause_dependents_wait_human",
+    "tool_effect_commit": "at_most_once_by_idempotency_key"
+  },
+  "shared_core": {
+    "source_ids": [
+      "CL-0020",
+      "CL-0004",
+      "CL-0012"
+    ],
+    "repos": [
+      "xiaoyangtx996/goalcraft-skill",
+      "liu-zhengdong/pi-shadow-mind",
+      "czm15053/write-notes-like-deepseek",
+      "paperclipai/paperclip",
+      "bestruirui/octopus"
+    ],
+    "scope": "各配方共享的目标、审计、决策与请求预算机制；不另起调度器"
+  }
+}

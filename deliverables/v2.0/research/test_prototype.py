@@ -17,7 +17,7 @@ with sync_playwright() as p:
  ctx=browser.new_context(viewport={'width':1440,'height':1000},accept_downloads=True)
  page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(BASE+'/可点击原型.html');page.wait_for_selector('h1')
- page.evaluate('S=seed();save();render()');ok('初始11页导航',page.locator('#nav button').count()==11)
+ page.evaluate('S=seed();save();render()');ok('初始12页导航含融合实验室',page.locator('#nav button').count()==12)
  page.screenshot(path=str(root/'原型首页.png'),full_page=True)
  page.evaluate("go('board')");page.get_by_role('button',name='推进一阶段（模拟） →').click();ok('未确认方案禁止制作',page.evaluate('P().phase===0&&P().approved===0'))
  page.evaluate("go('plan')");page.get_by_role('button',name='确认演示方案并执行 →').click();ok('四区方案确认开启派发',page.evaluate("P().status==='running'&&P().approved===P().plan"))
@@ -50,7 +50,7 @@ with sync_playwright() as p:
  with page.expect_download() as d:page.get_by_role('button',name='下载评估JSON').click()
  download=d.value;download.save_as(str(root/'research/evaluation-test.json'));ok('评估可导出',json.loads((root/'research/evaluation-test.json').read_text())['reviews']['多Agent协作']==4)
  page.evaluate('closeModal();S=seed();save();render()')
- for id in ['overview','workspace','plan','crew','board','decisions','evidence','artifacts','resources','recovery','architecture']:
+ for id in ['overview','workspace','plan','crew','board','decisions','evidence','artifacts','fusion','resources','recovery','architecture']:
   page.evaluate(f"go('{id}')");ok('页面无横向溢出 '+id,page.evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'))
  page.evaluate("go('crew')");page.screenshot(path=str(root/'原型团队岗位.png'),full_page=False)
  page.evaluate("go('workspace')");page.screenshot(path=str(root/'原型项目工作区.png'),full_page=True)

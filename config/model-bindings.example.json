@@ -1,0 +1,14 @@
+{
+  "status": "configuration_example_not_model_evaluation",
+  "gateway": "Set THESIS_MODEL_BASE_URL to an authenticated, verified OpenAI-compatible /v1 endpoint.",
+  "retry_owner": "gateway",
+  "profiles": {
+    "planning": {"alias": "thesis-planning", "requires": ["reasoning", "structured_output"], "roles": ["R001", "R004", "R006", "R021", "R083", "R084"]},
+    "coding": {"alias": "thesis-coding", "requires": ["code_generation", "tool_calling"], "roles": ["R033", "R035", "R036", "R040", "R042"]},
+    "translation": {"alias": "thesis-translation", "requires": ["full_text_coverage", "terminology"], "roles": ["R015", "R016", "R018", "R019"]},
+    "vision": {"alias": "thesis-vision", "requires": ["image_input", "document_layout"], "roles": ["R028", "R052", "R085"]},
+    "extraction": {"alias": "thesis-extraction", "requires": ["structured_output"], "roles": ["R002", "R009", "R038"]}
+  },
+  "selection": "Evaluate actual endpoint on representative tasks; provider name and HTTP 200 do not establish capability equivalence.",
+  "secrets": "Environment only; never copy keys into this file or GitHub."
+}

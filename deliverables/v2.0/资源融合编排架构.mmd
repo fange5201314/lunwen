@@ -1,0 +1,111 @@
+%% 资源融合编排架构 v2.1；一个可编辑 Mermaid flowchart，含系统/证据/恢复三个子图。
+%% 未运行组件为候选；仅离线交互已实现。
+flowchart TB
+  subgraph system_view["资源融合的单一编排架构"]
+    direction TB
+    system_resources["111 重点资源 · 可组合能力卡<br/>23 条台账 → 去重成 22 组来源"]
+    system_goal["Goalcraft · 可验证目标契约<br/>目标 / 边界 / 检查 / 回滚"]
+    system_compiler["组合蓝图编译器 · 工作站新增<br/>能力卡 → 配方 → DAG + 证据需求"]
+    system_cockpit["共享驾驶舱 · Co-Space / PI<br/>同项目空间 · 人与 Agent 同步观察"]
+    system_meeting["Rovai 证据会议 + 用户确认<br/>独立提案 → 两轮收敛 → 决定"]
+    system_domain["唯一业务状态源 · 领域服务<br/>计划 / DAG / 决定 / 证据 / 验收"]
+    system_notes["决策记忆 · 双向版本关联<br/>为什么选 / 为什么拒绝 / 何时重议"]
+    system_paperclip["宿主适配器 · Paperclip / Rovai<br/>Core-local 已运行；外部宿主待验证"]
+    system_db["状态与事件 · SQLite / 后续中心数据库<br/>领域 schema / outbox / 去重 / lease"]
+    system_development["Anneal / Trellis · 规格开发单元<br/>spec → 实施 → 测试 → 审核"]
+    system_workers["按需 Agent + MCP / CLI 适配器<br/>角色 × 宿主 × 能力 × 独立上下文"]
+    system_storage["内容寻址文件库 · 原生工程<br/>SHA-256 / 临时区 / 正式不可变对象"]
+    system_engineering["数字样机 · 跨专业适配包<br/>Blender + PCB + CAD + PLC"]
+    system_gateway["Octopus · 唯一 API 重试预算<br/>总 3 次 / 90 秒 · 同能力渠道"]
+    system_apis["模型 API · 按能力分工<br/>研究 / 编码 / 审计 / 图像"]
+    system_outcomes["一份证据 · 三类成果投影<br/>论文 / 工程 / 答辩与 HTML"]
+    system_evidence["版本化证据图谱 · 成果护照<br/>Requirement → Task → Artifact → Claim"]
+    system_audits["双 shadow + 独立来源/专业核验<br/>结构与质量 × 成功目标一致性"]
+    system_change["需求变化雷达 · 精确失效传播<br/>参数 diff → 证据引用 → 最小重验范围"]
+    system_authorized["授权软件研究 · 专业可选单元<br/>结构还原 / 合法测试 / 兼容性证据"]
+    system_repo_research["PavedPath · 开源方案证据链<br/>本地问题 → repo/issue/PR → 最小验证"]
+    system_resources -- "资料→约束" --> system_goal
+    system_goal -- "契约" --> system_compiler
+    system_compiler -- "蓝图候选" --> system_domain
+    system_cockpit -- "人机协作" --> system_meeting
+    system_meeting -- "确认 plan_hash" --> system_domain
+    system_notes -. "决定上下文" .-> system_meeting
+    system_domain -- "仅可派发任务" --> system_paperclip
+    system_domain -. "事务 / outbox" .-> system_db
+    system_paperclip -- "TaskContract" --> system_workers
+    system_development -. "已验证适配包" .-> system_workers
+    system_engineering -. "能力绑定" .-> system_workers
+    system_workers -. "暂存→正式对象" .-> system_storage
+    system_workers -- "request_id" --> system_gateway
+    system_gateway -- "总预算共享" --> system_apis
+    system_workers -. "成果 / 实际日志" .-> system_evidence
+    system_storage -. "Manifest" .-> system_evidence
+    system_evidence -- "同源多投影" --> system_outcomes
+    system_evidence -- "冻结证据" --> system_audits
+    system_audits -. "检查事件 / 关卡" .-> system_domain
+    system_evidence -- "参数引用" --> system_change
+    system_change -. "影响 / 重确认" .-> system_domain
+    system_repo_research -. "研究任务/能力面试" .-> system_workers
+    system_authorized -. "授权研究成果" .-> system_outcomes
+  end
+  subgraph evidence_view["需求变化如何影响工程、论文与答辩"]
+    direction TB
+    evidence_requirement_contract["目标契约 v2 → v3<br/>响应时限：200 ms → 100 ms"]
+    evidence_library["文献库 / 学校模板<br/>未引用时限参数 → 保持有效"]
+    evidence_control_algo["控制算法 / 任务调度<br/>直接使用响应时限 → 确定过期"]
+    evidence_cad_interface["CAD 安装/机械接口<br/>安装位置、惯量关联 → 待核对"]
+    evidence_pcb_interface["PCB 采样/通信接口<br/>采样周期、延迟预算 → 待核对"]
+    evidence_plc_project["PLC 原生工程 / 扫描周期<br/>程序时序证书 → 确定过期"]
+    evidence_experiment["端到端实验 / 仿真证据<br/>冻结输入、环境、程序、参数"]
+    evidence_charts["性能图表 / 结果论断<br/>derived_from 实验版本"]
+    evidence_passport["成果护照 / 原生工程包<br/>Manifest + 输入哈希 + CheckRun"]
+    evidence_chapter["论文章节与开题修订<br/>论断引用 evidence_revision"]
+    evidence_slides["答辩 PPT / 视觉故事<br/>同源图表 + 可编辑说明"]
+    evidence_html_story["交互 HTML / 数字样机演示<br/>点论断 → 数据 → 工程 → 决定"]
+    evidence_acceptance["新版本检查 + 用户验收<br/>历史有效；新版本单独确认"]
+    evidence_requirement_contract -- "uses_parameter" --> evidence_control_algo
+    evidence_requirement_contract -. "影响核对" .-> evidence_cad_interface
+    evidence_requirement_contract -. "影响核对" .-> evidence_pcb_interface
+    evidence_requirement_contract -- "uses_parameter" --> evidence_plc_project
+    evidence_control_algo -- "程序版本" --> evidence_experiment
+    evidence_cad_interface -. "接口证据" .-> evidence_experiment
+    evidence_pcb_interface -. "接口证据" .-> evidence_experiment
+    evidence_plc_project -- "时序日志" --> evidence_experiment
+    evidence_experiment -- "derived_from" --> evidence_charts
+    evidence_experiment -- "Manifest" --> evidence_passport
+    evidence_charts -- "supports" --> evidence_chapter
+    evidence_charts -- "supports" --> evidence_slides
+    evidence_charts -- "supports" --> evidence_html_story
+    evidence_passport -- "文件版本" --> evidence_acceptance
+    evidence_chapter -- "文件hash" --> evidence_acceptance
+    evidence_slides -- "文件hash" --> evidence_acceptance
+    evidence_html_story -- "图谱版本" --> evidence_acceptance
+  end
+  subgraph recovery_view["请求有限重试 · 业务暂停与人工恢复"]
+    direction TB
+    recovery_run["当前 TaskRun / Operation Ledger<br/>冻结输入与 PlanVersion"]
+    recovery_api_error["API 请求故障<br/>429 / 可恢复5xx / 连接断流"]
+    recovery_business_error["业务 / 工具 / 审查失败<br/>漏译 / 缺文件 / 编译 / 检查未通过"]
+    recovery_api_budget["统一预算 · 总3次 / 90秒<br/>初次请求计入总次数"]
+    recovery_committed["完整响应 · 去重后提交一次<br/>部分流与重复tool_call_id隔离"]
+    recovery_paused["保存现场 · PAUSED_FAILED<br/>checkpoint / 日志 / 已有文件 / 依赖"]
+    recovery_notify["本机工单 + 可选手机通知<br/>投递/失败/已查看分别记录"]
+    recovery_human["人工处理 + 决策留痕<br/>修API / 补资料 / 修环境 / 改计划"]
+    recovery_resume_gate["恢复关卡 · 版本与外部状态核对<br/>Plan / 输入 / 依赖 / 能力 / 锁"]
+    recovery_run -- "请求异常" --> recovery_api_error
+    recovery_run -- "业务失败" --> recovery_business_error
+    recovery_api_error -- "唯一预算" --> recovery_api_budget
+    recovery_api_budget -- "完整通过" --> recovery_committed
+    recovery_api_budget -. "耗尽 / 未知" .-> recovery_paused
+    recovery_business_error -- "立即暂停" --> recovery_paused
+    recovery_paused -- "outbox" --> recovery_notify
+    recovery_notify -- "明确处理" --> recovery_human
+    recovery_human -- "ResumeRequest" --> recovery_resume_gate
+    recovery_resume_gate -. "新attempt / 真resume" .-> recovery_run
+  end
+  classDef state fill:#e9f2fa,stroke:#3167a4,color:#302d45;
+  classDef source fill:#e8ecfd,stroke:#6053bc,color:#302d45;
+  classDef evidence fill:#e9f5f2,stroke:#287c75,color:#302d45;
+  class system_compiler,system_domain,system_workers,recovery_run,recovery_notify state;
+  class system_resources,system_goal,system_cockpit,system_meeting,system_notes,system_paperclip,system_development,system_engineering,system_authorized,system_repo_research,evidence_requirement_contract,evidence_cad_interface,evidence_pcb_interface,recovery_human source;
+  class system_evidence,system_change,evidence_control_algo,evidence_plc_project,evidence_experiment,evidence_charts,recovery_committed evidence;

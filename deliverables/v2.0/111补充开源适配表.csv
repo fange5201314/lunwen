@@ -1,0 +1,15 @@
+﻿repo,source_ids,module,recipes,commit,license,runtime_verified,reuse,validation
+liu-zhengdong/pi-shadow-mind,CL-0004,两名持续职责审计者：结构质量与目标一致性,goal；spec,dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,作者自报成功而目标缺一文件时审计失败；旧generation报告不能覆盖新结论
+xiaoyangtx996/goalcraft-skill,CL-0020,目标整理Agent只生成填实契约并交执行者,goal,8b7041b9849a0c13eaa9d919848f7d06b4b2f994,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,不存在的验证命令/占位路径使编译blocked；可观察标准显示给评审者
+uvwt/agentdock,CL-0026,设备能力员封装文件/命令/Git/MCP/Skill调用,cockpit,a19d133768fd95d366c36ec6e0839d41311855ca,Apache-2.0,False,固定版本协议/方法或候选接口；具体执行接缝待自测,输出文件实际存在、边界路径正确、撤销lease后旧回调拒收
+QingYunA/answer-me-with-html,CL-0009,结果解释Agent输出内容草稿，固定工具渲染交互页,research；twin；defense,c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,缺panel不改文件；示例数字明确模拟；输出页必须绑定产物版本
+JingxuanKang/cospace,CL-0016,共享空间适配员提供文件/会话/成员标识与可撤销访问,cockpit,e3ff959950c4c94797147b074662659ac75598fd,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,离线接手可找回相同方案版本；成员撤销后不能继续提交
+Jia-Ethan/pavedpath-code,CL-0023,工程路径研究员在能力缺口/版本卡点时调查接口与已修复路径,spec；software-lab,97a319fcfd3f9b68976690e04f3b511d6171a300,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,低匹配热门仓库被拒绝；关键claim由主控复核；结果不得只是链接列表
+boyang-hu/website-rebuild-skill,CL-0013,界面证据Agent建立只读快照和模块来源映射,software-lab,830647fbe4e31cda85319df69b48514bd224ad79,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,已知页面点击/键盘行为与组件规格一致；每个模块有文件证据
+newliver666/apk-reverse,CL-0014,安卓专项Agent分析自有或有授权APK的结构/接口/数据流,software-lab,7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,静态结论有代码位置，运行结论由自有测试样本确认
+gamecrafters-io/base-ui,CL-0021；CL-0022,组件作者按ThemeProvider/表单/预览组件实现一致界面；来源档案员保留与CL-0021同源关系,defense,f23322221a51c19a747c8a27e0b6e75bd674efc5,MIT,False,固定版本协议/方法或候选接口；具体执行接缝待自测,主题切换、表单键盘、窄屏验证；不能把Primer相似风格写成官方Primer；组合编译只加载一个base-ui能力实现
+yyjeqhc/webcodex,CL-0025,远程执行适配员接MCP Server/Runner能力与文件事件,cockpit,203c65bca3bf4f9c24bc9590131c82d1c639e960,Apache-2.0,False,固定版本协议/方法或候选接口；具体执行接缝待自测,断流/Runner失联显式失败；WebCodex与AgentDock按节点选其一避免重复执行
+QAbot-zh/citation-checker,CL-0019,文献方法员+引用核验员+论证审计员分别管理元数据、来源与论证,research,eb34cfaad861b3d1db32f0ca694ac8d380bb5d26,未在常见根路径取得；待核对,False,固定版本协议/方法或候选接口；具体执行接缝待自测,Crossref/OpenAlex分歧标待核验；不能把max评分当双源一致；无全文不冒称全文翻译
+pengsida/learning_research,CL-0019,文献方法员+引用核验员+论证审计员分别管理元数据、来源与论证,research,001978e4bc2ad79f670dc44ec11816e1d9c4c610,未在常见根路径取得；待核对,False,固定版本协议/方法或候选接口；具体执行接缝待自测,Crossref/OpenAlex分歧标待核验；不能把max评分当双源一致；无全文不冒称全文翻译
+MLNLP-World/Paper-Writing-Tips,CL-0019,文献方法员+引用核验员+论证审计员分别管理元数据、来源与论证,research,50712564062249b28b8493ebdc35f8b3a3b88512,未在常见根路径取得；待核对,False,固定版本协议/方法或候选接口；具体执行接缝待自测,Crossref/OpenAlex分歧标待核验；不能把max评分当双源一致；无全文不冒称全文翻译
+Leey21/awesome-ai-research-writing,CL-0019,文献方法员+引用核验员+论证审计员分别管理元数据、来源与论证,research,df0af726a79109b8760c1b80d5dfc36ed44a6f1f,未在常见根路径取得；待核对,False,固定版本协议/方法或候选接口；具体执行接缝待自测,Crossref/OpenAlex分歧标待核验；不能把max评分当双源一致；无全文不冒称全文翻译

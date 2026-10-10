@@ -1,0 +1,37 @@
+{
+  "document": "系统开发任务流转与工具链验证.pdf",
+  "pages": 34,
+  "bytes": 3708491,
+  "sha256": "a3884612fd645136eddc07b8c6a2db05fea90a6bd6a3e561fc717ccd9cacb261",
+  "role": "补充讨论资料，提炼需求与比较方案，非执行授权",
+  "private_original_published": false,
+  "design_version": "3.0",
+  "use_pages": [
+    6,
+    7,
+    12,
+    13,
+    14,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "corrected_mappings": [
+    "Mycel CL-0267, not CL-0266",
+    "GH-005 is Turnstile, not Rovai",
+    "CL-0545 identity not established as Paperclip"
+  ]
+}

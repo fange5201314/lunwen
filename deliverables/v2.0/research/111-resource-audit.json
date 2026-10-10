@@ -1,0 +1,2016 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-10-09",
+  "selection_rule": "解码Clippings原笔记文件名以111开头，非GH/CL/C编号111；保留同源重复来源",
+  "statistics": {
+    "priority_rows": 23,
+    "deduplicated_themes": 22,
+    "same_source_duplicate_groups": 1,
+    "existing_curated_35_direct_repo_matches": 3,
+    "existing_direct_matched_repos": [
+      "mosonlab/anneal",
+      "murray17/rovai-ai",
+      "vastsa/pi-desktop"
+    ],
+    "new_readonly_repo_checks": 14,
+    "core_protocol_contracts": 12,
+    "recipes": 7,
+    "runtime_integrations_verified": 0,
+    "recipe_reference_source": "最终7套fusion-blueprints",
+    "github_repo_leads": 25,
+    "source_primary_repo_leads": 22
+  },
+  "join_method": "以decoded_filename将CL台账与C非GitHub来源索引匹配，不按数字ID匹配",
+  "metadata_repairs": [
+    {
+      "id": "CL-0006",
+      "fields": {
+        "name": {
+          "before": "image2 直出答辩/学术PPT 焚诀 \\",
+          "after": "image2 直出答辩/学术PPT 焚诀 | Prompt is all you need"
+        },
+        "summary": {
+          "before": "Prompt is all you need",
+          "after": "语义核对：用提示词组织学术演示图像与页面内容。"
+        },
+        "interfaces": {
+          "before": "语义核对：用提示词组织学术演示图像与页面内容。",
+          "after": "API"
+        },
+        "evidence": {
+          "before": "API",
+          "after": "用户使用待核对"
+        }
+      },
+      "cause": "原table parser split(\"|\")误切Markdown转义管道或未解码转义标记；应按非转义管道分割"
+    },
+    {
+      "id": "CL-0015",
+      "fields": {
+        "name": {
+          "before": "【开源】群聊式多 Agent 工作台 \\",
+          "after": "【开源】群聊式多 Agent 工作台 | Rovai 0.3 更新：使命板、远程连接与实时群聊"
+        },
+        "summary": {
+          "before": "Rovai 0.3 更新：使命板、远程连接与实时群聊",
+          "after": "语义核对：帖子描述使命板、实时群聊、远程连接及 Linux Server 路线。"
+        },
+        "interfaces": {
+          "before": "语义核对：帖子描述使命板、实时群聊、远程连接及 Linux Server 路线。",
+          "after": "未提取"
+        },
+        "evidence": {
+          "before": "未提取",
+          "after": "用户使用待核对"
+        }
+      },
+      "cause": "原table parser split(\"|\")误切Markdown转义管道或未解码转义标记；应按非转义管道分割"
+    },
+    {
+      "id": "CL-0024",
+      "fields": {
+        "name": {
+          "before": "\\[开源推广\\] CF过盾 SKILL",
+          "after": "[开源推广] CF过盾 SKILL"
+        }
+      },
+      "cause": "原table parser split(\"|\")误切Markdown转义管道或未解码转义标记；应按非转义管道分割"
+    },
+    {
+      "id": "CL-0025",
+      "fields": {
+        "name": {
+          "before": "\\[开源推广\\] webcodex v0.4.6发布，一款自我迭代的线上mcp工具",
+          "after": "[开源推广] webcodex v0.4.6发布，一款自我迭代的线上mcp工具"
+        }
+      },
+      "cause": "原table parser split(\"|\")误切Markdown转义管道或未解码转义标记；应按非转义管道分割"
+    }
+  ],
+  "evidence_limit": "帖子题名/摘要为资料线索；本次读取固定提交README与核心协议，未安装或执行外部项目；核心方法映射进原型/契约，不能视为生产接入。",
+  "recipes": [
+    {
+      "id": "goal",
+      "name": "目标契约工厂",
+      "primary_ids": [
+        "CL-0020",
+        "CL-0004",
+        "CL-0012"
+      ],
+      "combine_with": [
+        "xiaoyangtx996/goalcraft-skill",
+        "liu-zhengdong/pi-shadow-mind",
+        "czm15053/write-notes-like-deepseek",
+        "paperclipai/paperclip"
+      ],
+      "new_behavior": "Goalcraft 拆目标，双 Shadow 审计分别对结构和目标发问，Notes 记录被否决理由。下一位 Agent 接到的是有效决定与证据包。",
+      "agents": [
+        "目标整理员",
+        "开源路径研究员",
+        "计划编译员",
+        "开发执行员",
+        "工程质量审计员",
+        "目标一致性审计员",
+        "决策档案员"
+      ],
+      "inputs": [
+        "任务书版本",
+        "学校验收标准",
+        "已批准目标",
+        "工具能力自测结果"
+      ],
+      "outputs": [
+        "goal-contract.json",
+        "task-dag.json",
+        "independent-audit.json",
+        "decision-diff.json"
+      ],
+      "proof": "漏一个必交文件或引用一个不存在的验证命令时，编译必须 blocked；作者成功不覆盖独立审计失败。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#goal"
+    },
+    {
+      "id": "cockpit",
+      "name": "共享驾驶舱",
+      "primary_ids": [
+        "CL-0016",
+        "CL-0010",
+        "CL-0015",
+        "CL-0025",
+        "CL-0026"
+      ],
+      "combine_with": [
+        "paperclipai/paperclip",
+        "vastsa/PI-Desktop",
+        "murray17/rovai-ai",
+        "uvwt/agentdock"
+      ],
+      "new_behavior": "Co-Space 的共享空间 + PI 子 Agent 可视化 + Rovai 两轮会议，工作站保存唯一任务状态；Paperclip 唯一委派入口。桌面端只提供执行与观察。",
+      "agents": [
+        "会诊主持人",
+        "领域专家",
+        "模型路由员",
+        "远程执行员",
+        "版本接手员",
+        "审核员"
+      ],
+      "inputs": [
+        "批准方案版本",
+        "共享context-manifest",
+        "设备能力注册",
+        "任务lease与输出目录"
+      ],
+      "outputs": [
+        "meeting-decision.json",
+        "handoff-bundle.json",
+        "native-artifact-manifest.json",
+        "run-events.jsonl"
+      ],
+      "proof": "断开执行端后同一任务只允许持有新lease的实例提交；旧回调不得写成功；模型网关/远程工具都不能另派业务任务。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#cockpit"
+    },
+    {
+      "id": "research",
+      "name": "研究证据活页",
+      "primary_ids": [
+        "CL-0019",
+        "CL-0009",
+        "CL-0012"
+      ],
+      "combine_with": [
+        "dr-dumpling/paper-search-cli",
+        "docling-project/docling",
+        "shilong20/getbib",
+        "iOfficeAI/OfficeCLI",
+        "the-shy123456/thesis-docx"
+      ],
+      "new_behavior": "Zotero/RSS 线索驱动 Paper Search 检索，Docling 切成可定位的证据单元，OfficeCLI 与 HTML 共享同一段落绑定。改一个结论即可找到使用它的章节。",
+      "agents": [
+        "文献检索员",
+        "全文解析员",
+        "引用核验员",
+        "论证作者",
+        "图表编辑员",
+        "答辩导演",
+        "模拟评委",
+        "交付审计员"
+      ],
+      "inputs": [
+        "论文DOI与全文",
+        "工程原始数据",
+        "章节目标",
+        "学校PPT模板"
+      ],
+      "outputs": [
+        "evidence-graph.json",
+        "chapter-patches.json",
+        "editable-deck.pptx",
+        "defense-brief.html",
+        "question-evidence-map.json"
+      ],
+      "proof": "改变实验参数后，章节/图表/PPT对应引用进入 stale；正文数值与表格应一致。图像生成不得产出测量值或将图片文字当可编辑PPT。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#research"
+    },
+    {
+      "id": "twin",
+      "name": "跨专业数字样机",
+      "primary_ids": [
+        "CL-0005",
+        "CL-0008",
+        "CL-0006",
+        "CL-0009"
+      ],
+      "combine_with": [
+        "Cai-aa/CAD-Agent-Hub",
+        "bulaofen0036-coder/TIA_Portal_Openness_MCP",
+        "johannesPettersson80/codesys-mcp-toolkit",
+        "jgraph/drawio-mcp",
+        "iOfficeAI/OfficeCLI"
+      ],
+      "new_behavior": "把 Blender 场景作为可视化外壳，CAD 尺寸、PCB 引脚、PLC I/O 共享 InterfaceContract。并行产物先汇合做接口检查，再给章节与答辩同一份实验证据。",
+      "agents": [
+        "机械设计员",
+        "控制工程师",
+        "电子设计员",
+        "仿真验证员",
+        "Blender演示员",
+        "尺寸一致性审计员"
+      ],
+      "inputs": [
+        "param-manifest.json",
+        "设计约束",
+        "物料表",
+        "控制状态机",
+        "验证场景"
+      ],
+      "outputs": [
+        "native CAD/PLC/PCB工程",
+        "solver-or-compile-report.json",
+        "presentation-scene.blend",
+        "animation-evidence-map.json"
+      ],
+      "proof": "修改尺寸后演示模型与原生图纸需同步；渲染漂亮不等于CAD重开/求解/PLC互锁/PCB ERC-DRC通过。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#twin"
+    },
+    {
+      "id": "spec",
+      "name": "规格开发流水线",
+      "primary_ids": [
+        "CL-0011",
+        "CL-0023",
+        "CL-0004",
+        "CL-0012"
+      ],
+      "combine_with": [
+        "mosonlab/anneal",
+        "mindfold-ai/Trellis",
+        "liu-zhengdong/pi-shadow-mind",
+        "czm15053/write-notes-like-deepseek"
+      ],
+      "new_behavior": "GitHub Solution Research 先交 repo/issue/PR/代码证据，Anneal 作为唯一开发流水线，Trellis 只提供规格和上下文格式；双 Shadow 独立审计后写 Notes。",
+      "agents": [
+        "目标整理员",
+        "开源路径研究员",
+        "计划编译员",
+        "开发执行员",
+        "工程质量审计员",
+        "目标一致性审计员",
+        "决策档案员"
+      ],
+      "inputs": [
+        "任务书版本",
+        "学校验收标准",
+        "已批准目标",
+        "工具能力自测结果"
+      ],
+      "outputs": [
+        "goal-contract.json",
+        "task-dag.json",
+        "independent-audit.json",
+        "decision-diff.json"
+      ],
+      "proof": "漏一个必交文件或引用一个不存在的验证命令时，编译必须 blocked；作者成功不覆盖独立审计失败。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#spec"
+    },
+    {
+      "id": "defense",
+      "name": "证据答辩剧场",
+      "primary_ids": [
+        "CL-0006",
+        "CL-0009",
+        "CL-0017",
+        "CL-0021",
+        "CL-0022"
+      ],
+      "combine_with": [
+        "iOfficeAI/OfficeCLI",
+        "the-shy123456/thesis-docx",
+        "tt-a1i/archify",
+        "jgraph/drawio-mcp"
+      ],
+      "new_behavior": "image2 只设计视觉草稿，OfficeCLI 生成可编辑文字与数据图；HTML 做结论→原始证据的点击跳转，UI Guide 与 React 统一阅读层。答辩对手 Agent 只能引用证据提出质疑。",
+      "agents": [
+        "文献检索员",
+        "全文解析员",
+        "引用核验员",
+        "论证作者",
+        "图表编辑员",
+        "答辩导演",
+        "模拟评委",
+        "交付审计员"
+      ],
+      "inputs": [
+        "论文DOI与全文",
+        "工程原始数据",
+        "章节目标",
+        "学校PPT模板"
+      ],
+      "outputs": [
+        "evidence-graph.json",
+        "chapter-patches.json",
+        "editable-deck.pptx",
+        "defense-brief.html",
+        "question-evidence-map.json"
+      ],
+      "proof": "改变实验参数后，章节/图表/PPT对应引用进入 stale；正文数值与表格应一致。图像生成不得产出测量值或将图片文字当可编辑PPT。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#defense"
+    },
+    {
+      "id": "software-lab",
+      "name": "授权软件显微镜",
+      "primary_ids": [
+        "CL-0014",
+        "CL-0013",
+        "CL-0023",
+        "CL-0017"
+      ],
+      "combine_with": [
+        "uvwt/agentdock",
+        "mindfold-ai/Trellis",
+        "liu-zhengdong/pi-shadow-mind"
+      ],
+      "new_behavior": "把 apk-reverse 与网站模块研究作为选装方法，模块树每个推断绑定可见源位置。UI 复现后用事实与目标双审计，输出机制报告与原创实现。",
+      "agents": [
+        "界面证据分析员",
+        "UI规则员",
+        "组件作者",
+        "工程路径研究员",
+        "交互测试员",
+        "平台专项审计员"
+      ],
+      "inputs": [
+        "自有页面/APK",
+        "目标交互场景",
+        "UI约束",
+        "组件版本"
+      ],
+      "outputs": [
+        "module-evidence-map.json",
+        "component-spec.json",
+        "UI patch",
+        "keyboard-mobile-check.json"
+      ],
+      "proof": "每个关键状态能用键盘操作；模块映射有源文件证据；同源React两条只计一项，未知UI Guide源码身份不得虚构。",
+      "final_blueprint_ref": "config/fusion-blueprints.json#software-lab"
+    }
+  ],
+  "reusable_contracts": [
+    {
+      "repo": "xiaoyangtx996/goalcraft-skill",
+      "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+      "path": "SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/SKILL.md",
+      "line_start": 24,
+      "line_end": 30,
+      "section": "五条原则",
+      "short_summary": "目标生成与执行分开；约束填实；成功必须可观察。",
+      "local_mapping": "组合编译器生成 contract，不直接派发；approved 后交唯一业务调度器。",
+      "sha256": "105ee734b0ea5b4e94949c6ae038852f27a0aa46b951fb2c40e4e855a9ebdcee",
+      "runtime_verified": false
+    },
+    {
+      "repo": "xiaoyangtx996/goalcraft-skill",
+      "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+      "path": "SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/SKILL.md",
+      "line_start": 101,
+      "line_end": 110,
+      "section": "交付验收门 G1–G6",
+      "short_summary": "无占位、命令真实、结果可核对、权限诚实；没有用户时限不编造时限。",
+      "local_mapping": "编译结果显示路径/验收/工具自测门禁；缺字段标 blocked，不能输出假通过。",
+      "sha256": "105ee734b0ea5b4e94949c6ae038852f27a0aa46b951fb2c40e4e855a9ebdcee",
+      "runtime_verified": false
+    },
+    {
+      "repo": "xiaoyangtx996/goalcraft-skill",
+      "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+      "path": "references/field-spec.md",
+      "file_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/references/field-spec.md",
+      "line_start": 1,
+      "line_end": 54,
+      "section": "字段说明",
+      "short_summary": "inputs/constraints/success_criteria/short_test/deliverables 各有字段语义。",
+      "local_mapping": "映射输入证据版本、目标路径、验证入口、必交文件与模型预算；金额预算由产品另定义，非上游默认为时限。",
+      "sha256": "b840d0340717736a5cf588e247d1b050491e1f4fb264d87dae850c1840f536f4",
+      "runtime_verified": false
+    },
+    {
+      "repo": "liu-zhengdong/pi-shadow-mind",
+      "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+      "path": "DESIGN.md",
+      "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+      "line_start": 128,
+      "line_end": 150,
+      "section": "工具白名单与写入并发边界",
+      "short_summary": "默认 read/grep/find/ls + report_to_main；工具权限显式；上游没有文件互斥。",
+      "local_mapping": "两名审计者固定只读，生成 findings；实施Agent独占工作树写入权，文档修改经计划节点提交。",
+      "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+      "runtime_verified": false
+    },
+    {
+      "repo": "liu-zhengdong/pi-shadow-mind",
+      "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+      "path": "DESIGN.md",
+      "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+      "line_start": 342,
+      "line_end": 350,
+      "section": "Final response",
+      "short_summary": "审查按 generation 聚合；旧批次失效；并发硬上限；可限定一轮。",
+      "local_mapping": "论文/证据变更提高 review_generation；旧报告不得覆盖新版本；定向复核两名审计者，最多一轮后人工处理。",
+      "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+      "runtime_verified": false
+    },
+    {
+      "repo": "liu-zhengdong/pi-shadow-mind",
+      "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+      "path": "DESIGN.md",
+      "file_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/DESIGN.md",
+      "line_start": 150,
+      "line_end": 152,
+      "section": "report_to_main 与保持沉默",
+      "short_summary": "一次激活最多上报一条意见，保持沉默不表示未执行工作。",
+      "local_mapping": "产品契约要求 explicit passed/failed/blocked；没有报告只能 pending，不能把沉默当验收通过。",
+      "sha256": "e9d0f162507bbe13eb40e0c502cfa1d2aeb1006af893b3366f68790374fe9bb0",
+      "runtime_verified": false
+    },
+    {
+      "repo": "QingYunA/answer-me-with-html",
+      "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+      "path": "skills/answer-me-with-html/SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+      "line_start": 51,
+      "line_end": 85,
+      "section": "内容草稿与CLI呈现",
+      "short_summary": "模型写Markdown内容，CLI确定布局与图坐标；有错误时不生成成功页面。",
+      "local_mapping": "答辩成果卡由结构化内容+固定模板渲染；避免每个Agent重复写样式。原型展示方法映射，未执行该CLI。",
+      "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+      "runtime_verified": false
+    },
+    {
+      "repo": "QingYunA/answer-me-with-html",
+      "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+      "path": "skills/answer-me-with-html/SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+      "line_start": 89,
+      "line_end": 98,
+      "section": "单panel更新",
+      "short_summary": "HTML保留 #am-source；patch按panel更新；找不到panel不改文件。",
+      "local_mapping": "证据变更仅触发受影响章节/讲稿/图卡；保留内容源与不可变产物版本。",
+      "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+      "runtime_verified": false
+    },
+    {
+      "repo": "QingYunA/answer-me-with-html",
+      "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+      "path": "skills/answer-me-with-html/SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/skills/answer-me-with-html/SKILL.md",
+      "line_start": 145,
+      "line_end": 153,
+      "section": "真实代码、变更视图、数据标识",
+      "short_summary": "+/-/~变更标记生成前后视图；src/lines引用真实代码；草图明确标sketch；不编数据。",
+      "local_mapping": "资源融合画布显示新增/移除依赖，示例数值标模拟；每个结果绑定文件版本和证据。",
+      "sha256": "015c4e9cb8c5e610046764b37808d1f60a1756c70b4cb40117bd344b6cc4e8b4",
+      "runtime_verified": false
+    },
+    {
+      "repo": "Jia-Ethan/pavedpath-code",
+      "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+      "path": "SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+      "line_start": 25,
+      "line_end": 37,
+      "section": "Default Workflow",
+      "short_summary": "先定义本地症状与版本，再读issue/PR/源码；提取最小适配并本地验证。",
+      "local_mapping": "缺能力或适配失败产生 investigation unit，输出匹配条件、最小改动、验证计划；不自主改技术路线。",
+      "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+      "runtime_verified": false
+    },
+    {
+      "repo": "Jia-Ethan/pavedpath-code",
+      "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+      "path": "SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+      "line_start": 57,
+      "line_end": 63,
+      "section": "控制者对子Agent证据复核",
+      "short_summary": "子Agent分面只读研究，结果去重，控制者直接核验最强论断。",
+      "local_mapping": "工程检索组分接口/许可证/版本三个研究角色；主控输出 verified_claims 和 rejected_options。",
+      "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+      "runtime_verified": false
+    },
+    {
+      "repo": "Jia-Ethan/pavedpath-code",
+      "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+      "path": "SKILL.md",
+      "file_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/SKILL.md",
+      "line_start": 94,
+      "line_end": 121,
+      "section": "Evidence Standard / Output Contract",
+      "short_summary": "强证据有匹配条件、适用性、拒绝理由与本地验证；链接和Stars不能代替结论。",
+      "local_mapping": "资源卡区分来源线索/固定文档核对/运行通过；组合方案必须携带 required_validation。",
+      "sha256": "81605269429e265f75f5c29a4017ad27459209edbf10fe47ef0b674fee492685",
+      "runtime_verified": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "CL-0004",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "双影审计",
+      "title": "GPT 写的烂代码终于找到根治手段了哈哈哈",
+      "decoded_filename": "111GPT 写的烂代码终于找到根治手段了哈哈哈.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0004"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2759945/2"
+      ],
+      "ledger_summary": "规则提取：大幅减少我的精力消耗。我现在有两个shadow mind， 一个是【代码与项目结构审计者】 负责检查代码坏味道 一个是【成功目标一致性审计者】 负责看代码有没有满足原始的要求。",
+      "interfaces": "未提取",
+      "source_status": "主索引 CL-0004；同来源 1 份；README GH-013；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "liu-zhengdong/pi-shadow-mind",
+          "url": "https://github.com/liu-zhengdong/pi-shadow-mind",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-013",
+          "commit": "dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c",
+          "readme_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/liu-zhengdong/pi-shadow-mind/dbf7e3fb7d6fd6cd744b0ba3ccbd3a64d99c2e5c/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "liuzhengdongfortest/pi-shadow-mind",
+          "url": "https://github.com/liuzhengdongfortest/pi-shadow-mind",
+          "relation": "secondary_source_repo_lead",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入",
+          "relation_note": "来源索引里提及的插件/别名/附属线索；未确认主实现或版本关系"
+        }
+      ],
+      "recipes": [
+        "goal",
+        "spec"
+      ],
+      "agent_responsibility": "两名持续职责审计者：结构质量与目标一致性",
+      "input_contract": "主任务净化轨迹、目标契约、产物版本",
+      "output_contract": "独立findings与显式passed/failed/blocked",
+      "previous_usage_gap": "上一版没有将双Shadow协议接到完成关卡；新增独立终检和版本失效",
+      "required_validation": "作者自报成功而目标缺一文件时审计失败；旧generation报告不能覆盖新结论",
+      "missing_information": [
+        "Pi插件实际接入自测",
+        "审计白名单与一次运行上限"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "GPT 写的烂代码终于找到根治手段了哈哈哈",
+      "source_index_id": "C0004",
+      "repos": [
+        "liu-zhengdong/pi-shadow-mind",
+        "liuzhengdongfortest/pi-shadow-mind"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "两名持续职责审计者：结构质量与目标一致性",
+      "input": "主任务净化轨迹、目标契约、产物版本",
+      "output": "独立findings与显式passed/failed/blocked",
+      "gaps": [
+        "Pi插件实际接入自测",
+        "审计白名单与一次运行上限"
+      ],
+      "validation": "作者自报成功而目标缺一文件时审计失败；旧generation报告不能覆盖新结论",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0005",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Blender工程演示",
+      "title": "GPT6的强大建模功能，革完了程序员的命，开始快速迭代革建模人的命了？？？人傻了，进来看看拖拉机吧",
+      "decoded_filename": "111GPT6的强大建模功能，革完了程序员的命，开始快速迭代革建模人的命了？？？人傻了，进来看看拖拉机吧 1.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0005"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2876986/2"
+      ],
+      "ledger_summary": "语义核对：作者展示 Blender CLI 建模、渲染和动画，原始模型另有链接。",
+      "interfaces": "CLI",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [],
+      "recipes": [
+        "twin"
+      ],
+      "agent_responsibility": "演示Agent消费工程参数生成模型/渲染/动画",
+      "input_contract": "参数清单、原生工程导出、动作场景",
+      "output_contract": "blend/图像/动画及参数来源映射",
+      "previous_usage_gap": "上一版专业设计仅原生工程；新增可演示数字孪生与答辩素材联动",
+      "required_validation": "尺寸抽样与CAD一致；动作帧对应控制场景",
+      "missing_information": [
+        "原帖模型/媒体未附",
+        "Blender版本与CLI脚本",
+        "标题模型名仅是帖子原题非配置能力"
+      ],
+      "implementation_status": "待补证 / 设计候选；离线原型演示不代表执行接入",
+      "name": "GPT6的强大建模功能，革完了程序员的命，开始快速迭代革建模人的命了？？？人傻了，进来看看拖拉机吧",
+      "source_index_id": "C0005",
+      "repos": [],
+      "status": "待补证 / 设计候选",
+      "use": "演示Agent消费工程参数生成模型/渲染/动画",
+      "input": "参数清单、原生工程导出、动作场景",
+      "output": "blend/图像/动画及参数来源映射",
+      "gaps": [
+        "原帖模型/媒体未附",
+        "Blender版本与CLI脚本",
+        "标题模型名仅是帖子原题非配置能力"
+      ],
+      "validation": "尺寸抽样与CAD一致；动作帧对应控制场景",
+      "adoption_category": "needs_evidence"
+    },
+    {
+      "id": "CL-0006",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "image2答辩提示",
+      "title": "image2 直出答辩/学术PPT 焚诀 | Prompt is all you need",
+      "decoded_filename": "111image2 直出答辩学术PPT 焚诀  Prompt is all you need.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0008"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2326431"
+      ],
+      "ledger_summary": "语义核对：用提示词组织学术演示图像与页面内容。",
+      "interfaces": "API",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [],
+      "recipes": [
+        "twin",
+        "defense"
+      ],
+      "agent_responsibility": "答辩导演整理问题、结论、图表与讲述顺序",
+      "input_contract": "真实章节证据、学校PPT模板、讲述时间偏好",
+      "output_contract": "页面脚本/可编辑PPT内容与独立概念插图",
+      "previous_usage_gap": "上一版未把创意演示提示融合进证据驱动的PPT生产",
+      "required_validation": "图内不得虚构实验数字；文字仍可编辑；图片概念与数据图区分",
+      "missing_information": [
+        "原提示全文/图片未附",
+        "用户可用图像API名称、价格、输入版权"
+      ],
+      "implementation_status": "待补证 / 设计候选；离线原型演示不代表执行接入",
+      "name": "image2 直出答辩/学术PPT 焚诀 | Prompt is all you need",
+      "source_index_id": "C0008",
+      "repos": [],
+      "status": "待补证 / 设计候选",
+      "use": "答辩导演整理问题、结论、图表与讲述顺序",
+      "input": "真实章节证据、学校PPT模板、讲述时间偏好",
+      "output": "页面脚本/可编辑PPT内容与独立概念插图",
+      "gaps": [
+        "原提示全文/图片未附",
+        "用户可用图像API名称、价格、输入版权"
+      ],
+      "validation": "图内不得虚构实验数字；文字仍可编辑；图片概念与数据图区分",
+      "adoption_category": "needs_evidence"
+    },
+    {
+      "id": "CL-0007",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Keysmith响应研究",
+      "title": "Keysmith系列更新：Keysmith-Switch，更简单易用的模型破解工具",
+      "decoded_filename": "111Keysmith系列更新：Keysmith-Switch，更简单易用的模型破解工具.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0006"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2984494"
+      ],
+      "ledger_summary": "规则提取：Keysmith的诞生比较传奇，我的本意是帮助大家在日常使用agent的过程中，让coding agent减少过度拒绝的问题。 所以才有了Keysmith Codex，Grok，Glm等项目。但是老用户和对模型攻防稍微了解的用户应该是知道，大模型的防护层是adpative，攻击也是adpative的。也就是说 不同的时间点，不同模型很难做到攻击的迁移性。因此",
+      "interfaces": "API",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "Jia-Ethan/keysmith-switch",
+          "url": "https://github.com/Jia-Ethan/keysmith-switch",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        },
+        {
+          "repo": "Jia-Ethan/keysmith-switch-releases",
+          "url": "https://github.com/Jia-Ethan/keysmith-switch-releases",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        },
+        {
+          "repo": "Jia-Ethan/keysmith-switch-extensions",
+          "url": "https://github.com/Jia-Ethan/keysmith-switch-extensions",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        }
+      ],
+      "recipes": [],
+      "agent_responsibility": "响应分类员研究正常任务响应与失败边界",
+      "input_contract": "任务响应、模型/端点版本、合法任务约束",
+      "output_contract": "拒绝/权限/内容质量分类报告",
+      "previous_usage_gap": "上一版未明确该线索在API恢复中的关系；增加研究登记且不作为首版恢复服务",
+      "required_validation": "分类不把安全拒绝当传输故障；恢复仍用有界API重试",
+      "missing_information": [
+        "源代码/发布包/拓展三者身份与许可证未核",
+        "不执行拓展提示或绕过机制"
+      ],
+      "implementation_status": "索引保留 / 暂缓主链；离线原型演示不代表执行接入",
+      "name": "Keysmith系列更新：Keysmith-Switch，更简单易用的模型破解工具",
+      "source_index_id": "C0006",
+      "repos": [
+        "Jia-Ethan/keysmith-switch",
+        "Jia-Ethan/keysmith-switch-releases",
+        "Jia-Ethan/keysmith-switch-extensions"
+      ],
+      "status": "索引保留 / 暂缓主链",
+      "use": "响应分类员研究正常任务响应与失败边界",
+      "input": "任务响应、模型/端点版本、合法任务约束",
+      "output": "拒绝/权限/内容质量分类报告",
+      "gaps": [
+        "源代码/发布包/拓展三者身份与许可证未核",
+        "不执行拓展提示或绕过机制"
+      ],
+      "validation": "分类不把安全拒绝当传输故障；恢复仍用有界API重试",
+      "adoption_category": "deferred",
+      "indexed_use": "采集受阻/模型响应研究与人工接管线索，非首版自动执行能力"
+    },
+    {
+      "id": "CL-0008",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "PCB专业分支",
+      "title": "PCB skill 现已开源！让 ai 工作 24h 给你造块板子出来",
+      "decoded_filename": "111PCB skill 现已开源！让 ai 工作 24h 给你造块板子出来.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0007"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2875338"
+      ],
+      "ledger_summary": "规则提取：正文线索不足；详见保存的原文",
+      "interfaces": "未提取",
+      "source_status": "资料问题已登记；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [],
+      "recipes": [
+        "twin"
+      ],
+      "agent_responsibility": "电子设计Agent负责约束、电路/BOM/布局，审计Agent独立ERC/DRC",
+      "input_contract": "电气需求、器件库、设计规则",
+      "output_contract": "原生PCB/原理图/BOM/ERC-DRC报告",
+      "previous_usage_gap": "上一版资源摘要不足，现显式设计PCB适配契约与激活缺口",
+      "required_validation": "可重开原生工程；ERC-DRC、连通与BOM核对后才能交付",
+      "missing_information": [
+        "索引仅Comments、未提供对应GH仓库",
+        "原帖主文/工具和EDA版本/规则未附"
+      ],
+      "implementation_status": "待补证 / 设计候选；离线原型演示不代表执行接入",
+      "name": "PCB skill 现已开源！让 ai 工作 24h 给你造块板子出来",
+      "source_index_id": "C0007",
+      "repos": [],
+      "status": "待补证 / 设计候选",
+      "use": "电子设计Agent负责约束、电路/BOM/布局，审计Agent独立ERC/DRC",
+      "input": "电气需求、器件库、设计规则",
+      "output": "原生PCB/原理图/BOM/ERC-DRC报告",
+      "gaps": [
+        "索引仅Comments、未提供对应GH仓库",
+        "原帖主文/工具和EDA版本/规则未附"
+      ],
+      "validation": "可重开原生工程；ERC-DRC、连通与BOM核对后才能交付",
+      "adoption_category": "needs_evidence"
+    },
+    {
+      "id": "CL-0009",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "HTML成果解释",
+      "title": "【answer-me-with-html】一天 1k star ！ 这个Skill 让 Agent 输出可视化结果！",
+      "decoded_filename": "111【answer-me-with-html】一天 1k star ！ 这个Skill 让 Agent 输出可视化结果！.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0010"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2984649"
+      ],
+      "ledger_summary": "语义核对：以 HTML 呈现 Agent 输出和可视化结果。",
+      "interfaces": "CLI、Skill",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "QingYunA/answer-me-with-html",
+          "url": "https://github.com/QingYunA/answer-me-with-html",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669",
+          "readme_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/QingYunA/answer-me-with-html/c0a2e3e7dc5d2b51ac71dfd33eddfa4a26c68669/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "research",
+        "twin",
+        "defense"
+      ],
+      "agent_responsibility": "结果解释Agent输出内容草稿，固定工具渲染交互页",
+      "input_contract": "契约/证据/日志/结构化决策",
+      "output_contract": "离线HTML与可追溯内容源",
+      "previous_usage_gap": "从泛化HTML参考变为成果解释层：局部更新、前后对照、真实来源引用",
+      "required_validation": "缺panel不改文件；示例数字明确模拟；输出页必须绑定产物版本",
+      "missing_information": [
+        "CLI未运行接入",
+        "固定版本Node20+兼容自测"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【answer-me-with-html】一天 1k star ！ 这个Skill 让 Agent 输出可视化结果！",
+      "source_index_id": "C0010",
+      "repos": [
+        "QingYunA/answer-me-with-html"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "结果解释Agent输出内容草稿，固定工具渲染交互页",
+      "input": "契约/证据/日志/结构化决策",
+      "output": "离线HTML与可追溯内容源",
+      "gaps": [
+        "CLI未运行接入",
+        "固定版本Node20+兼容自测"
+      ],
+      "validation": "缺panel不改文件；示例数字明确模拟；输出页必须绑定产物版本",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0010",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "PI子Agent可视化",
+      "title": "【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了",
+      "decoded_filename": "111【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0009"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2869113"
+      ],
+      "ledger_summary": "语义核对：文内描述会话导入、子 Agent 可视化、不同模型分工和插件系统。",
+      "interfaces": "MCP、Skill",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "vastsa/PI-Desktop",
+          "url": "https://github.com/vastsa/PI-Desktop",
+          "relation": "direct_source_repo",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "7949d6ff693646397828da3ac3f43b4d3f8a111d",
+          "readme_url": "https://raw.githubusercontent.com/vastsa/PI-Desktop/7949d6ff693646397828da3ac3f43b4d3f8a111d/README.md",
+          "runtime_verified": false,
+          "license": "LGPL-3.0",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "vastsa/pi-desktop-plugins",
+          "url": "https://github.com/vastsa/pi-desktop-plugins",
+          "relation": "secondary_source_repo_lead",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入",
+          "relation_note": "来源索引里提及的插件/别名/附属线索；未确认主实现或版本关系"
+        }
+      ],
+      "recipes": [
+        "cockpit"
+      ],
+      "agent_responsibility": "执行宿主适配员接已有会话、插件与多模型分工",
+      "input_contract": "已批准task contract、模型别名、工具权限",
+      "output_contract": "子Agent执行事件与会话接手包",
+      "previous_usage_gap": "原有35已列宿主候选，但未把子Agent树与模型分工画入会诊空间",
+      "required_validation": "会话恢复仅恢复对应task attempt；不生成第二份业务状态",
+      "missing_information": [
+        "插件API/会话导入格式",
+        "LGPL义务与部署方式"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了",
+      "source_index_id": "C0009",
+      "repos": [
+        "vastsa/PI-Desktop",
+        "vastsa/pi-desktop-plugins"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "执行宿主适配员接已有会话、插件与多模型分工",
+      "input": "已批准task contract、模型别名、工具权限",
+      "output": "子Agent执行事件与会话接手包",
+      "gaps": [
+        "插件API/会话导入格式",
+        "LGPL义务与部署方式"
+      ],
+      "validation": "会话恢复仅恢复对应task attempt；不生成第二份业务状态",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0011",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Anneal规格开发",
+      "title": "【开源】你只管写spec，它帮你清空任务看板。一个无人值守AI Agent开发自动流水线的黑灯工厂",
+      "decoded_filename": "111【开源】你只管写spec，它帮你清空任务看板。一个无人值守AI Agent开发自动流水线的黑灯工厂.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0011"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2834795"
+      ],
+      "ledger_summary": "语义核对：项目卡片说明按规格串联规划、评审、实现、验证和合并。",
+      "interfaces": "未提取",
+      "source_status": "主索引 CL-0277；同来源 2 份；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "mosonlab/anneal",
+          "url": "https://github.com/mosonlab/anneal",
+          "relation": "direct_source_repo",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "bfa821b066355dfd321d15e43162a9047cfa4091",
+          "readme_url": "https://raw.githubusercontent.com/mosonlab/anneal/bfa821b066355dfd321d15e43162a9047cfa4091/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "spec"
+      ],
+      "agent_responsibility": "开发流水线执行批准的工作站/适配器规格",
+      "input_contract": "Goalcraft契约、受控开发分支、验收入口",
+      "output_contract": "实现diff、验证报告、待审PR",
+      "previous_usage_gap": "原有35仅独立开发链候选，现连接目标契约与双影审计",
+      "required_validation": "通过开发检查不等于论文/CAD验收通过；合并为待人工批准动作",
+      "missing_information": [
+        "Windows开发路线",
+        "与Trellis一次只选一个主开发链"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【开源】你只管写spec，它帮你清空任务看板。一个无人值守AI Agent开发自动流水线的黑灯工厂",
+      "source_index_id": "C0011",
+      "repos": [
+        "mosonlab/anneal"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "开发流水线执行批准的工作站/适配器规格",
+      "input": "Goalcraft契约、受控开发分支、验收入口",
+      "output": "实现diff、验证报告、待审PR",
+      "gaps": [
+        "Windows开发路线",
+        "与Trellis一次只选一个主开发链"
+      ],
+      "validation": "通过开发检查不等于论文/CAD验收通过；合并为待人工批准动作",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0012",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "DeepSeek式决策记忆",
+      "title": "【开源】像 DeepSeek 团队一样维护项目",
+      "decoded_filename": "111【开源】像 DeepSeek 团队一样维护项目.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0012"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2874256/5"
+      ],
+      "ledger_summary": "语义核对：讨论项目维护、文档和 Agent 经验沉淀。",
+      "interfaces": "未提取",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [],
+      "recipes": [
+        "goal",
+        "research",
+        "spec"
+      ],
+      "agent_responsibility": "决策档案员维护拟议/实施/否决/归档及接手背景",
+      "input_contract": "会议结论、契约/证据版本、否决理由",
+      "output_contract": "有效decisions与handoff manifest",
+      "previous_usage_gap": "原有Notes方法存在，现让组合变更成为可审计的设计决定",
+      "required_validation": "换模型接手先加载有效方案与被否决路线；不会重新猜目标",
+      "missing_information": [
+        "原帖主文少，GH-003 Notes为主题相近候选并非证实同项目",
+        "Notes许可证未明确"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【开源】像 DeepSeek 团队一样维护项目",
+      "source_index_id": "C0012",
+      "repos": [],
+      "status": "设计采用 / 待真实接入",
+      "use": "决策档案员维护拟议/实施/否决/归档及接手背景",
+      "input": "会议结论、契约/证据版本、否决理由",
+      "output": "有效decisions与handoff manifest",
+      "gaps": [
+        "原帖主文少，GH-003 Notes为主题相近候选并非证实同项目",
+        "Notes许可证未明确"
+      ],
+      "validation": "换模型接手先加载有效方案与被否决路线；不会重新猜目标",
+      "related_candidates": [
+        {
+          "repo": "czm15053/write-notes-like-deepseek",
+          "url": "https://github.com/czm15053/write-notes-like-deepseek",
+          "relation": "related_theme_candidate",
+          "existing_35": true,
+          "catalog_id": "GH-003",
+          "commit": "0e8200c0f80d37a1c75e585a65b35401ae198462",
+          "readme_url": "https://raw.githubusercontent.com/czm15053/write-notes-like-deepseek/0e8200c0f80d37a1c75e585a65b35401ae198462/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "deepseek-ai/deepseek-harness",
+          "url": "https://github.com/deepseek-ai/deepseek-harness",
+          "relation": "related_theme_candidate",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "d743267388641bc76f17c45ce8b4c231aed1d32c",
+          "readme_url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/d743267388641bc76f17c45ce8b4c231aed1d32c/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0013",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "网站模块证据",
+      "title": "【开源】复刻网站的焚决来啦！",
+      "decoded_filename": "111【开源】复刻网站的焚决来啦！.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0013"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2834831"
+      ],
+      "ledger_summary": "规则提取：也经常有佬友质疑扒站很容易，你在这儿费这么大劲干什么呢？ 这个skill和扒站不一样的点就是：扒站只能把这个站保存下来，也就是\"它长什么样\"。这个skill想要达成的目标是告诉我们这个站\"它是怎么做到的\"。这个skill最后可以让你拿到的不是一坨压缩JS，而是一个模块树，每个文件头标注它来自源站 bundle 的哪几行，变量名按证据逐个还原，外加一份逆向笔记",
+      "interfaces": "Skill",
+      "source_status": "主索引 CL-0288；同来源 1 份；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "boyang-hu/website-rebuild-skill",
+          "url": "https://github.com/boyang-hu/website-rebuild-skill",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "830647fbe4e31cda85319df69b48514bd224ad79",
+          "readme_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/830647fbe4e31cda85319df69b48514bd224ad79/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/boyang-hu/website-rebuild-skill/830647fbe4e31cda85319df69b48514bd224ad79/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "software-lab"
+      ],
+      "agent_responsibility": "界面证据Agent建立只读快照和模块来源映射",
+      "input_contract": "自有/获允许分析站点文件",
+      "output_contract": "模块图与源文件定位、复现测试",
+      "previous_usage_gap": "上一版未采用模块溯源方法；新增由实现证据驱动组件规格",
+      "required_validation": "已知页面点击/键盘行为与组件规格一致；每个模块有文件证据",
+      "missing_information": [
+        "源站可分析范围",
+        "该课题是否需要严格复刻或仅设计参考"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【开源】复刻网站的焚决来啦！",
+      "source_index_id": "C0013",
+      "repos": [
+        "boyang-hu/website-rebuild-skill"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "界面证据Agent建立只读快照和模块来源映射",
+      "input": "自有/获允许分析站点文件",
+      "output": "模块图与源文件定位、复现测试",
+      "gaps": [
+        "源站可分析范围",
+        "该课题是否需要严格复刻或仅设计参考"
+      ],
+      "validation": "已知页面点击/键盘行为与组件规格一致；每个模块有文件证据",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0014",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "自有安卓课题分析",
+      "title": "【开源】安卓逆向专用skills apk-reverse 基于逆向项目经验总结和提炼",
+      "decoded_filename": "111【开源】安卓逆向专用skills apk-reverse 基于逆向项目经验总结和提炼.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0014"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2923820"
+      ],
+      "ledger_summary": "规则提取：出来一套apk逆向思路 方向 脚本 工具等等方面的辅助型 skills 用于提高逆向效率和成功率",
+      "interfaces": "Skill",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "newliver666/apk-reverse",
+          "url": "https://github.com/newliver666/apk-reverse",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd",
+          "readme_url": "https://raw.githubusercontent.com/newliver666/apk-reverse/7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/newliver666/apk-reverse/7b6c6932a95f03d778e81e5e1a2cbf6f62dc97fd/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "ejfkdev/ddc",
+          "url": "https://github.com/ejfkdev/ddc",
+          "relation": "secondary_source_repo_lead",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入",
+          "relation_note": "来源索引里提及的插件/别名/附属线索；未确认主实现或版本关系"
+        }
+      ],
+      "recipes": [
+        "software-lab"
+      ],
+      "agent_responsibility": "安卓专项Agent分析自有或有授权APK的结构/接口/数据流",
+      "input_contract": "APK、课题目标、测试设备",
+      "output_contract": "模块证据与验证用例、分析边界报告",
+      "previous_usage_gap": "上一版无专项落点，现作为安卓课题可选模块而非必装通用工具",
+      "required_validation": "静态结论有代码位置，运行结论由自有测试样本确认",
+      "missing_information": [
+        "课题是否涉及APK",
+        "工具链/设备/样本范围"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【开源】安卓逆向专用skills apk-reverse 基于逆向项目经验总结和提炼",
+      "source_index_id": "C0014",
+      "repos": [
+        "newliver666/apk-reverse",
+        "ejfkdev/ddc"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "安卓专项Agent分析自有或有授权APK的结构/接口/数据流",
+      "input": "APK、课题目标、测试设备",
+      "output": "模块证据与验证用例、分析边界报告",
+      "gaps": [
+        "课题是否涉及APK",
+        "工具链/设备/样本范围"
+      ],
+      "validation": "静态结论有代码位置，运行结论由自有测试样本确认",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0015",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Rovai使命会诊",
+      "title": "【开源】群聊式多 Agent 工作台 | Rovai 0.3 更新：使命板、远程连接与实时群聊",
+      "decoded_filename": "111【开源】群聊式多 Agent 工作台  Rovai 0.3 更新：使命板、远程连接与实时群聊.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0015"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2929826/1"
+      ],
+      "ledger_summary": "语义核对：帖子描述使命板、实时群聊、远程连接及 Linux Server 路线。",
+      "interfaces": "未提取",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "murray17/rovai-ai",
+          "url": "https://github.com/murray17/rovai-ai",
+          "relation": "direct_source_repo",
+          "existing_35": true,
+          "catalog_id": null,
+          "commit": "c2ff826e66f5d34faa05449d33616c5c86772018",
+          "readme_url": "https://raw.githubusercontent.com/murray17/rovai-ai/c2ff826e66f5d34faa05449d33616c5c86772018/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "cockpit"
+      ],
+      "agent_responsibility": "会诊主持人把群聊争议变成有期限讨论与决策",
+      "input_contract": "使命/争议点、候选方案、版本化证据",
+      "output_contract": "有负责人决策与待批准任务",
+      "previous_usage_gap": "原有35已参考会议协议，新增使命板到契约到接手的可点击链",
+      "required_validation": "两轮讨论结束输出结论；未解决问题进入waiting_human",
+      "missing_information": [
+        "UI/远程连接实际接口",
+        "已登记escaped-pipe错列，audit已修正"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【开源】群聊式多 Agent 工作台 | Rovai 0.3 更新：使命板、远程连接与实时群聊",
+      "source_index_id": "C0015",
+      "repos": [
+        "murray17/rovai-ai"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "会诊主持人把群聊争议变成有期限讨论与决策",
+      "input": "使命/争议点、候选方案、版本化证据",
+      "output": "有负责人决策与待批准任务",
+      "gaps": [
+        "UI/远程连接实际接口",
+        "已登记escaped-pipe错列，audit已修正"
+      ],
+      "validation": "两轮讨论结束输出结论；未解决问题进入waiting_human",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0016",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Co-Space共享工作区",
+      "title": "【开源推广】Co-Space: AI Coding协作终极方案",
+      "decoded_filename": "111【开源推广】Co-Space AI Coding协作终极方案.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0016"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2980125"
+      ],
+      "ledger_summary": "规则提取：1. 项目即空间。一个项目开一个空间，完成后可以直接close。合作这个项目的成员在一个space工作，大家共享一个context。可以用 Codex app 经 SSH 连进同一个空间，一个人提问，其他人能实时看到 agent 的流式输出和运行状态。CLI中，tmux attach也可以现场围观、控制；git commit 的作者按成员自动区分。 2. 一",
+      "interfaces": "API",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "JingxuanKang/cospace",
+          "url": "https://github.com/JingxuanKang/cospace",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "e3ff959950c4c94797147b074662659ac75598fd",
+          "readme_url": "https://raw.githubusercontent.com/JingxuanKang/cospace/e3ff959950c4c94797147b074662659ac75598fd/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/JingxuanKang/cospace/e3ff959950c4c94797147b074662659ac75598fd/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "cockpit"
+      ],
+      "agent_responsibility": "共享空间适配员提供文件/会话/成员标识与可撤销访问",
+      "input_contract": "上下文清单、成员身份、受控project目录",
+      "output_contract": "共享context manifest与成员归属事件",
+      "previous_usage_gap": "原有35遗漏该开源资源；新增云/本机共同空间，代码工作仍独立工作树",
+      "required_validation": "离线接手可找回相同方案版本；成员撤销后不能继续提交",
+      "missing_information": [
+        "Mac/Linux主机条件；Windows Guest原README标未真机验证",
+        "共享文件冲突由工作站lease/worktree解决而非宣称上游已有锁"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【开源推广】Co-Space: AI Coding协作终极方案",
+      "source_index_id": "C0016",
+      "repos": [
+        "JingxuanKang/cospace"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "共享空间适配员提供文件/会话/成员标识与可撤销访问",
+      "input": "上下文清单、成员身份、受控project目录",
+      "output": "共享context manifest与成员归属事件",
+      "gaps": [
+        "Mac/Linux主机条件；Windows Guest原README标未真机验证",
+        "共享文件冲突由工作站lease/worktree解决而非宣称上游已有锁"
+      ],
+      "validation": "离线接手可找回相同方案版本；成员撤销后不能继续提交",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0017",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "UI Design规则",
+      "title": "【开源推广】UI Design Guide · 界面设计指南：灵感、设计、动效、UI Skill",
+      "decoded_filename": "111【开源推广】UI Design Guide · 界面设计指南：灵感、设计、动效、UI Skill.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0017"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2863821/8"
+      ],
+      "ledger_summary": "规则提取：哈哈哈哈是的太对了，不知道佬友有没有推荐的前端的技巧或者解决方案",
+      "interfaces": "未提取",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [],
+      "recipes": [
+        "defense",
+        "software-lab"
+      ],
+      "agent_responsibility": "UI规则员将设计灵感收成组件/动效/可访问性约束",
+      "input_contract": "主题、用户评审意见、交互场景",
+      "output_contract": "design-tokens与UI验收条件",
+      "previous_usage_gap": "原先只是资源清单；新增对实现Agent的可核对界面规则",
+      "required_validation": "加载/等待/失败状态对比清楚；键盘与窄屏可操作",
+      "missing_information": [
+        "索引只有Comments、无明确GH仓库",
+        "正文与图片未附，不能编造上游组件"
+      ],
+      "implementation_status": "待补证 / 设计候选；离线原型演示不代表执行接入",
+      "name": "【开源推广】UI Design Guide · 界面设计指南：灵感、设计、动效、UI Skill",
+      "source_index_id": "C0017",
+      "repos": [],
+      "status": "待补证 / 设计候选",
+      "use": "UI规则员将设计灵感收成组件/动效/可访问性约束",
+      "input": "主题、用户评审意见、交互场景",
+      "output": "design-tokens与UI验收条件",
+      "gaps": [
+        "索引只有Comments、无明确GH仓库",
+        "正文与图片未附，不能编造上游组件"
+      ],
+      "validation": "加载/等待/失败状态对比清楚；键盘与窄屏可操作",
+      "adoption_category": "needs_evidence"
+    },
+    {
+      "id": "CL-0018",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Chromix浏览器候选",
+      "title": "【开源推广】做浏览器自动化老被 Cloudflare 拦？开源了个源码级指纹 Chromium：Chromix",
+      "decoded_filename": "111【开源推广】做浏览器自动化老被 Cloudflare 拦？开源了个源码级指纹 Chromium：Chromix.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0018"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2870222"
+      ],
+      "ledger_summary": "规则提取：之前用 playwright-stealth 的时候，每次 Chromium 升级都要重新对一遍 patch， 而且 JS 层注入的伪装特征还是会被一些检测站点识别出来。 商业方案（AdsPower / 比特浏览器）功能强但闭源、按 profile 收费， 索性自己做了一份。",
+      "interfaces": "SDK",
+      "source_status": "README GH-004；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "xiaozhou26/Chromix",
+          "url": "https://github.com/xiaozhou26/Chromix",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-004",
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        }
+      ],
+      "recipes": [],
+      "agent_responsibility": "浏览器能力评估员验证SDK与浏览器兼容性；采集Agent识别受阻并转人工",
+      "input_contract": "自有站点测试场景、浏览器版本、开放来源URL",
+      "output_contract": "兼容性报告与采集受阻事件",
+      "previous_usage_gap": "上一版泛化网页资源未纳入任务失败分类；现设为按需评估候选，非默认保证可达",
+      "required_validation": "自有测试页仅评估兼容性；挑战页进入waiting_human；不能将帖子防检测宣称当稳定采集证明",
+      "missing_information": [
+        "Chromium补丁维护/SDK版本/许可核对",
+        "不执行绕过站点访问控制的流程"
+      ],
+      "implementation_status": "索引保留 / 暂缓主链；离线原型演示不代表执行接入",
+      "name": "【开源推广】做浏览器自动化老被 Cloudflare 拦？开源了个源码级指纹 Chromium：Chromix",
+      "source_index_id": "C0018",
+      "repos": [
+        "xiaozhou26/Chromix"
+      ],
+      "status": "索引保留 / 暂缓主链",
+      "use": "浏览器能力评估员验证SDK与浏览器兼容性；采集Agent识别受阻并转人工",
+      "input": "自有站点测试场景、浏览器版本、开放来源URL",
+      "output": "兼容性报告与采集受阻事件",
+      "gaps": [
+        "Chromium补丁维护/SDK版本/许可核对",
+        "不执行绕过站点访问控制的流程"
+      ],
+      "validation": "自有测试页仅评估兼容性；挑战页进入waiting_human；不能将帖子防检测宣称当稳定采集证明",
+      "adoption_category": "deferred",
+      "indexed_use": "采集受阻/模型响应研究与人工接管线索，非首版自动执行能力"
+    },
+    {
+      "id": "CL-0019",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "科研方法与引用核验",
+      "title": "【长期更新】我 在 L 站 科 研",
+      "decoded_filename": "111【长期更新】我 在 L 站 科 研.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0019"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/1417107"
+      ],
+      "ledger_summary": "规则提取：- Zotero 7 使用教程 - Zotero 自动化翻译 - 自定义文献RSS订阅 - 文献引用快速校验工具 - Claude Code 科研辅助体验 - Claude Code 日常使用指南 - Claude Code 修改开题报告 - Claude Code,codex，gemini cli三合一 - 如何让codex任劳任怨跑几个小时 - 现代化",
+      "interfaces": "Skill",
+      "source_status": "主索引 CL-0358；同来源 2 份；README GH-025,GH-182；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "MLNLP-World/Paper-Writing-Tips",
+          "url": "https://github.com/MLNLP-World/Paper-Writing-Tips",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-025",
+          "commit": "50712564062249b28b8493ebdc35f8b3a3b88512",
+          "readme_url": "https://raw.githubusercontent.com/MLNLP-World/Paper-Writing-Tips/50712564062249b28b8493ebdc35f8b3a3b88512/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "Leey21/awesome-ai-research-writing",
+          "url": "https://github.com/Leey21/awesome-ai-research-writing",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-182",
+          "commit": "df0af726a79109b8760c1b80d5dfc36ed44a6f1f",
+          "readme_url": "https://raw.githubusercontent.com/Leey21/awesome-ai-research-writing/df0af726a79109b8760c1b80d5dfc36ed44a6f1f/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "QAbot-zh/citation-checker",
+          "url": "https://github.com/QAbot-zh/citation-checker",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "eb34cfaad861b3d1db32f0ca694ac8d380bb5d26",
+          "readme_url": "https://raw.githubusercontent.com/QAbot-zh/citation-checker/eb34cfaad861b3d1db32f0ca694ac8d380bb5d26/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        },
+        {
+          "repo": "pengsida/learning_research",
+          "url": "https://github.com/pengsida/learning_research",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "001978e4bc2ad79f670dc44ec11816e1d9c4c610",
+          "readme_url": "https://raw.githubusercontent.com/pengsida/learning_research/001978e4bc2ad79f670dc44ec11816e1d9c4c610/README.md",
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "research"
+      ],
+      "agent_responsibility": "文献方法员+引用核验员+论证审计员分别管理元数据、来源与论证",
+      "input_contract": "论文全文、DOI、工程数据",
+      "output_contract": "引用记录与论证证据图",
+      "previous_usage_gap": "原版仅提写作链，新增Zotero/引用双源数据与答辩追问绑定",
+      "required_validation": "Crossref/OpenAlex分歧标待核验；不能把max评分当双源一致；无全文不冒称全文翻译",
+      "missing_information": [
+        "实际Zotero库/学校引用样式",
+        "4仓库常见根路径未取得许可证，方法参考优先"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "【长期更新】我 在 L 站 科 研",
+      "source_index_id": "C0019",
+      "repos": [
+        "MLNLP-World/Paper-Writing-Tips",
+        "Leey21/awesome-ai-research-writing",
+        "QAbot-zh/citation-checker",
+        "pengsida/learning_research"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "文献方法员+引用核验员+论证审计员分别管理元数据、来源与论证",
+      "input": "论文全文、DOI、工程数据",
+      "output": "引用记录与论证证据图",
+      "gaps": [
+        "实际Zotero库/学校引用样式",
+        "4仓库常见根路径未取得许可证，方法参考优先"
+      ],
+      "validation": "Crossref/OpenAlex分歧标待核验；不能把max评分当双源一致；无全文不冒称全文翻译",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0020",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Goalcraft可验目标",
+      "title": "专门优化 goal 目标 提示词的skill",
+      "decoded_filename": "111专门优化 goal 目标 提示词的skill.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0020"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2668118"
+      ],
+      "ledger_summary": "语义核对：将模糊目标整理为明确的目标、边界和检查条件。",
+      "interfaces": "Skill",
+      "source_status": "主索引 CL-0020；同来源 1 份；README GH-034；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "xiaoyangtx996/goalcraft-skill",
+          "url": "https://github.com/xiaoyangtx996/goalcraft-skill",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-034",
+          "commit": "8b7041b9849a0c13eaa9d919848f7d06b4b2f994",
+          "readme_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/xiaoyangtx996/goalcraft-skill/8b7041b9849a0c13eaa9d919848f7d06b4b2f994/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "goal"
+      ],
+      "agent_responsibility": "目标整理Agent只生成填实契约并交执行者",
+      "input_contract": "用户任务书、现有仓库命令、产物要求",
+      "output_contract": "inputs/constraints/success_criteria/short_test/deliverables",
+      "previous_usage_gap": "原有35未纳入，现把G1–G4校验设为资源组合编译入口",
+      "required_validation": "不存在的验证命令/占位路径使编译blocked；可观察标准显示给评审者",
+      "missing_information": [
+        "工作站task schema字段映射验证",
+        "学校目标是否已经批准"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "专门优化 goal 目标 提示词的skill",
+      "source_index_id": "C0020",
+      "repos": [
+        "xiaoyangtx996/goalcraft-skill"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "目标整理Agent只生成填实契约并交执行者",
+      "input": "用户任务书、现有仓库命令、产物要求",
+      "output": "inputs/constraints/success_criteria/short_test/deliverables",
+      "gaps": [
+        "工作站task schema字段映射验证",
+        "学校目标是否已经批准"
+      ],
+      "validation": "不存在的验证命令/占位路径使编译blocked；可观察标准显示给评审者",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0021",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Base UI组件主题",
+      "title": "为 AI Coding 准备的 React 组件库",
+      "decoded_filename": "111为 AI Coding 准备的 React 组件库 1.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0021"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2771937/3"
+      ],
+      "ledger_summary": "规则提取：近段时间在实现的React组件库，样式风格参考Github Primer，用于统一side-project或是多平台项目的UI/UX设计. （给大家写玩具时提供一个新的模板选择）",
+      "interfaces": "未提取",
+      "source_status": "主索引 CL-0021；同来源 2 份；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "gamecrafters-io/base-ui",
+          "url": "https://github.com/gamecrafters-io/base-ui",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "f23322221a51c19a747c8a27e0b6e75bd674efc5",
+          "readme_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "defense"
+      ],
+      "agent_responsibility": "组件作者按ThemeProvider/表单/预览组件实现一致界面",
+      "input_contract": "设计token、任务状态规范、UI测试场景",
+      "output_contract": "React组件与Storybook/Playwright报告",
+      "previous_usage_gap": "原有35遗漏该组件库；新增正式界面落地候选，原型仍纯离线HTML",
+      "required_validation": "主题切换、表单键盘、窄屏验证；不能把Primer相似风格写成官方Primer",
+      "missing_information": [
+        "实际React/包版本与Monaco worker打包自测"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "为 AI Coding 准备的 React 组件库",
+      "source_index_id": "C0021",
+      "repos": [
+        "gamecrafters-io/base-ui"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "组件作者按ThemeProvider/表单/预览组件实现一致界面",
+      "input": "设计token、任务状态规范、UI测试场景",
+      "output": "React组件与Storybook/Playwright报告",
+      "gaps": [
+        "实际React/包版本与Monaco worker打包自测"
+      ],
+      "validation": "主题切换、表单键盘、窄屏验证；不能把Primer相似风格写成官方Primer",
+      "dedup_group": "base-ui-post",
+      "canonical_resource_id": "CL-0021",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0022",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "Base UI重复来源",
+      "title": "为 AI Coding 准备的 React 组件库",
+      "decoded_filename": "111为 AI Coding 准备的 React 组件库.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0022"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2771937"
+      ],
+      "ledger_summary": "规则提取：近段时间在实现的React组件库，样式风格参考Github Primer，用于统一side-project或是多平台项目的UI/UX设计. （给大家写玩具时提供一个新的模板选择）",
+      "interfaces": "未提取",
+      "source_status": "主索引 CL-0021；同来源 2 份；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "gamecrafters-io/base-ui",
+          "url": "https://github.com/gamecrafters-io/base-ui",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "f23322221a51c19a747c8a27e0b6e75bd674efc5",
+          "readme_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/gamecrafters-io/base-ui/f23322221a51c19a747c8a27e0b6e75bd674efc5/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "defense"
+      ],
+      "agent_responsibility": "来源档案员保留与CL-0021同源关系",
+      "input_contract": "重复条目元数据",
+      "output_contract": "dedup-group base-ui与来源引用",
+      "previous_usage_gap": "保留23原始标记，不把同源帖子算两个能力或双证据",
+      "required_validation": "组合编译只加载一个base-ui能力实现",
+      "missing_information": [
+        "与CL-0021合并展示但保留来源ID"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "为 AI Coding 准备的 React 组件库",
+      "source_index_id": "C0022",
+      "repos": [
+        "gamecrafters-io/base-ui"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "来源档案员保留与CL-0021同源关系",
+      "input": "重复条目元数据",
+      "output": "dedup-group base-ui与来源引用",
+      "gaps": [
+        "与CL-0021合并展示但保留来源ID"
+      ],
+      "validation": "组合编译只加载一个base-ui能力实现",
+      "dedup_group": "base-ui-post",
+      "canonical_resource_id": "CL-0021",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0023",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "PavedPath开源证据研究",
+      "title": "分享一个自己做的Skills，主要用来给智能体去GitHub上面找解决方案",
+      "decoded_filename": "111分享一个自己做的Skills，主要用来给智能体去GitHub上面找解决方案.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0023"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2383560"
+      ],
+      "ledger_summary": "规则提取：我顺着这个想法做了一个 Codex skill：GitHub Solution Research。它会引导 Codex 先把本地问题描述清楚，再去 GitHub 上找相关 repo、issue、PR、release notes 和代码证据，最后整理成可落地的修复思路或实现方案。",
+      "interfaces": "Skill",
+      "source_status": "主索引 CL-0023；同来源 1 份；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "Jia-Ethan/pavedpath-code",
+          "url": "https://github.com/Jia-Ethan/pavedpath-code",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "97a319fcfd3f9b68976690e04f3b511d6171a300",
+          "readme_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/README.md",
+          "runtime_verified": false,
+          "license": "MIT",
+          "license_url": "https://raw.githubusercontent.com/Jia-Ethan/pavedpath-code/97a319fcfd3f9b68976690e04f3b511d6171a300/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "spec",
+        "software-lab"
+      ],
+      "agent_responsibility": "工程路径研究员在能力缺口/版本卡点时调查接口与已修复路径",
+      "input_contract": "本地症状、版本、约束、接口目标",
+      "output_contract": "匹配证据、最小适配方案、拒绝项、验证入口",
+      "previous_usage_gap": "原有35未纳入，现变为能力选择与失败调查的证据协议",
+      "required_validation": "低匹配热门仓库被拒绝；关键claim由主控复核；结果不得只是链接列表",
+      "missing_information": [
+        "GitHub搜索额度",
+        "历史名github-solution-research与现名迁移别名"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "分享一个自己做的Skills，主要用来给智能体去GitHub上面找解决方案",
+      "source_index_id": "C0023",
+      "repos": [
+        "Jia-Ethan/pavedpath-code"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "工程路径研究员在能力缺口/版本卡点时调查接口与已修复路径",
+      "input": "本地症状、版本、约束、接口目标",
+      "output": "匹配证据、最小适配方案、拒绝项、验证入口",
+      "gaps": [
+        "GitHub搜索额度",
+        "历史名github-solution-research与现名迁移别名"
+      ],
+      "validation": "低匹配热门仓库被拒绝；关键claim由主控复核；结果不得只是链接列表",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0024",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "CF挑战页线索",
+      "title": "[开源推广] CF过盾 SKILL",
+      "decoded_filename": "111开源推广 CF过盾 SKILL.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0024"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2873684/3"
+      ],
+      "ledger_summary": "规则提取：Cross-platform Cloudflare Turnstile solver (macOS, Windows, Linux)",
+      "interfaces": "Skill",
+      "source_status": "README GH-005；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "Sophomoresty/turnstile-bypass",
+          "url": "https://github.com/Sophomoresty/turnstile-bypass",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-005",
+          "commit": null,
+          "readme_url": null,
+          "runtime_verified": false,
+          "license": "未在常见根路径取得；待核对",
+          "evidence_level": "资料索引中的仓库线索；未运行接入"
+        }
+      ],
+      "recipes": [],
+      "agent_responsibility": "可达性观察员识别挑战页、记录人工处理点",
+      "input_contract": "来源URL与获取失败类型",
+      "output_contract": "waiting_human/用户导入替代方案",
+      "previous_usage_gap": "从泛泛收录变为明确候选边界及采集受阻UI状态",
+      "required_validation": "获取遇挑战页不能提交已采集；优先开放元数据/全文来源",
+      "missing_information": [
+        "未执行、未核固定代码协议",
+        "不进入首版默认自动采集能力"
+      ],
+      "implementation_status": "索引保留 / 暂缓主链；离线原型演示不代表执行接入",
+      "name": "[开源推广] CF过盾 SKILL",
+      "source_index_id": "C0024",
+      "repos": [
+        "Sophomoresty/turnstile-bypass"
+      ],
+      "status": "索引保留 / 暂缓主链",
+      "use": "可达性观察员识别挑战页、记录人工处理点",
+      "input": "来源URL与获取失败类型",
+      "output": "waiting_human/用户导入替代方案",
+      "gaps": [
+        "未执行、未核固定代码协议",
+        "不进入首版默认自动采集能力"
+      ],
+      "validation": "获取遇挑战页不能提交已采集；优先开放元数据/全文来源",
+      "adoption_category": "deferred",
+      "indexed_use": "采集受阻/模型响应研究与人工接管线索，非首版自动执行能力"
+    },
+    {
+      "id": "CL-0025",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "WebCodex远程Runner",
+      "title": "[开源推广] webcodex v0.4.6发布，一款自我迭代的线上mcp工具",
+      "decoded_filename": "111开源推广 webcodex v0.4.6发布，一款自我迭代的线上mcp工具.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0025"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2783117/2"
+      ],
+      "ledger_summary": "语义核对：帖子介绍线上 MCP 工具及本机协作、文件和执行能力。",
+      "interfaces": "MCP",
+      "source_status": "用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "yyjeqhc/webcodex",
+          "url": "https://github.com/yyjeqhc/webcodex",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": null,
+          "commit": "203c65bca3bf4f9c24bc9590131c82d1c639e960",
+          "readme_url": "https://raw.githubusercontent.com/yyjeqhc/webcodex/203c65bca3bf4f9c24bc9590131c82d1c639e960/README.md",
+          "runtime_verified": false,
+          "license": "Apache-2.0",
+          "license_url": "https://raw.githubusercontent.com/yyjeqhc/webcodex/203c65bca3bf4f9c24bc9590131c82d1c639e960/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "cockpit"
+      ],
+      "agent_responsibility": "远程执行适配员接MCP Server/Runner能力与文件事件",
+      "input_contract": "task contract、限定project根、lease、工具权限",
+      "output_contract": "结构化执行事件/产物manifest",
+      "previous_usage_gap": "原有35遗漏：新增可比较的远程执行端；任务仍归业务服务所有",
+      "required_validation": "断流/Runner失联显式失败；WebCodex与AgentDock按节点选其一避免重复执行",
+      "missing_information": [
+        "Server/Runner的真实schema与取消语义自测",
+        "不能在设计阶段宣称生产已连通"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "[开源推广] webcodex v0.4.6发布，一款自我迭代的线上mcp工具",
+      "source_index_id": "C0025",
+      "repos": [
+        "yyjeqhc/webcodex"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "远程执行适配员接MCP Server/Runner能力与文件事件",
+      "input": "task contract、限定project根、lease、工具权限",
+      "output": "结构化执行事件/产物manifest",
+      "gaps": [
+        "Server/Runner的真实schema与取消语义自测",
+        "不能在设计阶段宣称生产已连通"
+      ],
+      "validation": "断流/Runner失联显式失败；WebCodex与AgentDock按节点选其一避免重复执行",
+      "adoption_category": "designed_pending_integration"
+    },
+    {
+      "id": "CL-0026",
+      "priority_marker": "111_filename_prefix",
+      "short_name": "AgentDock多机工具",
+      "title": "超级扩展GPT网页版功能，远程电脑，加入MCP，Skill，Codex以及网页UI",
+      "decoded_filename": "111超级扩展GPT网页版功能，远程电脑，加入MCP，Skill，Codex以及网页UI.md",
+      "ledger_source": "毕业设计论文工作站-资源台账-v0.4 (1).md",
+      "clippings_index_ids": [
+        "C0026"
+      ],
+      "public_source_urls": [
+        "https://linux.do/t/topic/2827412"
+      ],
+      "ledger_summary": "规则提取：除了我在之前帖子说的控制本地设备和编写代码之外，AgentDock还可以：",
+      "interfaces": "MCP",
+      "source_status": "README GH-043；用户使用待核对",
+      "clippings_body_available": false,
+      "source_scope": "已上传资源台账/非GitHub索引摘要；未提供该Clipping原始正文或媒体",
+      "github_matches": [
+        {
+          "repo": "uvwt/agentdock",
+          "url": "https://github.com/uvwt/agentdock",
+          "relation": "direct_source_repo",
+          "existing_35": false,
+          "catalog_id": "GH-043",
+          "commit": "a19d133768fd95d366c36ec6e0839d41311855ca",
+          "readme_url": "https://raw.githubusercontent.com/uvwt/agentdock/a19d133768fd95d366c36ec6e0839d41311855ca/README.md",
+          "runtime_verified": false,
+          "license": "Apache-2.0",
+          "license_url": "https://raw.githubusercontent.com/uvwt/agentdock/a19d133768fd95d366c36ec6e0839d41311855ca/LICENSE",
+          "evidence_level": "固定提交README/核心协议只读核对；未运行接入"
+        }
+      ],
+      "recipes": [
+        "cockpit"
+      ],
+      "agent_responsibility": "设备能力员封装文件/命令/Git/MCP/Skill调用",
+      "input_contract": "受控权限、工具schema、任务输入URI",
+      "output_contract": "可追踪结果与设备能力版本",
+      "previous_usage_gap": "原有35遗漏：新增工具执行桥与来源skill_ref；已有模型客户端可以接专业机",
+      "required_validation": "输出文件实际存在、边界路径正确、撤销lease后旧回调拒收",
+      "missing_information": [
+        "Streamable HTTP/OAuth或Bearer配置",
+        "专业应用会话锁由适配器补足"
+      ],
+      "implementation_status": "设计采用 / 待真实接入；离线原型演示不代表执行接入",
+      "name": "超级扩展GPT网页版功能，远程电脑，加入MCP，Skill，Codex以及网页UI",
+      "source_index_id": "C0026",
+      "repos": [
+        "uvwt/agentdock"
+      ],
+      "status": "设计采用 / 待真实接入",
+      "use": "设备能力员封装文件/命令/Git/MCP/Skill调用",
+      "input": "受控权限、工具schema、任务输入URI",
+      "output": "可追踪结果与设备能力版本",
+      "gaps": [
+        "Streamable HTTP/OAuth或Bearer配置",
+        "专业应用会话锁由适配器补足"
+      ],
+      "validation": "输出文件实际存在、边界路径正确、撤销lease后旧回调拒收",
+      "adoption_category": "designed_pending_integration"
+    }
+  ],
+  "final_recipe_consistency": "resources[*].recipes逐项匹配最终blueprints source_ids；暂缓项无主链引用，保留indexed_use"
+}

@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>运行与验证</title><style>body{margin:0;color:#302d43;background:#f5f4f9;font:14px/1.9 "Noto Sans CJK SC","Microsoft YaHei",sans-serif}main{max-width:1000px;margin:45px auto;background:white;padding:60px 65px;border:1px solid #e8e4f0;border-radius:17px}.tag{color:#8a76b3;font-size:11px;letter-spacing:2px}.toplink{font-size:12px;text-align:right}h1{font-size:30px;line-height:1.5;margin:12px 0 25px}h2{font-size:22px;line-height:1.5;padding-top:25px;margin-top:36px;border-top:1px solid #eae5f2;color:#675087}h3{font-size:16px;margin-top:28px}p{margin:12px 0}table{border-collapse:collapse;width:100%;font-size:11px;line-height:1.7;table-layout:fixed}th{background:#ebe7f5;color:#655280;font-weight:600}td,th{text-align:left;vertical-align:top;padding:11px;border:1px solid #e7e2ef;word-break:break-word}td p{margin:0}tr:nth-child(even){background:#fbfafc}.table{margin:20px 0}pre{font-size:11px;line-height:1.7;background:#f2eff7;border:1px solid #e5dfef;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word}code{font-family:ui-monospace,monospace}a{color:#7561a5;text-decoration:none}.toc{padding:20px 25px;background:#f7f5fb;border-radius:12px;font-size:12px}.toc a{display:block}ul,ol{padding-left:23px}li{margin:6px 0}.covernote{padding:15px 20px;border-left:3px solid #9e8ac9;background:#f5f2fa;font-size:12px;color:#776988}figure{margin:30px 0;text-align:center}figure img{max-width:100%;height:auto}figcaption{font-size:11px;color:#8b829c;margin-top:12px}@media(max-width:800px){main{padding:25px;margin:15px;border-radius:10px}h1{font-size:25px}}@media print{@page{size:A4;margin:18mm 16mm}body{background:white;font-size:10pt;line-height:1.8}main{border:0;border-radius:0;padding:0;margin:0;max-width:none}.toplink,.toc{display:none}h1{font-size:24pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}table{font-size:8pt}tr{break-inside:avoid}thead{display:table-header-group}pre{font-size:8pt}figure{break-inside:avoid}figure img{max-height:235mm;object-fit:contain}.print-cover{break-after:page}}</style><main><div class="tag">THESIS ATELIER / DEVELOPMENT v3.0</div><p><a href="../开始评审.html">返回评审入口</a></p><h1 id="s0">运行与验证</h1>
+<p>当前版本是本机开发验证PoC，数据保存在 <code>.local/workstation/</code>，不会推送到GitHub。真实论文、Agent宿主、远程笔记本与手机通知尚未接入。</p>
+<p>需要 Python 3.12+、Git、Node.js 18+。Archify使用固定提交，Python依赖使用带SHA-256的 <code>requirements.lock</code>。</p>
+<h2 id="s3">Linux / macOS</h2>
+<p>在仓库根目录执行：</p>
+<pre><code>bash scripts/setup.sh
+bash scripts/start.sh</code></pre>
+<p>setup会创建独立虚拟环境、校验安装依赖、下载/固定Archify并运行14个控制面测试。start以单进程启动本机服务，浏览器访问本机8765端口。不要用多进程workers或将本版未鉴权API直接暴露到公网。</p>
+<p>云环境已经保留 <code>/workspace/tools/archify</code> 时，可设置 <code>THESIS_ARCHIFY_DIR</code> 指向该目录再执行脚本。脚本支持该覆盖，避免重复下载。</p>
+<h2 id="s8">Windows</h2>
+<p>在仓库根目录的PowerShell执行：</p>
+<pre><code>./scripts/setup.ps1
+./scripts/start.ps1</code></pre>
+<p>当前云环境没有Windows专业软件；PowerShell入口已提供，Windows和CAD/TIA等软件的运行状态必须在实际执行机验证。</p>
+<h2 id="s12">第一条验证路线</h2>
+<ol><li>建立项目，明确资料为开发样例或真实输入。</li><li>建立验证任务链；确认前派发会被服务器拒绝。</li><li>确认方案，派发输入清单；查看真实文件、字节数、SHA-256。</li><li>由不同身份分别登记工程质量与目标一致性报告。界面是人工登记，不会假装调用了模型。</li><li>运行依赖任务，用固定Archify CLI真实生成HTML/SVG。</li><li>两项任务通过检查后，用户验收并下载冻结manifest。</li><li>用源码测试验证实际缺文件、P0两审、旧版本、锁冲突、重启和依赖失效。</li></ol>
+<h2 id="s14">模型配置</h2>
+<p>只有需要真实模型草案任务时才配置环境变量：</p>
+<ul><li><code>THESIS_MODEL_BASE_URL</code>：实际已验证的兼容网关 <code>/v1</code> 根端点。</li><li><code>THESIS_MODEL_API_KEY</code>：在运行环境安全配置，不写入Git或聊天。</li><li><code>THESIS_RETRY_OWNER</code>：默认 <code>gateway</code>，客户端不叠加重试；明确直连且上游不重试时可选 <code>client</code>。</li><li><code>THESIS_WORKER_ID</code>：本机执行身份，默认 <code>local</code>。</li><li><code>THESIS_DATA_DIR</code>：可选持久数据目录。</li></ul>
+<p>能力别名与岗位映射见 <code>config/model-bindings.example.json</code>。实际网关、模型工具调用、上下文覆盖与费用需独立测试；目前测试使用HTTP桩验证重试和格式行为，未调用付费模型。</p>
+<h2 id="s18">测试</h2>
+<pre><code>THESIS_ARCHIFY_DIR=.tools/archify .venv/bin/python -m unittest discover -s tests -v</code></pre>
+<p>完整测试要求固定Archify工具就绪，缺失不会用skip伪装通过。<code>scripts/test_runtime_browser.py</code> 是当前Linux云环境的额外Chromium验证脚本，需已启动服务与Playwright；不属于应用启动依赖。</p>
+<p>测试证据位于 <code>deliverables/v2.0/research/</code>。SQLite持久化是本机验证范围；远程鉴权、租约心跳、GitHub API同步、手机投递和真实论文检查仍待专项实现。</p></main></html>

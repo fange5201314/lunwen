@@ -1,0 +1,332 @@
+{
+  "review_scope": "Independent read-only v2.1 resource fusion audit",
+  "browser": "system Chromium over allowed localhost HTTP",
+  "checks": [
+    {
+      "name": "seven distinct recipes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "goal overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "goal blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "goal meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "goal radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "goal recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "goal sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cockpit overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cockpit blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cockpit meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cockpit radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cockpit recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cockpit sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "research sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "twin overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "twin blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "twin meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "twin radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "twin recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "twin sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "spec overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "spec blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "spec meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "spec radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "spec recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "spec sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "defense overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "defense blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "defense meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "defense radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "defense recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "defense sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "software-lab overview render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "software-lab blueprint render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "software-lab meeting render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "software-lab radar render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "software-lab recovery render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "software-lab sources render",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "author cannot pass own review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "old generation rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "silence cannot approve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "one review does not open human gate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "both current reviews open human gate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "change revokes prior review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "independent literature remains valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "change acceptance waits dual audit",
+      "passed": true,
+      "detail": "Must require current two pass reports"
+    },
+    {
+      "name": "meeting reflects changed 100ms target",
+      "passed": false,
+      "detail": "验收目标为响应时限 100 ms；专业工具未连接。\n\nGoalContract v2 · response_limit_ms=100 · author_id=author · state=propos"
+    },
+    {
+      "name": "API budget three total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "checkpoint survives refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "old checkpoint cannot resume new target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all 23 source records visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Notes candidate distinct from original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "prototype no horizontal overflow 390px",
+      "passed": false,
+      "detail": "{'width': 390, 'scroll': 442}"
+    },
+    {
+      "name": "architecture node selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "architecture compiler has source contract",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "architecture selective propagation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "architecture retry budget correct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "architecture no horizontal overflow 390px",
+      "passed": true,
+      "detail": "{'width': 390, 'scroll': 390}"
+    },
+    {
+      "name": "no Javascript errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "issues": [
+    "meeting reflects changed 100ms target: 验收目标为响应时限 100 ms；专业工具未连接。\n\nGoalContract v2 · response_limit_ms=100 · author_id=author · state=propos",
+    "prototype no horizontal overflow 390px: {'width': 390, 'scroll': 442}"
+  ],
+  "errors": [],
+  "superseded_by": "fusion-browser-validation.json"
+}

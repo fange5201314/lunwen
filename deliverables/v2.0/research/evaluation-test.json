@@ -1,0 +1,168 @@
+{
+  "prototype": "THESIS ATELIER v2.1",
+  "exportedAt": "2026-10-10T09:33:27.717Z",
+  "reviews": {
+    "note": "需要增加专业软件占用视图",
+    "多Agent协作": 4
+  },
+  "projects": [
+    {
+      "id": "P001",
+      "name": "校园设备预约与管理系统",
+      "major": "计算机",
+      "status": "awaiting_plan_approval",
+      "progress": 24,
+      "plan": 2,
+      "approved": 0,
+      "phase": 0,
+      "failed": false,
+      "accepted": false,
+      "comments": [
+        {
+          "text": "统一译文术语",
+          "plan": 1,
+          "time": "09:33"
+        }
+      ],
+      "messages": [],
+      "events": [
+        {
+          "time": "09:33",
+          "message": "方案变更：更换外文候选；依赖旧版的成果标记过期，历史保留。"
+        },
+        {
+          "time": "09:33",
+          "message": "用户提出修订任务：统一译文术语；原验收与旧文件保留，新版需检查。"
+        },
+        {
+          "time": "09:33",
+          "message": "用户验收演示交付v1，项目完成；真实文件尚未生成。"
+        },
+        {
+          "time": "09:33",
+          "message": "演示阶段推进至 4；系统检查通过，等待用户验收。"
+        },
+        {
+          "time": "09:33",
+          "message": "演示阶段推进至 3；保存阶段检查点。"
+        },
+        {
+          "time": "09:33",
+          "message": "演示阶段推进至 2；保存阶段检查点。"
+        },
+        {
+          "time": "09:33",
+          "message": "模拟能力自测通过；岗位R011加入演示项目队伍，未验证真实软件。"
+        },
+        {
+          "time": "09:33",
+          "message": "会议结论写入工程决策板；未自动确认主路线。"
+        },
+        {
+          "time": "09:33",
+          "message": "人工恢复：渠道配置已修复；从有效检查点phase-1继续，旧失败记录保留。"
+        },
+        {
+          "time": "09:33",
+          "message": "模拟API总重试预算耗尽；保存现场，停止该节点依赖并通知（未实际发送）。"
+        },
+        {
+          "time": "09:33",
+          "message": "模拟API请求故障转移成功；业务状态保持，工具副作用未重复。"
+        },
+        {
+          "time": "09:33",
+          "message": "人工恢复：已补充附录并重新核验；从有效检查点phase-1继续，旧失败记录保留。"
+        },
+        {
+          "time": "09:33",
+          "message": "模拟全文覆盖检查失败：附录未对齐；G12与依赖节点停止派发；保留阶段检查点；通知排队（模拟）。"
+        },
+        {
+          "time": "09:33",
+          "message": "演示阶段推进至 1；保存阶段检查点。"
+        },
+        {
+          "time": "09:33",
+          "message": "用户确认演示方案v1；正式制作关卡开启。"
+        }
+      ],
+      "decisions": [
+        {
+          "title": "多 Agent 协作与唯一状态源",
+          "status": "待决策",
+          "reason": "双轮演示讨论：工作站管理业务状态，Paperclip提供团队委派；真实接入与失败隔离待验证。"
+        },
+        {
+          "title": "首版范围与交付合同",
+          "status": "待实施",
+          "reason": "用户确认方案版本v1；验证与最终验收仍独立。"
+        }
+      ],
+      "extraRoles": [
+        "R011"
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "轻型输送机构设计",
+      "major": "机械 / CAD",
+      "status": "running",
+      "progress": 62,
+      "plan": 1,
+      "approved": 1,
+      "phase": 1,
+      "failed": false,
+      "accepted": false,
+      "comments": [],
+      "messages": [],
+      "events": [
+        {
+          "time": "09:33",
+          "message": "独立项目演示推进，不受其他项目失败影响。"
+        }
+      ],
+      "decisions": [],
+      "extraRoles": []
+    },
+    {
+      "id": "P003",
+      "name": "分拣输送线 PLC 控制",
+      "major": "PLC / 自动化",
+      "status": "blocked",
+      "progress": 18,
+      "plan": 1,
+      "approved": 0,
+      "phase": 0,
+      "failed": true,
+      "accepted": false,
+      "comments": [],
+      "messages": [],
+      "events": [],
+      "decisions": [],
+      "extraRoles": []
+    },
+    {
+      "id": "P004",
+      "name": "<测试> 跨专业项目",
+      "major": "计算机",
+      "status": "awaiting_plan_approval",
+      "progress": 24,
+      "plan": 1,
+      "approved": 0,
+      "phase": 0,
+      "failed": false,
+      "accepted": false,
+      "comments": [],
+      "messages": [],
+      "events": [],
+      "decisions": [],
+      "extraRoles": []
+    }
+  ],
+  "apiEvents": [
+    "09:33 P001: req-02 3次请求全部失败 → 熔断 → 不提交部分响应 → 人工工单",
+    "09:33 P001: req-01 attempt1 429 → attempt2 同能力渠道B 200 → 完整响应校验 → 提交一次"
+  ],
+  "notice": "全部运行与产物状态为原型模拟，非真实工程记录"
+}

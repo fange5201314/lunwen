@@ -1,0 +1,36 @@
+{
+  "design_version": "2.1",
+  "status": "proposed_not_integrated",
+  "goalcraft_gates": [
+    {"id": "G1", "name": "无占位", "rule": "Missing school constraints, actual inputs and output specifications remain missing; cannot compile executable production tasks."},
+    {"id": "G2", "name": "命令真实", "rule": "Executable commands must exist in the bound capability version and have a recorded self-test; unknown adapters remain proposed."},
+    {"id": "G3", "name": "可观察", "rule": "Every task has observable output, evidence references and a check contract; prose assurances cannot mark passed."},
+    {"id": "G4", "name": "权限诚实", "rule": "Capability availability and execution scope must match the worker; cannot claim cloud Linux can operate an unbound Windows CAD session."}
+  ],
+  "review_contract": {
+    "reviewer_count": 2,
+    "dimensions": ["engineering_quality", "original_goal_alignment"],
+    "tools": ["read", "search", "list", "report"],
+    "no_write_tools": true,
+    "author_member_id_must_differ_from_reviewers": true,
+    "reviewers_must_be_distinct_members": true,
+    "silence_means": "pending",
+    "required_reports": "explicit pass/fail with evidence references",
+    "scope_fields": ["project_id", "plan_version", "generation", "input_hash", "output_hash"],
+    "stale_report": "retain_for_history_but_reject_for_current_gate",
+    "review_is_not_user_acceptance": true
+  },
+  "meeting": {"max_rounds": 2, "output": "DecisionProposal", "plan_change_requires_user_confirmation": true},
+  "change_propagation": {
+    "algorithm": "traverse declared depends_on edges from changed artifact version; mark descendants stale; preserve unrelated branches",
+    "granularity": "object or section when explicit provenance exists; otherwise conservative file-level invalidation",
+    "do_not_modify_accepted_versions": true,
+    "recheck": "recompute affected nodes under new generation; run two independent checks; user confirms affected delivery manifest"
+  },
+  "retry_owner": "model-gateway",
+  "request_attempts_total": 3,
+  "request_window_seconds": 90,
+  "business_failure": "checkpoint_and_wait_for_human",
+  "tool_side_effect_replay": "never_automatically_when_outcome_unknown",
+  "runtime_slots": {"min": 4, "max": 8, "activation": "phase_and_capability_driven"}
+}

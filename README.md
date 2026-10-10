@@ -1,38 +1,38 @@
-# 毕设论文工作站 · 方案与可点击原型
+# 毕设论文工作站 · 资源融合与开发验证 v3.0
 
-根据用户提供的八份资料设计，重点是多 Agent 的招募、分工、讨论、任务编排、工程决策、证据交接和失败恢复。
+原8份资料与新增34页《系统开发任务流转与工具链验证》已合并。保留884条资源索引、96岗位、215节点，重点将**111开头的23条记录 / 22主题**编为7套协作蓝图，并开始实现可运行核心。
 
-## 下载与查看
+**[下载完整离线包 v3.0](https://raw.githubusercontent.com/fange5201314/lunwen/main/downloads/thesis-workstation-v3.0.zip)**。解压打开根目录 **开始评审.html**，可点击评估原型和架构；HTML在GitHub文件页显示源码，需要下载后打开。也可使用 **Code → Download ZIP**。
 
-**[下载离线交付 ZIP](downloads/thesis-workstation-v2.0.zip)**：在 GitHub 文件页点击 **Download raw file** 下载；解压后打开 **开始评审.html**。也可以在仓库首页点击 **Code → Download ZIP** 下载整个仓库。
+## 现在可以开发什么
 
-HTML 原型需要下载后用浏览器打开，GitHub 文件页只显示 HTML 源码。
+**Workstation Core 是唯一业务中心**，负责方案确认、黑板、任务依赖、真实文件、证据版本、检查与验收；Rovai、Paperclip、PI等通过适配器接入。现有 Python/FastAPI/SQLite 本机PoC已跑通：确认方案 → 生成输入清单 → 两类不同身份检查 → 固定Archify出图 → 用户验收下载。状态与真实SHA-256持久化，失败可人工恢复，P0两审后停止自动循环。
+
+**[统一实施方案](docs/开发实施方案-v3.0.md)**说明PDF建议取舍、资源组合、接口、成本和下一批任务。**[运行与验证](docs/运行与验证.md)**提供安装启动步骤；开发任务与验收见 [backlog](config/development-backlog.json)。
+
+```bash
+bash scripts/setup.sh
+bash scripts/start.sh
+```
+
+Linux环境已验证14项控制面测试、8项真实服务浏览器检查及64项融合原型检查。双审计在当前运行界面由人登记；模型接缝用HTTP桩测试。远程笔记本、真实Agent宿主/模型、论文链、GitHub Issue同步、手机通知与Windows专业工具是后续开发范围，详见实施方案。
+
+![真实开发验证工作台](deliverables/v2.0/开发验证工作台预览.png)
+
+## 设计交付与资源证据
 
 | 内容 | 文件 |
 | --- | --- |
-| 可点击原型：11 个主要页面 | [可点击原型.html](deliverables/v2.0/可点击原型.html) |
-| 交互系统架构图：Archify 实际生成 | [架构图.html](deliverables/v2.0/架构图.html) / [PDF](deliverables/v2.0/架构图.pdf) |
-| 多 Agent 协作、API 与业务恢复 | [多Agent协作与恢复图.html](deliverables/v2.0/多Agent协作与恢复图.html) |
-| 18 页设计与实施方案 | [PDF](deliverables/v2.0/架构设计与方案说明.pdf) / [Word](deliverables/v2.0/架构设计与方案说明.docx) / [Markdown](deliverables/v2.0/架构设计与方案说明.md) |
-| 资源清单、复用边界与缺口 | [Excel](deliverables/v2.0/资源复用与缺口清单.xlsx) / [全量CSV](deliverables/v2.0/资源全量索引.csv) |
-| 使用与验证说明 | [资源清单与使用说明](deliverables/v2.0/资源清单与使用说明.md) |
-| 可继续开发的配置 | [config/](deliverables/v2.0/config/) |
+| 7套可点击资源融合实验室 | [HTML](deliverables/v2.0/资源融合实验室.html) |
+| 111资源融合方案、范围与成本 | [PDF](deliverables/v2.0/111重点资源融合方案.pdf) / [Word](deliverables/v2.0/111重点资源融合方案.docx) / [Markdown](deliverables/v2.0/111重点资源融合方案.md) |
+| 融合编排、证据变更、恢复三视图 | [互动图](deliverables/v2.0/资源融合编排架构.html) / [PDF](deliverables/v2.0/资源融合编排架构.pdf) / [SVG](deliverables/v2.0/资源融合编排架构.svg) / [Mermaid](deliverables/v2.0/资源融合编排架构.mmd) |
+| 当前开发核心与后续接口 | [开发验证架构](deliverables/v2.0/开发验证架构.html) / [PDF](deliverables/v2.0/开发验证架构.pdf) |
+| 23条重点资源逐项去向与全部索引 | [111 CSV](deliverables/v2.0/111重点资源融合清单.csv) / [Excel](deliverables/v2.0/资源复用与缺口清单.xlsx) |
+| 14个补充仓库、12条核心协议 | [适配表](deliverables/v2.0/111补充开源适配表.csv) / [协议证据](deliverables/v2.0/111资源协议复用证据.md) |
+| 完整12页工作站原型 | [HTML](deliverables/v2.0/可点击原型.html) |
+| 完整设计、API依赖与缺失信息 | [方案PDF](deliverables/v2.0/架构设计与方案说明.pdf) / [资源说明](deliverables/v2.0/资源清单与使用说明.md) |
+| 蓝图、门禁、契约与验证报告 | [配置](deliverables/v2.0/config/) / [报告](deliverables/v2.0/research/) |
 
-## 资源与编排设计
+融合覆盖目标工厂、共享驾驶舱、科研证据活页、跨专业数字样机、规格开发流水线、答辩叙事与授权软件研究。23条重点来源均保留去向：16条设计采用、4条待补证候选、3条索引保留；没有把原帖标题或固定源码核对当成已完成运行集成。
 
-- 完整保留 **884 条资源索引**，精选 **35 项复用组合**，其中 **34 个 GitHub 项目**有固定提交与公开说明核对记录。
-- 提取 **96 个岗位、215 个流程节点、12 套队伍、12 套章节模板、69 类成果和33 个原设计验收场景**。
-- 推荐 Paperclip 团队与派发接入，参考 Rovai 长期成员协作；Trellis 用于工作站开发；论文链接入检索、Docling、OfficeCLI与独立审计；Octopus用于有限API切换；CAD、CAE、TIA按能力自测后扩展。
-- 方案确认与用户验收是独立关卡。API故障可以有限切换；业务与检查失败保存现场、暂停依赖、通知并等待人工恢复，其他独立项目继续。
-
-## 当前交付状态
-
-本仓库是**方案、可交互原型和开发配置**。示例项目执行、论文内容、产物与通知状态为模拟；真实 Agent、API 网关和专业软件尚未接入。Archify已实际用于本次出图。
-
-原型有41项真实浏览器交互检查通过，另有图表、PDF及配置校验。报告位于 `deliverables/v2.0/research/`。
-
-原始上传资料与私人对话保留在工作区。公开交付版保存八份资料的文件名、SHA-256、版本与提取信息于 [脱敏来源清单](deliverables/v2.0/research/source-manifest.json)，并保留全部整理后的资源索引。需要重新提取原始资料时，使用者应自行提供原附件。第三方README副本与私人附件签名链接不在发布包中。
-
-## 首页预览
-
-![原型首页](deliverables/v2.0/原型首页.png)
+私人原始附件不发布；公开版保留整理结果和脱敏来源SHA清单。[v2.0原离线包](downloads/thesis-workstation-v2.0.zip)保留供对照。当前v3.0包含设计与源码，应用安装仍需联网取得校验后的依赖。
